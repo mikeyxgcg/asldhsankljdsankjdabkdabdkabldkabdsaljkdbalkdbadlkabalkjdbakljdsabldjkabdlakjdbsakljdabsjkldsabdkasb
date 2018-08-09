@@ -94,7 +94,7 @@ client.on('message', message => {
     if(message.content.includes('discord.gg')){
 		if(!message.channel.guild) return;
         message.delete()
-    return message.reply(`** No Invite Links للاسف ما تقدر تنشر يا حبيبي   :) ههههههههههايي 😠 ! **`)
+    return message.reply(`** No Invite Links للاسف ما تقدر تنشر :) ههههههههههايي 😠 ! **`)
     }
 });
 
@@ -127,7 +127,7 @@ client.on("message", message => {
  if (message.content === "-help") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2018 لــبوت')
+      .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2017 لــبوت')
       .setFooter('اوامر الادمنيه')
 	  .addField('-bc', `لخاصية البرودكستات`)
       .setFooter('======================================================')
@@ -159,7 +159,7 @@ client.on("message", message => {
  if (message.content === "-invite") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2018 لــبوت')
+      .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2017 لــبوت')
       .addField('شكرا لك لاستخدامك ل بروميوم بوت', `http://premium-bot.bitballoon.com`)
   message.author.send({embed});
 
@@ -270,10 +270,6 @@ var cats = [
 "https://vignette1.wikia.nocookie.net/houseofnight/images/8/8b/Cats.jpg/revision/latest?cb=20130812053537",
 "https://s-media-cache-ak0.pinimg.com/originals/f0/3b/76/f03b7614dfadbbe4c2e8f88b69d12e04.jpg",
 "http://www.rd.com/wp-content/uploads/sites/2/2016/04/15-cat-wants-to-tell-you-attention.jpg"
-https://images.pexels.com/photos/209037/pexels-photo-209037.jpeg?cs=srgb&dl=adorable-animal-animal-world-209037.jpg&fm=jpg
-https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg?cs=srgb&dl=adorable-animal-cat-127028.jpg&fm=jpg
-https://images.pexels.com/photos/326875/pexels-photo-326875.jpeg?cs=srgb&dl=adorable-animal-blur-326875.jpg&fm=jpg
-https://images.pexels.com/photos/248280/pexels-photo-248280.jpeg?cs=srgb&dl=adorable-animal-animal-photography-248280.jpg&fm=jpg
 ]
     client.on('message', message => {
         var args = message.content.split(" ").slice(1);
@@ -351,7 +347,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers `);
     console.log(`---------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(`in 250 server by: n3k4a   -help`,"https://www.twitch.tv/ninja")
+  client.user.setGame(`in 190 serverby:n3k4a   -help`,"https://www.twitch.tv/ninja")
    client.user.setStatus("dnd")
 });
 
