@@ -56,7 +56,7 @@ const x5bz4 = [
    '*** لماذا لم تدخل الغرفة ؟ ***',
    '*** ههههههههههههههههههه انت الان مسجون في هذه الغرفة ***',
    '*** لن تخرج حتى اعود لك بعد قليل ***',
-   '*** المفت��ح معك ! اكتب .مريم  ***',
+   '*** المفت����ح معك ! اكتب .مريم  ***',
    '*** مفتاح احمر , هل حصلت عليه ؟ ***',
    '*** ان لم تحصل عليه , اكتب .مريم مرة اخرى ***',
    '*** مفتاح اسود . هل حصلت عليه ؟ ***',
@@ -528,7 +528,7 @@ const cuttweet = [
 'كت تويت ‏- أكثر سؤال وجِّه إليك مؤخرًا؟',
      '‏كت تويت|ما هو الشيء الذي يجعلك تشعر بالخوف؟',
      '‏كت تويت|وش يفسد الصداقة؟',
-     '‏كت ت��ي��|شخص ل��ترفض له طلبا ؟',
+     '‏كت ت��ي����|شخص ل��ترفض له طلبا ؟',
      '‏كت تويت|كم مره خسرت شخص تحبه؟.',
      '‏كت تويت|كيف تتعامل مع الاشخاص السلبيين ؟',
      '‏كت تويت|كلمة تشعر بالخجل اذا قيلت لك؟',
@@ -780,7 +780,7 @@ client.on('message', function(message) {
 			});
 		}
 	}
-		if (mess.startsWith('fdsfdas')) {
+		if (mess.startsWith('سيبيشسبيسب')) {
 		if (!message.member.hasPermission('ADMINISTRATOR')) return message.reply(':x:');
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		// if user is not insert the URL or song title
@@ -846,7 +846,7 @@ client.on('message', function(message) {
 		dispatcher.setVolume(1 * args / 50);
 		message.channel.sendMessage(`Volume Updated To: **${dispatcher.volume*50}**`);
 	}
-			else if (mess.startsWith(prefix + 's')) {
+			else if (mess.startsWith('لبيليبليب')) {
 		if (!message.member.voiceChannel) return message.channel.send(':x: **You have to be in a voice channel to use this command.**');
 		message.channel.send(':gear: **تم التخطي**').then(() => {
 			skip_song(message);
@@ -854,7 +854,7 @@ client.on('message', function(message) {
 			if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 		});
 	}
-			else if (message.content.startsWith(prefix + 'v')) {
+			else if (message.content.startsWith('بسيبيسبسيبv')) {
 		if (!message.member.voiceChannel) return message.channel.send(':x: **You have to be in a voice channel to use this command.**');
 		// console.log(args)
 		if (args > 100) return message.channel.send('**1 - 100 | لا أكثر ولا أقل **')
@@ -862,7 +862,7 @@ client.on('message', function(message) {
 			dispatcher.setVolume(1 * args / 100);
 		message.channel.sendMessage(`**__ ${dispatcher.volume*50}% مستوى الصوت __**`);
 	}
-			else if (mess.startsWith(prefix + 'l')) {
+			else if (mess.startsWith('بيسبيسبش')) {
 		if (!message.member.voiceChannel) return message.channel.send(':x: **You have to be in a voice channel to use this command.**');
 		message.channel.send('**Done...:white_check_mark: **')
 		var server = server = servers[message.guild.id];
@@ -894,7 +894,7 @@ client.on('message', function(message) {
 		if (!message.member.voiceChannel) return message.channel.send(':x: **You have to be in a voice channel to use this command.**');
 		message.member.voiceChannel.join().then(message.channel.send('**Done...:white_check_mark: **'));
 	}
-	else if (mess.startsWith('-play')) {
+	else if (mess.startsWith('بيسبيسشب')) {
 		getID(args, function(id) {
 			add_to_queue(id);
 			fetchVideoInfo(id, function(err, videoInfo) {
