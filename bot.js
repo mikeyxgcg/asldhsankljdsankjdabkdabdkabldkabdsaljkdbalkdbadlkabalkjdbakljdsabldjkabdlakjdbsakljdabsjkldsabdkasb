@@ -19,7 +19,7 @@ client.on('ready', () => {
 
 
 
-console.log('mariam ra7t tmot al nas');
+console.log('n3k4a is one ');
 client.on('ready', () => {
   console.log(`im redey`);
 });
@@ -121,13 +121,19 @@ client.on('message', msg => {
 });
 
 
+client.on('message', msg => {
+  if (msg.content === 'السلام عليكم ') {
+    msg.reply('وعليكم السلام :)');
+  }
+});
+
 
 
 client.on("message", message => {
  if (message.content === "-help") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2017 لــبوت')
+      .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2018 لــبوت')
       .setFooter('اوامر الادمنيه')
 	  .addField('-bc', `لخاصية البرودكستات`)
       .setFooter('======================================================')
@@ -159,7 +165,7 @@ client.on("message", message => {
  if (message.content === "-invite") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2017 لــبوت')
+      .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2018 لــبوت')
       .addField('شكرا لك لاستخدامك ل بروميوم بوت', `http://premium-bot.bitballoon.com`)
   message.author.send({embed});
 
@@ -342,7 +348,7 @@ const Client = new Discord.Client();
 
 client.on('ready', () => {
    console.log(`----------------`);
-      console.log(`PANDA BOT STARTED`);
+      console.log(`Premium BOT STARTED`);
         console.log(`---------------`);
       console.log(`ON ${client.guilds.size} Servers `);
     console.log(`---------------`);
