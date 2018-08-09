@@ -353,7 +353,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers `);
     console.log(`---------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(`in 190 serverby:n3k4a   -help`,"https://www.twitch.tv/ninja")
+  client.user.setGame(`in 260 server by: n3k4a   -help`,"https://www.twitch.tv/ninja")
    client.user.setStatus("dnd")
 });
 
@@ -453,6 +453,7 @@ Client.on("message", message => {
                                                       message.delete();
                             }
                           }
+                         
 });
 
 
