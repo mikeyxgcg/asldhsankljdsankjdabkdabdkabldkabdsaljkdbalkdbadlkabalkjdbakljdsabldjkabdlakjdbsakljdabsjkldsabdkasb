@@ -296,52 +296,49 @@ const Client = new Discord.Client();
 
 
 
-
-         client.on('message', message => {
-            if (message.content === 'برب') {
-              message.channel.sendFile("./tyt.png");
-            }
-         });
-
+ client.on('message', message => {
+ if (message.content === 'برب') {
+message.channel.sendFile("./tyt.png");
+ }
+  });
 
 
 
-         client.on('message', message => {
-            if (message.content === 'ق1') {
-              message.channel.sendFile("./5.png");
-            }
-         });
+client.on('message', message => {
+if (message.content === 'ق1') {
+ message.channel.sendFile("./5.png");
+ }
+ });
+
+
+client.on('message', message => {
+if (message.content === 'السلام عليكم') {
+message.channel.sendFile("./5bz.png");
+ }
+});
+
+
+client.on('message', message => {
+if (message.content === 'حشيش') {
+message.channel.sendFile("./2.png");
+}
+});
 
 
 
-         client.on('message', message => {
-            if (message.content === 'السلام عليكم') {
-              message.channel.sendFile("./5bz.png");
-            }
-         });
-
-
-         client.on('message', message => {
-            if (message.content === 'حشيش') {
-              message.channel.sendFile("./2.png");
-            }
-         });
-
-
-
-         client.on('message', message => {
-            if (message.content === 'باك') {
-              message.channel.sendFile("./WLC.png");
-            }
-         });
+client.on('message', message => {
+if (message.content === 'باك') {
+ message.channel.sendFile("./WLC.png");
+ }
+ });
          
          
          
-                 client.on('message', message => {
-            if (message.content === 'ترحيب') {
-              message.channel.sendFile("./1.jpg");
-            }
-         });
+client.on('message', message => {
+if (message.content === 'ترحيب') {
+message.channel.sendFile("./1.jpg");
+}
+});
 
 
 
@@ -416,12 +413,6 @@ client.on('message', message => {
       message.channel.sendEmbed(embed);
     }
 });
-
-
-
-
-
-
 
 
 
