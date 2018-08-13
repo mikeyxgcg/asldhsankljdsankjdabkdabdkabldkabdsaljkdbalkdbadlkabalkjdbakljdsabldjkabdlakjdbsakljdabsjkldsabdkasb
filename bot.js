@@ -118,6 +118,7 @@ client.on('message', msg => {
   if (msg.content === 'مين يلعب؟') {
     msg.reply('انا العب ولا شي :)');
   }
+
 });
 
 
@@ -146,7 +147,8 @@ client.on("message", message => {
 	  .addField('-id', `يجبلك الملف الشخصي حقك`)
 	  .addField('-clear', `البوت يمسح  100 رسايل`)
 	  .addField('-say', `البوت يكرر الكلام الي انت تقوله`)
-	  .addField('-ping', `يقلك كم بنق البوت`)
+	  .addField('-botin', `لمعرفه البوت في كام سرفر الان`)
+          .addField('-ping', `يقلك كم بنق البوت`)
       .addField('-support', `سيرفر الدعم`)
       .setFooter('======================================================')
       .setFooter('اوامر تحت الصيانه(يمكنك تجربتها) وشكرا')
@@ -218,7 +220,7 @@ function hasRole(mem, role) {
 
 
 client.on('message', message => {
-     if (message.content === "-كم") {
+     if (message.content === "-botin") {
 		 if(!message.channel.guild) return;
      let embed = new Discord.RichEmbed()
   .setColor("RANDOM")
@@ -809,7 +811,7 @@ client.on('message', function(message) {
 			if (message.guild.voiceConnection) message.guild.voiceConnection.end();
 		});
 	}
-	else if (message.content.startsWith('-volume')) {
+	else if (message.content.startsWith('-vol')) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		// console.log(args)
 		if (args > 100) return message.reply(':x: **100**');
