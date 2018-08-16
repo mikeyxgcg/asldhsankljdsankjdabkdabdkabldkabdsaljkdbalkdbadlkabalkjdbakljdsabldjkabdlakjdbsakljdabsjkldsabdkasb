@@ -134,21 +134,37 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2018 لــبوت')
+  
       .setFooter('اوامر الادمنيه')
+  
 	  .addField('-botin', `لمعرفه البوت في كام سرفر الان`)
+  
       .setFooter('======================================================')
+  
       .setFooter('اوامر الاعضاء')
+  
       .addField('-invite', `لاضافة البوت الى سيرفرك`)
+  
 	  .addField('-roles', `لمعرفة الرتب الي في السيرفر`)
+  
       .addField('-avatar', `يجبلك الافتار حقك يعني صورة حسابك`)
+  
        .addField('-support', `سيرفر الدعم`)
+  
 	  .addField('-server', `يجبلك معلومات السيرفر`)
+  
 	  .addField('-id', `يجبلك الملف الشخصي حقك`)
+  
 	  .addField('-clear', `البوت يمسح  100 رسايل`)
+  
 	  .addField('-say', `البوت يكرر الكلام الي انت تقوله`)
+  
           .addField('-ping', `يقلك كم بنق البوت`)
-      .addField('-kiss' , ' يعطي قبله لمن تختار في السيرفر' , true)	
+  
+      .addField('-kiss' , ' يعطي قبله لمن تختار في السيرفر' , true)
+	
       .addField('-slap' , ' يعطي كف لمن تختاره في السيرفر' , true)
+  
       .addField('-hug' , 'يعطي وحضن او ضمه لمن تختاره في السيرفر' , true)
       .setFooter('======================================================')
       .setFooter('اوامر تحت الصيانه(يمكنك تجربتها) وشكرا')
@@ -274,31 +290,31 @@ client.on('message',  (message) => {
     'https://i.giphy.com/media/j3iGKfXRKlLqw/giphy.gif',
     'https://i.giphy.com/media/2M2RtPm8T2kOQ/giphy.gif',
     'https://i.giphy.com/media/l3YSimA8CV1k41b1u/giphy.gif',
-    'https://giphy.com/gifs/slap-nichijou-81kHQ5v9zbqzC',
-    'https://giphy.com/gifs/QYT2VEOXVyVmE',
-    'https://giphy.com/gifs/funimation-slap-xUNd9HZq1itMkiK652',
-    'https://giphy.com/gifs/hit-slap-xXRDuvEcMA2JO',
-    'https://giphy.com/gifs/slap-rozen-maiden-zRlGxKCCkatIQ',
-    'https://giphy.com/gifs/slap-gif-9U5J7JpaYBr68',
-    'https://giphy.com/gifs/slap-michiko-to-hatchin-q0uYk5uwJVFug',
-    'https://giphy.com/gifs/slap-oneechan-kita-iREUC7qrjN4vC',
-    'https://giphy.com/gifs/bitch-slap-AkKEOnHxc4IU0',
-    'https://giphy.com/gifs/slap-reaction-angry-6Fad0loHc6Cbe',
-    'https://giphy.com/gifs/anime-gifs-prKt29rL7zAbe',
-    'https://giphy.com/gifs/couple-fight-LeTDEozJwatvW',
-    'https://giphy.com/gifs/manga-6UTkJXBd26qiI',
-    'https://giphy.com/gifs/slapping-technique-konosuba-VEmm8ngZxwJ9K',
-    'https://giphy.com/gifs/ga-punishment-EtdEOL3MbPbmE',
-    'https://giphy.com/gifs/last-one-CIvfqJqBbvliU',
-    'https://giphy.com/gifs/3pSKnxaDzl9Oo',
-    'https://giphy.com/gifs/like-hoe-hanasaku-1iw7RG8JbOmpq',
-    'https://giphy.com/gifs/shinji-m0VwgrO5yXxQY',
-    'https://giphy.com/gifs/2o855hr1xVotO',
-    'https://giphy.com/gifs/mgh-URBigLkgWoYzS',
-    'https://giphy.com/gifs/slap-pGOdXNi6J7ML6',
-    'https://giphy.com/gifs/slap-gif-HHUd5nOFbSYtG',
-    'https://giphy.com/gifs/slap-TZp6XSDusOnXG',
-    'https://giphy.com/gifs/slapping-wqP5TOFnOMwqQ',
+    'https://media.giphy.com/media/81kHQ5v9zbqzC/giphy.gif',
+    'https://media.giphy.com/media/QYT2VEOXVyVmE/giphy.gif',
+    'https://media.giphy.com/media/xUNd9HZq1itMkiK652/giphy.gif',
+    'https://media.giphy.com/media/xXRDuvEcMA2JO/giphy.gif',
+    'https://media.giphy.com/media/zRlGxKCCkatIQ/giphy.gif',
+    'https://media.giphy.com/media/9U5J7JpaYBr68/giphy.gif',
+    'https://media.giphy.com/media/q0uYk5uwJVFug/giphy.gif',
+    'https://media.giphy.com/media/iREUC7qrjN4vC/giphy.gif',
+    'https://media.giphy.com/media/AkKEOnHxc4IU0/giphy.gif',
+    'https://media.giphy.com/media/6Fad0loHc6Cbe/giphy.gif',
+    'https://media.giphy.com/media/prKt29rL7zAbe/giphy.gif',
+    'https://media.giphy.com/media/LeTDEozJwatvW/giphy.gif',
+    'https://media.giphy.com/media/6UTkJXBd26qiI/giphy.gif',
+    'https://media.giphy.com/media/VEmm8ngZxwJ9K/giphy.gif',
+    'https://media.giphy.com/media/EtdEOL3MbPbmE/giphy.gif',
+    'https://media.giphy.com/media/CIvfqJqBbvliU/giphy.gif',
+    'https://media.giphy.com/media/3pSKnxaDzl9Oo/giphy.gif',
+    'https://media.giphy.com/media/1iw7RG8JbOmpq/giphy.gif',
+    'https://media.giphy.com/media/m0VwgrO5yXxQY/giphy.gif',
+    'https://media.giphy.com/media/2o855hr1xVotO/giphy.gif',
+    'https://media.giphy.com/media/URBigLkgWoYzS/giphy.gif',
+    'https://media.giphy.com/media/pGOdXNi6J7ML6/giphy.gif',
+    'https://media.giphy.com/media/HHUd5nOFbSYtG/giphy.gif',
+    'https://media.giphy.com/media/TZp6XSDusOnXG/giphy.gif',
+    'https://media.giphy.com/media/wqP5TOFnOMwqQ/giphy.gif',
     'https://i.giphy.com/media/WLXO8OZmq0JK8/giphy.gif'
   ];
 
@@ -324,38 +340,38 @@ client.on('message',  (message) => {
     return message.emit('commandUsage', message, this.help);
   }
   let hugs = [
-    'https://giphy.com/gifs/happy-hug-od5H3PmEG5EVq',
-    'https://giphy.com/gifs/animated-cute-13YrHUvPzUUmkM',
-    'https://giphy.com/gifs/cute-anime-couple-hug-wnsgren9NtITS',
-    'https://giphy.com/gifs/love-sad-qscdhWs5o3yb6',
-    'https://giphy.com/gifs/disney-hercules-walt-disney-animation-studios-pegasus-hi0VuTUqLrmuc',
-	'https://giphy.com/gifs/k-on-hug-xJlOdEYy0r7ZS',
-	'https://giphy.com/gifs/animation-disneypixar-7WQQXPg6o3YNa',
-	'https://giphy.com/gifs/love-disney-amazing-LWTxLvp8G6gzm',
-	'https://giphy.com/gifs/hug-surprise-hibike-xZshtXrSgsRHy',
-	'https://giphy.com/gifs/hug-sleep-sleeping-BXrwTdoho6hkQ',
-	'https://giphy.com/gifs/hugging-love-10BcGXjbHOctZC',
-	'https://giphy.com/gifs/hug-lucy-49mdjsMrH7oze',
-	'https://giphy.com/gifs/looney-tunes-marc-anthony-pussyfoot-xUPGcgtKxm4PADy3Cw',
-	'https://giphy.com/gifs/hug-sailor-moon-JTjSlqiz63j5m',
-	'https://giphy.com/gifs/time-hug-aD1fI3UUWC4',
-	'https://giphy.com/gifs/sad-hug-5eyhBKLvYhafu',
-	'https://giphy.com/gifs/mannyjammy-hug-cry-ddGxYkb7Fp2QRuTTGO',
-	'https://giphy.com/gifs/hug-intense-noucome-pXQhWw2oHoPIs',
-	'https://giphy.com/gifs/we-are-your-friends-ZRI1k4BNvKX1S',
-	'https://giphy.com/gifs/ZQN9jsRWp1M76',
-	'https://giphy.com/gifs/hug-bleach-s31WaGPAmTP1e',
-	'https://giphy.com/gifs/wSY4wcrHnB0CA',
-	'https://giphy.com/gifs/hug-inu-boku-aVmEsdMmCTqSs',
-	'https://giphy.com/gifs/animated-girls-C4gbG94zAjyYE',
-	'https://giphy.com/gifs/hug-pillow-huging-ArLxZ4PebH2Ug',
-	'https://giphy.com/gifs/hug-kFTKQfjK4ysZq',
-	'https://giphy.com/gifs/live-hug-date-vVA8U5NnXpMXK',
-	'https://giphy.com/gifs/hug-wonderful-2q2qHJu838EyQ',
-	'https://giphy.com/gifs/hug-spoilers-lwa-q3kYEKHyiU4kU',
-	'https://giphy.com/gifs/hug-3ZnBrkqoaI2hq',
-	'https://giphy.com/gifs/hug-durarara-celty-ExQqjagJBoECY',
-    'https://giphy.com/gifs/love-animation-black-and-white-3o6Yg5fZCGeFArIcbm'
+    'https://media.giphy.com/media/od5H3PmEG5EVq/giphy.gif',
+    'https://media.giphy.com/media/13YrHUvPzUUmkM/giphy.gif',
+    'https://media.giphy.com/media/wnsgren9NtITS/giphy.gif',
+    'https://media.giphy.com/media/qscdhWs5o3yb6/giphy.gif',
+    'https://media.giphy.com/media/hi0VuTUqLrmuc/giphy.gif',
+	'https://media.giphy.com/media/xJlOdEYy0r7ZS/giphy.gif',
+	'https://media.giphy.com/media/7WQQXPg6o3YNa/giphy.gif',
+	'https://media.giphy.com/media/LWTxLvp8G6gzm/giphy.gif',
+	'https://media.giphy.com/media/xZshtXrSgsRHy/giphy.gif',
+	'https://media.giphy.com/media/BXrwTdoho6hkQ/giphy.gif',
+	'https://media.giphy.com/media/10BcGXjbHOctZC/giphy.gif',
+	'https://media.giphy.com/media/49mdjsMrH7oze/giphy.gif',
+	'https://media.giphy.com/media/xUPGcgtKxm4PADy3Cw/giphy.gif',
+	'https://media.giphy.com/media/JTjSlqiz63j5m/giphy.gif',
+	'https://media.giphy.com/media/aD1fI3UUWC4/giphy.gif',
+	'https://media.giphy.com/media/5eyhBKLvYhafu/giphy.gif',
+	'https://media.giphy.com/media/ddGxYkb7Fp2QRuTTGO/giphy.gif',
+	'https://media.giphy.com/media/pXQhWw2oHoPIs/giphy.gif',
+	'https://media.giphy.com/media/ZRI1k4BNvKX1S/giphy.gif',
+	'https://media.giphy.com/media/ZQN9jsRWp1M76/giphy.gif',
+	'https://media.giphy.com/media/s31WaGPAmTP1e/giphy.gif',
+	'https://media.giphy.com/media/wSY4wcrHnB0CA/giphy.gif',
+	'https://media.giphy.com/media/aVmEsdMmCTqSs/giphy.gif',
+	'https://media.giphy.com/media/C4gbG94zAjyYE/giphy.gif',
+	'https://media.giphy.com/media/ArLxZ4PebH2Ug/giphy.gif',
+	'https://media.giphy.com/media/kFTKQfjK4ysZq/giphy.gif',
+	'https://media.giphy.com/media/vVA8U5NnXpMXK/giphy.gif',
+	'https://media.giphy.com/media/2q2qHJu838EyQ/giphy.gif',
+	'https://media.giphy.com/media/q3kYEKHyiU4kU/giphy.gif',
+	'https://media.giphy.com/media/3ZnBrkqoaI2hq/giphy.gif',
+	'https://media.giphy.com/media/ExQqjagJBoECY/giphy.gif',
+    'https://media.giphy.com/media/3o6Yg5fZCGeFArIcbm/giphy.gif'
   ];
 
   message.channel.send({
@@ -380,37 +396,37 @@ client.on('message',  (message) => {
     return message.emit('commandUsage', message, this.help);
   }
   let kiss = [
-    'https://giphy.com/gifs/kiss-anime-say-i-love-you-dP8ONh1mN8YWQ',
-    'https://giphy.com/gifs/love-kiss-CzCi6itPr3yBa',
-    'https://giphy.com/gifs/sora-haru-anime-love-hnNyVPIXgLdle',
-    'https://giphy.com/gifs/love-animation-kiss-bGm9FuBCGg4SY',
-	'https://giphy.com/gifs/kiss-anime-riko-G3va31oEEnIkM',
-	'https://giphy.com/gifs/kiss-anime-riko-G3va31oEEnIkM',
-    'https://giphy.com/gifs/yuno-gasai-anime-kiss-BaEE3QOfm2rf2',
-	'https://giphy.com/gifs/love-dream-OSq9souL3j5zW',
-	'https://giphy.com/gifs/kiss-anime-nISHppsUAzosM',
-	'https://giphy.com/gifs/anime-kiss-ll5leTSPh4ocE',
-	'https://giphy.com/gifs/funny-anime-contract-10r6oEoT6dk7E4',
-	'https://giphy.com/gifs/kiss-kawaii-light-YC4QEtFmz64sE',
-	'https://giphy.com/gifs/kiss-love-KH1CTZtw1iP3W',
-	'https://giphy.com/gifs/love-kiss-cartoon-flmwfIpFVrSKI',
-	'https://giphy.com/gifs/animation-2d-Z21HJj2kz9uBG',
-	'https://giphy.com/gifs/kiss-manga-mGAzm47irxEpG',
-	'https://giphy.com/gifs/kiss-yuri-JynbO9pnGxPrO',
-	'https://giphy.com/gifs/love-shinsekai-yori-7z1xs4Fl9Kb8A',
-	'https://giphy.com/gifs/gl-EP9YxsbmbplIs',
-	'https://giphy.com/gifs/disney-cartoons-zootopia-q7MxQyarcDHDW',
-	'https://giphy.com/gifs/death-note-uSHX6qYv1M7pC',
-	'https://giphy.com/gifs/yuri-girls-kissing-EVODaJHSXZGta',
-	'https://giphy.com/gifs/yuri-girls-kissing-EVODaJHSXZGta',
-	'https://giphy.com/gifs/kiss-anime-couple-fHtb1JPbfph72',
-	'https://giphy.com/gifs/love-kiss-pwZ2TLSTouCQw',
-	'https://giphy.com/gifs/kiss-goku-DfzHC09hY64Gk',
-	'https://giphy.com/gifs/love-animation-black-and-white-l0MYB8Ory7Hqefo9a',
-	'https://giphy.com/gifs/love-kiss-Y9iiZdUaNRF2U',
-	'https://giphy.com/gifs/love-cute-CTo4IKRN4l4SA',
-	'https://giphy.com/gifs/kiss-anime-love-jR22gdcPiOLaE',
-    'https://giphy.com/gifs/disney-pFg4Ko6pXqQVy'
+    'https://media.giphy.com/media/dP8ONh1mN8YWQ/giphy.gif',
+    'https://media.giphy.com/media/CzCi6itPr3yBa/giphy.gif',
+    'https://media.giphy.com/media/hnNyVPIXgLdle/giphy.gif',
+    'https://media.giphy.com/media/bGm9FuBCGg4SY/giphy.gif',
+	'https://media.giphy.com/media/G3va31oEEnIkM/giphy.gif',
+	'https://media.giphy.com/media/G3va31oEEnIkM/giphy.gif',
+    'https://media.giphy.com/media/BaEE3QOfm2rf2/giphy.gif',
+	'https://media.giphy.com/media/OSq9souL3j5zW/giphy.gif',
+	'https://giphy.com/gifs/kiss-anime-nISHppsUAzosMhttps://media.giphy.com/media/nISHppsUAzosM/giphy.gif',
+	'https://media.giphy.com/media/ll5leTSPh4ocE/giphy.gif',
+	'https://media.giphy.com/media/10r6oEoT6dk7E4/giphy.gif',
+	'https://media.giphy.com/media/YC4QEtFmz64sE/giphy.gif',
+	'https://media.giphy.com/media/KH1CTZtw1iP3W/giphy.gif',
+	'https://media.giphy.com/media/flmwfIpFVrSKI/giphy.gif',
+	'https://media.giphy.com/media/Z21HJj2kz9uBG/giphy.gif',
+	'https://media.giphy.com/media/mGAzm47irxEpG/giphy.gif',
+	'https://media.giphy.com/media/JynbO9pnGxPrO/giphy.gif',
+	'https://media.giphy.com/media/7z1xs4Fl9Kb8A/giphy.gif',
+	'https://media.giphy.com/media/EP9YxsbmbplIs/giphy.gif',
+	'https://media.giphy.com/media/q7MxQyarcDHDW/giphy.gif',
+	'https://media.giphy.com/media/uSHX6qYv1M7pC/giphy.gif',
+	'https://media.giphy.com/media/EVODaJHSXZGta/giphy.gif',
+	'https://media.giphy.com/media/EVODaJHSXZGta/giphy.gif',
+	'https://media.giphy.com/media/fHtb1JPbfph72/giphy.gif',
+	'https://media.giphy.com/media/pwZ2TLSTouCQw/giphy.gif',
+	'https://media.giphy.com/media/DfzHC09hY64Gk/giphy.gif',
+	'https://media.giphy.com/media/l0MYB8Ory7Hqefo9a/giphy.gif',
+	'https://media.giphy.com/media/Y9iiZdUaNRF2U/giphy.gif',
+	'https://media.giphy.com/media/CTo4IKRN4l4SA/giphy.gif',
+	'https://media.giphy.com/media/jR22gdcPiOLaE/giphy.gif',
+    'https://media.giphy.com/media/pFg4Ko6pXqQVy/giphy.gif'
   ];
 
   message.channel.send({
