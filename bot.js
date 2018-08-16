@@ -141,15 +141,15 @@ client.on("message", message => {
       .addField('-invite', `لاضافة البوت الى سيرفرك`)
 	  .addField('-roles', `لمعرفة الرتب الي في السيرفر`)
       .addField('-avatar', `يجبلك الافتار حقك يعني صورة حسابك`)
-      .addField('-2avatar', `الافتار عن طريق المنشن`)
+       .addField('-support', `سيرفر الدعم`)
 	  .addField('-server', `يجبلك معلومات السيرفر`)
 	  .addField('-id', `يجبلك الملف الشخصي حقك`)
 	  .addField('-clear', `البوت يمسح  100 رسايل`)
 	  .addField('-say', `البوت يكرر الكلام الي انت تقوله`)
           .addField('-ping', `يقلك كم بنق البوت`)
-      .addField('-support', `سيرفر الدعم`)
-      .addField('-slap' , '< يعطي كف لمن تختاره في السيرفر>' , true)
-      .addField('-hug' , '<يعطي وحضن او ضمه لمن تختاره في السيرفر>' , true)
+      .addField('-kiss' , ' يعطي قبله لمن تختار في السيرفر' , true)	
+      .addField('-slap' , ' يعطي كف لمن تختاره في السيرفر' , true)
+      .addField('-hug' , 'يعطي وحضن او ضمه لمن تختاره في السيرفر' , true)
       .setFooter('======================================================')
       .setFooter('اوامر تحت الصيانه(يمكنك تجربتها) وشكرا')
       .addField('-play', `لتسمع الاغنيه`)
@@ -316,8 +316,115 @@ client.on('message',  (message) => {
 });
 
 
+client.on('message',  (message) => {
+        if(message.content.startsWith('-hug')) {
+  let user = message.mentions.users.first();
+  if (!user) {
+
+    return message.emit('commandUsage', message, this.help);
+  }
+  let hugs = [
+    'https://giphy.com/gifs/happy-hug-od5H3PmEG5EVq',
+    'https://giphy.com/gifs/animated-cute-13YrHUvPzUUmkM',
+    'https://giphy.com/gifs/cute-anime-couple-hug-wnsgren9NtITS',
+    'https://giphy.com/gifs/love-sad-qscdhWs5o3yb6',
+    'https://giphy.com/gifs/disney-hercules-walt-disney-animation-studios-pegasus-hi0VuTUqLrmuc',
+	'https://giphy.com/gifs/k-on-hug-xJlOdEYy0r7ZS',
+	'https://giphy.com/gifs/animation-disneypixar-7WQQXPg6o3YNa',
+	'https://giphy.com/gifs/love-disney-amazing-LWTxLvp8G6gzm',
+	'https://giphy.com/gifs/hug-surprise-hibike-xZshtXrSgsRHy',
+	'https://giphy.com/gifs/hug-sleep-sleeping-BXrwTdoho6hkQ',
+	'https://giphy.com/gifs/hugging-love-10BcGXjbHOctZC',
+	'https://giphy.com/gifs/hug-lucy-49mdjsMrH7oze',
+	'https://giphy.com/gifs/looney-tunes-marc-anthony-pussyfoot-xUPGcgtKxm4PADy3Cw',
+	'https://giphy.com/gifs/hug-sailor-moon-JTjSlqiz63j5m',
+	'https://giphy.com/gifs/time-hug-aD1fI3UUWC4',
+	'https://giphy.com/gifs/sad-hug-5eyhBKLvYhafu',
+	'https://giphy.com/gifs/mannyjammy-hug-cry-ddGxYkb7Fp2QRuTTGO',
+	'https://giphy.com/gifs/hug-intense-noucome-pXQhWw2oHoPIs',
+	'https://giphy.com/gifs/we-are-your-friends-ZRI1k4BNvKX1S',
+	'https://giphy.com/gifs/ZQN9jsRWp1M76',
+	'https://giphy.com/gifs/hug-bleach-s31WaGPAmTP1e',
+	'https://giphy.com/gifs/wSY4wcrHnB0CA',
+	'https://giphy.com/gifs/hug-inu-boku-aVmEsdMmCTqSs',
+	'https://giphy.com/gifs/animated-girls-C4gbG94zAjyYE',
+	'https://giphy.com/gifs/hug-pillow-huging-ArLxZ4PebH2Ug',
+	'https://giphy.com/gifs/hug-kFTKQfjK4ysZq',
+	'https://giphy.com/gifs/live-hug-date-vVA8U5NnXpMXK',
+	'https://giphy.com/gifs/hug-wonderful-2q2qHJu838EyQ',
+	'https://giphy.com/gifs/hug-spoilers-lwa-q3kYEKHyiU4kU',
+	'https://giphy.com/gifs/hug-3ZnBrkqoaI2hq',
+	'https://giphy.com/gifs/hug-durarara-celty-ExQqjagJBoECY',
+    'https://giphy.com/gifs/love-animation-black-and-white-3o6Yg5fZCGeFArIcbm'
+  ];
+
+  message.channel.send({
+    embed: {
+      description: `${message.author.username} اداك حضن او ضمه ${user.username}!`,
+      image: {
+        url: hugs[Math.floor(Math.random() * hugs.length)]
+      }
+    }
+  }).catch(e => {
+    client.log.error(e);
+  })
+        }  
+});
 
 
+client.on('message',  (message) => {
+        if(message.content.startsWith('-kiss')) {
+  let user = message.mentions.users.first();
+  if (!user) {
+
+    return message.emit('commandUsage', message, this.help);
+  }
+  let kiss = [
+    'https://giphy.com/gifs/kiss-anime-say-i-love-you-dP8ONh1mN8YWQ',
+    'https://giphy.com/gifs/love-kiss-CzCi6itPr3yBa',
+    'https://giphy.com/gifs/sora-haru-anime-love-hnNyVPIXgLdle',
+    'https://giphy.com/gifs/love-animation-kiss-bGm9FuBCGg4SY',
+	'https://giphy.com/gifs/kiss-anime-riko-G3va31oEEnIkM',
+	'https://giphy.com/gifs/kiss-anime-riko-G3va31oEEnIkM',
+    'https://giphy.com/gifs/yuno-gasai-anime-kiss-BaEE3QOfm2rf2',
+	'https://giphy.com/gifs/love-dream-OSq9souL3j5zW',
+	'https://giphy.com/gifs/kiss-anime-nISHppsUAzosM',
+	'https://giphy.com/gifs/anime-kiss-ll5leTSPh4ocE',
+	'https://giphy.com/gifs/funny-anime-contract-10r6oEoT6dk7E4',
+	'https://giphy.com/gifs/kiss-kawaii-light-YC4QEtFmz64sE',
+	'https://giphy.com/gifs/kiss-love-KH1CTZtw1iP3W',
+	'https://giphy.com/gifs/love-kiss-cartoon-flmwfIpFVrSKI',
+	'https://giphy.com/gifs/animation-2d-Z21HJj2kz9uBG',
+	'https://giphy.com/gifs/kiss-manga-mGAzm47irxEpG',
+	'https://giphy.com/gifs/kiss-yuri-JynbO9pnGxPrO',
+	'https://giphy.com/gifs/love-shinsekai-yori-7z1xs4Fl9Kb8A',
+	'https://giphy.com/gifs/gl-EP9YxsbmbplIs',
+	'https://giphy.com/gifs/disney-cartoons-zootopia-q7MxQyarcDHDW',
+	'https://giphy.com/gifs/death-note-uSHX6qYv1M7pC',
+	'https://giphy.com/gifs/yuri-girls-kissing-EVODaJHSXZGta',
+	'https://giphy.com/gifs/yuri-girls-kissing-EVODaJHSXZGta',
+	'https://giphy.com/gifs/kiss-anime-couple-fHtb1JPbfph72',
+	'https://giphy.com/gifs/love-kiss-pwZ2TLSTouCQw',
+	'https://giphy.com/gifs/kiss-goku-DfzHC09hY64Gk',
+	'https://giphy.com/gifs/love-animation-black-and-white-l0MYB8Ory7Hqefo9a',
+	'https://giphy.com/gifs/love-kiss-Y9iiZdUaNRF2U',
+	'https://giphy.com/gifs/love-cute-CTo4IKRN4l4SA',
+	'https://giphy.com/gifs/kiss-anime-love-jR22gdcPiOLaE',
+    'https://giphy.com/gifs/disney-pFg4Ko6pXqQVy'
+  ];
+
+  message.channel.send({
+    embed: {
+      description: `${message.author.username}اداك قبله او بوسه ${user.username}!`,
+      image: {
+        url: kiss[Math.floor(Math.random() * kiss.length)]
+      }
+    }
+  }).catch(e => {
+    client.log.error(e);
+  })
+        }  
+});
 
 
 
