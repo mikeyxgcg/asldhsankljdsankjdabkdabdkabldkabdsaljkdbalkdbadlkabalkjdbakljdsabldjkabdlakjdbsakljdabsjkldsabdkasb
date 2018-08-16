@@ -118,7 +118,6 @@ client.on('message', msg => {
   if (msg.content === 'مين يلعب؟') {
     msg.reply('انا العب ولا شي :)');
   }
-
 });
 
 
@@ -275,6 +274,8 @@ var cats = [
 "http://www.i-love-cats.com/images/2015/04/12/cat-wallpaper-38.jpg",
 "https://www.aspca.org/sites/default/files/cat-care_urine-marking_main-image.jpg",
 "https://vignette1.wikia.nocookie.net/houseofnight/images/8/8b/Cats.jpg/revision/latest?cb=20130812053537",
+"https://images.pexels.com/photos/1022158/pexels-photo-1022158.jpeg?cs=srgb&dl=adorable-animal-animal-photography-1022158.jpg&fm=jpg",
+"https://images.pexels.com/photos/248280/pexels-photo-248280.jpeg?cs=srgb&dl=adorable-animal-animal-photography-248280.jpg&fm=jpg",
 "https://s-media-cache-ak0.pinimg.com/originals/f0/3b/76/f03b7614dfadbbe4c2e8f88b69d12e04.jpg",
 "http://www.rd.com/wp-content/uploads/sites/2/2016/04/15-cat-wants-to-tell-you-attention.jpg"
 ]
