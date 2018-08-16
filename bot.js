@@ -148,6 +148,8 @@ client.on("message", message => {
 	  .addField('-say', `البوت يكرر الكلام الي انت تقوله`)
           .addField('-ping', `يقلك كم بنق البوت`)
       .addField('-support', `سيرفر الدعم`)
+      .addField('-slap' , '< يعطي كف لمن تختاره في السيرفر>' , true)
+      .addField('-hug' , '<يعطي وحضن او ضمه لمن تختاره في السيرفر>' , true)
       .setFooter('======================================================')
       .setFooter('اوامر تحت الصيانه(يمكنك تجربتها) وشكرا')
       .addField('-play', `لتسمع الاغنيه`)
@@ -257,6 +259,60 @@ client.on('message', message => {
         .addField('Roles:',`**[${roles}]**`)
         message.channel.sendEmbed(embed);
     }
+});
+
+client.on('message',  (message) => {
+        if(message.content.startsWith('-slap')) {
+  let user = message.mentions.users.first();
+  if (!user) {
+
+    return message.emit('commandUsage', message, this.help);
+  }
+  let slaps = [
+    'https://i.giphy.com/media/3XlEk2RxPS1m8/giphy.gif',
+    'https://i.giphy.com/media/mEtSQlxqBtWWA/giphy.gif',
+    'https://i.giphy.com/media/j3iGKfXRKlLqw/giphy.gif',
+    'https://i.giphy.com/media/2M2RtPm8T2kOQ/giphy.gif',
+    'https://i.giphy.com/media/l3YSimA8CV1k41b1u/giphy.gif',
+    'https://giphy.com/gifs/slap-nichijou-81kHQ5v9zbqzC',
+    'https://giphy.com/gifs/QYT2VEOXVyVmE',
+    'https://giphy.com/gifs/funimation-slap-xUNd9HZq1itMkiK652',
+    'https://giphy.com/gifs/hit-slap-xXRDuvEcMA2JO',
+    'https://giphy.com/gifs/slap-rozen-maiden-zRlGxKCCkatIQ',
+    'https://giphy.com/gifs/slap-gif-9U5J7JpaYBr68',
+    'https://giphy.com/gifs/slap-michiko-to-hatchin-q0uYk5uwJVFug',
+    'https://giphy.com/gifs/slap-oneechan-kita-iREUC7qrjN4vC',
+    'https://giphy.com/gifs/bitch-slap-AkKEOnHxc4IU0',
+    'https://giphy.com/gifs/slap-reaction-angry-6Fad0loHc6Cbe',
+    'https://giphy.com/gifs/anime-gifs-prKt29rL7zAbe',
+    'https://giphy.com/gifs/couple-fight-LeTDEozJwatvW',
+    'https://giphy.com/gifs/manga-6UTkJXBd26qiI',
+    'https://giphy.com/gifs/slapping-technique-konosuba-VEmm8ngZxwJ9K',
+    'https://giphy.com/gifs/ga-punishment-EtdEOL3MbPbmE',
+    'https://giphy.com/gifs/last-one-CIvfqJqBbvliU',
+    'https://giphy.com/gifs/3pSKnxaDzl9Oo',
+    'https://giphy.com/gifs/like-hoe-hanasaku-1iw7RG8JbOmpq',
+    'https://giphy.com/gifs/shinji-m0VwgrO5yXxQY',
+    'https://giphy.com/gifs/2o855hr1xVotO',
+    'https://giphy.com/gifs/mgh-URBigLkgWoYzS',
+    'https://giphy.com/gifs/slap-pGOdXNi6J7ML6',
+    'https://giphy.com/gifs/slap-gif-HHUd5nOFbSYtG',
+    'https://giphy.com/gifs/slap-TZp6XSDusOnXG',
+    'https://giphy.com/gifs/slapping-wqP5TOFnOMwqQ',
+    'https://i.giphy.com/media/WLXO8OZmq0JK8/giphy.gif'
+  ];
+
+  message.channel.send({
+    embed: {
+      description: `${message.author.username} اداك بالقلم علي وشك ${user.username}!`,
+      image: {
+        url: slaps[Math.floor(Math.random() * slaps.length)]
+      }
+    }
+  }).catch(e => {
+    client.log.error(e);
+  })
+        }  
 });
 
 
