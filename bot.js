@@ -135,13 +135,15 @@ client.on("message", message => {
       .setColor("RANDOM")
       .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2018 لــبوت')
   
-      .setFooter('اوامر الادمنيه')
+         .setFooter('اوامر الادمنيه')
   
 	  .addField('-botin', `لمعرفه البوت في كام سرفر الان`)
   
       .setFooter('======================================================')
   
       .setFooter('اوامر الاعضاء')
+	  
+	        .addField('-مريم', `لعبه مريم`)
   
       .addField('-invite', `لاضافة البوت الى سيرفرك`)
   
@@ -158,19 +160,27 @@ client.on("message", message => {
 	  .addField('-clear', `البوت يمسح  100 رسايل`)
   
 	  .addField('-say', `البوت يكرر الكلام الي انت تقوله`)
-  
+	  
           .addField('-ping', `يقلك كم بنق البوت`)
-  
+.setFooter('======================================================')
       .addField('-kiss' , ' يعطي قبله لمن تختار في السيرفر' , true)
-	
       .addField('-slap' , ' يعطي كف لمن تختاره في السيرفر' , true)
-  
       .addField('-hug' , 'يعطي وحضن او ضمه لمن تختاره في السيرفر' , true)
       .setFooter('======================================================')
       .setFooter('اوامر تحت الصيانه(يمكنك تجربتها) وشكرا')
+	  
       .addField('-play', `لتسمع الاغنيه`)
+	  
+	  .addField('-stop', `لتوقيف الاغاني `)
+	  
+	   .addField('-puase', ` لتوقيف الاغاني مؤقتا `)
+	   
+	   .addField('-unpuase', ` لعد تشغيل الاغنيه المتوقفه موقتا `)
+	  
       .addField('-غرد', `للتغريد`)
+	  
       .addField('-embed', `البوت يكرر الكلام الي قلته ب امبد`)
+	  
 	  .addField('-cat', `يجبلك صورة بسه`)
   message.author.send({embed});
 
