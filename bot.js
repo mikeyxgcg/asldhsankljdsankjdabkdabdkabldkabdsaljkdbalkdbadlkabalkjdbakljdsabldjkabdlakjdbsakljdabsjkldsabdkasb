@@ -1029,14 +1029,6 @@ client.on('message', function(message) {
 		var server = server = servers[message.guild.id];
 		if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 	}
-
-        }
-	else if (mess.startsWith('-stop')) {
-		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
-		message.reply(':name_badge: **تم الايقاف**');
-		var server = server = servers[message.guild.id];
-		if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-	}
 	else if (mess.startsWith('-join')) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		message.member.voiceChannel.join().then(message.react('✅'));
