@@ -143,12 +143,14 @@ client.on("message", message => {
   
       .setFooter('اوامر الاعضاء')
 	  
-	        .addField('-مريم', `لعبه مريم`)
+     .addField('-مريم', `لعبه مريم`)
   
       .addField('-invite', `لاضافة البوت الى سيرفرك`)
   
-	  .addField('-roles', `لمعرفة الرتب الي في السيرفر`)
+     .addField('-roles', `لمعرفة الرتب الي في السيرفر`)
   
+      .addField('-leave', `لاخراج البوت من الروم الصوتي.`)
+    
       .addField('-avatar', `يجبلك الافتار حقك يعني صورة حسابك`)
   
        .addField('-support', `سيرفر الدعم`)
@@ -833,26 +835,6 @@ client.on('message', message => {
     }
 });
 
-
-
-  var prefix = "-";
-    client.on('message', message => {
-    if(message.content.startsWith(prefix + '2avatar')) {
-         var men = message.mentions.users.first();
-      var heg;
-      if(men) {
-          heg = men
-      } else {
-          heg = message.author
-      }
-  var avatar = new Discord.RichEmbed()
-.setColor('RANDOM')
-.setTitle(heg.username)
-.setImage(heg.avatarURL)
-
-message.channel.sendEmbed(avatar)
-    }
-});
 /*
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1041,6 +1023,14 @@ client.on('message', function(message) {
 			dispatcher.resume();
 		});
 	}
+	else if (mess.startsWith('-leave')) {
+		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
+		message.reply(':name_badge: **تم الايقاف**');
+		var server = server = servers[message.guild.id];
+		if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+	}
+
+        }
 	else if (mess.startsWith('-stop')) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		message.reply(':name_badge: **تم الايقاف**');
