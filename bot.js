@@ -144,6 +144,8 @@ client.on("message", message => {
       .setFooter('اوامر الاعضاء')
 	  
      .addField('-مريم', `لعبه مريم`)
+
+      .addField('-كت تويت`', `لعبه كت تويت`)
   
       .addField('-invite', `لاضافة البوت الى سيرفرك`)
   
@@ -578,7 +580,7 @@ client.on('ready', () => {
 client.on("message", message => {
      if (message.content === "-kick") {
          if(!message.channel.guild) return message.reply('** This command only for servers **');
-        message.reply("bla bla")
+        message.reply("معلش في التحديث الجديد يا بشا ")
      }
 });
 
@@ -588,7 +590,7 @@ client.on("message", message => {
 client.on("message", message => {
      if (message.content === "-ban") {
          if(!message.channel.guild) return message.reply('** This command only for servers **');
-        message.reply("bla bla")
+        message.reply("معلش في التحديث الجديد يا بشا")
      }
 });
 
