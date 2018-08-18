@@ -152,6 +152,8 @@ client.on("message", message => {
      .addField('-roles', `لمعرفة الرتب الي في السيرفر`)
   
       .addField('-leave', `لاخراج البوت من الروم الصوتي.`)
+
+        .addField('-join', `لسحب البوت الي الروم الصوتي .`)
     
       .addField('-avatar', `يجبلك الافتار حقك يعني صورة حسابك`)
   
@@ -808,7 +810,6 @@ client.on("message", message => {
 
 
 
-
 var prefix = "-";
 client.on('message', message => {
     if(message.content == prefix + 'server') {
@@ -837,6 +838,26 @@ client.on('message', message => {
     }
 });
 
+
+
+  var prefix = "-";
+    client.on('message', message => {
+    if(message.content.startsWith(prefix + '2avatar')) {
+         var men = message.mentions.users.first();
+      var heg;
+      if(men) {
+          heg = men
+      } else {
+          heg = message.author
+      }
+  var avatar = new Discord.RichEmbed()
+.setColor('RANDOM')
+.setTitle(heg.username)
+.setImage(heg.avatarURL)
+
+message.channel.sendEmbed(avatar)
+    }
+});
 /*
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -1033,9 +1054,9 @@ client.on('message', function(message) {
 	}
 	else if (mess.startsWith('-join')) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
-		message.member.voiceChannel.join().then(message.react('✅'));
+		message.member.voiceChannel.join().then(message.react('?'));
 	}
-		else if (mess.startsWith(prefix + 'j')) {
+		else if (mess.startsWith(prefix - 'j')) {
 		if (!message.member.voiceChannel) return message.channel.send(':x: **You have to be in a voice channel to use this command.**');
 		message.member.voiceChannel.join().then(message.channel.send('**Done...:white_check_mark: **'));
 	}
