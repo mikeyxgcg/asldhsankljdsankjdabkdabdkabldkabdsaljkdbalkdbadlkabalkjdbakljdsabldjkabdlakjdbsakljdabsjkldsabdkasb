@@ -143,7 +143,7 @@ client.on("message", message => {
   
      .addField('-roles', `لمعرفة الرتب الي في السيرفر`)
   
-      .addField('-leave', `لاخراج البوت من الروم الصوتي.`)
+      .addField('-leave', `لاخراج البوت من الروم الصوتي او لاقف البوت.`)
 
         .addField('-join', `لسحب البوت الي الروم الصوتي .`)
     
@@ -168,9 +168,7 @@ client.on("message", message => {
       .setFooter('اوامر تحت الصيانه(يمكنك تجربتها) وشكرا')
 	  
       .addField('-play', `لتسمع الاغنيه`)
-	  
-	  .addField('-stop', `لتوقيف الاغاني `)
-	  
+	  	  
 	   .addField('-puase', ` لتوقيف الاغاني مؤقتا `)
 	   
 	   .addField('-unpuase', ` لعد تشغيل الاغنيه المتوقفه موقتا `)
