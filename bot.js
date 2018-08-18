@@ -147,7 +147,7 @@ client.on("message", message => {
 
         .addField('-join', `لسحب البوت الي الروم الصوتي .`)
     
-      .addField('-avatar', `يجبلك الافتار حقك يعني صورة حسابك`)
+      .addField('-avatar', ` يجبلك الافتار حقك يعني صورة حسابك او حساب شخص ثاني بل منشن`)
   
        .addField('-support', `سيرفر الدعم`)
   
