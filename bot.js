@@ -88,16 +88,16 @@ const x5bz4 = [
 
 
 
-
 client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
     if(message.content.includes('discord.gg')){
-		if(!message.channel.guild) return;
+if(!message.channel.guild) return 
+if (message.author.bot) return;
+        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
         message.delete()
-    return message.reply(`** No Invite Links للاسف ما تقدر تنشر :) ههههههههههايي 😠 ! **`)
+    return message.reply(`**  No Invite Links للاسف ما تقدر تنشر :) ههههههههههايي 😠 :angry: ! **`)
     }
+}
 });
-
 
 
 
@@ -530,7 +530,7 @@ if (message.content === 'باك') {
          
 client.on('message', message => {
 if (message.content === 'ترحيب') {
-message.channel.sendFile("./1.jpg");
+message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/480791714471346178/5t4qyhsm.gif")
 }
 });
 
@@ -538,17 +538,29 @@ message.channel.sendFile("./1.jpg");
 
 
 
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Premium BOT STARTED`);
-        console.log(`---------------`);
-      console.log(`ON ${client.guilds.size} Servers `);
-    console.log(`---------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(`in 300 server by: n3k4a -help`,"https://www.twitch.tv/ninja")
-   client.user.setStatus("dnd")
-});
-
+client.on('ready', function(){
+    var ms = 60000 ;
+    var setGame = [`${client.guilds.size} Server`,'-help','Type -help',`${client.users.size} Members`,'-invite','By: Hosam | BaronTube'];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`http://www.twitch.tv/n3k4a`);
+    }, ms);
+    console.log(` ╔═══╗──╔╗ |> Name: ${client.user.username}`);
+ console.log(` ║╔═╗║──║║ |> Servers: ${client.guilds.size}`);
+ console.log(` ║║─╚╬══╣║╔══╦╗╔╦╗─╔╗ |> Members: ${client.users.size}`);
+ console.log(` ║║╔═╣╔╗║║║╔╗╠╬╬╣║─║║║ |> Channels: ${client.channels.size}`);
+ console.log(` ║╚╩═║╔╗║╚╣╔╗╠╬╬╣╚═╝║ |> Channels: ${client.channels.size}`);
+ console.log(` ╚═══╩╝╚╩═╩╝╚╩╝╚╩═╗╔╝ |> Id: ${client.user.id}`);
+ console.log(` ───────────────╔═╝║`);
+ console.log(` ───────────────╚══╝`);
 
 
 
