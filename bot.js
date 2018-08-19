@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+onst Discord = require('discord.js');
 const bot = new Discord.Client();
 const dateFormat = require('dateformat');//npm i dateformat
 const client = new Discord.Client();
@@ -35,7 +35,7 @@ const x5bz4 = [
    '*** ابتعد عني قليل انني متعبة ***',
    '*** هل انت نادم على ماقلت ؟ ***',
    '*** هل تود مساعدتي ؟ ***',
-   '*** واو اشكرك انك شخصاَ رائع ! ***',
+   '*** واو اشك��ك انك شخصاَ رائع ! ***',
    '*** ابحث معي عن منزلي لقد كان قريباَ من هنا ***',
    '*** ولاكن عندما حل الليل لم اعد ارى اي شيء ***',
    '*** مذا تظن اين يوجد ؟ يمين او يسار ***',
@@ -437,7 +437,7 @@ client.on('message',  (message) => {
 
   message.channel.send({
     embed: {
-      description: `${message.author.username}اداك قبله او بوسه ${user.username}!`,
+      description: `${message.author.username}اداك قبله ا�� بوسه ${user.username}!`,
       image: {
         url: kiss[Math.floor(Math.random() * kiss.length)]
       }
@@ -891,7 +891,7 @@ var download = function(uri, filename, callback) {
 
 		request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
 	});
-};
+}
 
 client.on('message', function(message) {
 	const member = message.member;
@@ -1153,4 +1153,5 @@ client.on('message', function(message) {
 		return str.toLowerCase().indexOf('youtube.com') > -1;
 	}
 });
+})
 client.login(process.env.BOT_TOKEN);
