@@ -526,18 +526,6 @@ if (message.content === 'باك') {
  }
  });
          
-         
-         
-client.on('message', message => {
-if (message.content === 'ترحيب') {
-message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/480791714471346178/5t4qyhsm.gif")
-}
-});
-
-
-
-
-
 client.on('ready', function(){
     var ms = 60000 ;
     var setGame = [`${client.guilds.size} Server`,'-help','Type -help',`${client.users.size} Members`,'-invite','By: Hosam | BaronTube'];
