@@ -540,7 +540,7 @@ message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,'-help','Type -help',`${client.users.size} Members`,'-invite','By: n3k4a & Hosam | BaronTube'];
+    var setGame = [`${client.guilds.size} Server`,'-help','Type -help',`${client.users.size} Members`,'-invite','By: Hosam | BaronTube'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -736,7 +736,6 @@ client.on('message', message => {
 
 // -say
   if (command === "say") {
-  if(!meesgae.member.hasPermission("MANAGE_MESSAGES") return
           message.delete()
     message.channel.sendMessage(args.join(" ")).catch(console.error);
   }
@@ -813,67 +812,54 @@ client.on("message", message => {
 
 
 
+var prefix = "-";
 client.on('message', message => {
-if (message.content.startsWith('-server')) {
- message.channel.send(`Here is the different information of **${message.guild.name}**`, {
-        embed: {
-            color: 0xDF9C9D,
-            author: {
-                name: client.user.username,
-                icon_url: client.user.displayAvatarURL
-            },
-            thumbnail: {
-                url: message.guild.iconURL
-            },
-            fields: [{
-                    name: "• name:",
-                    value: `${message.guild.name}`,
-                    inline: true
-                }, {
-                    name: "• ID:",
-                    value: `${message.guild.id}`,
-                    inline: true
-                }, {
-                    name: "• Crated at:",
-                    value: moment(message.guild.createdAt).format("LL"),
-                    inline: true
-                }, {
-                    name: "• Owner:",
-                    value: message.guild.owner.user.tag,
-                    inline: true
-                }, {
-                    name: "• Members:",
-                    value: `${message.guild.memberCount}`,
-                    inline: true
-                }, {
-                    name: "• Last members:",
-                    value: `${Array.from(message.channel.guild.members.values()).sort((a, b) => b.joinedAt - a.joinedAt).map(m => `<@!${m.id}>`).splice(0, 1)}`,
-                    inline: true
-                }, {
-                    name: "• Channel",
-                    value: `**${message.guild.channels.filter(channel => channel.type === 'text').size}** text - **${message.guild.channels.filter(channel => channel.type === 'voice').size}** audio`,
-                    inline: true
-                }, {
-                    name: "• AFK channel",
-                    value: `${message.guild.afkChannel}`,
-                    inline: true
-                }, {
-                    name: `• Roles - **${message.channel.guild.roles.size}**:`,
-                    value: message.guild.roles.array().map(g => g).join(', '),
-                    inline: true
-                }, {
-                    name: `• Emojies - **${message.channel.guild.emojis.size}**:`,
-                    value: `${message.guild.emojis.map(e => e).join(', ')}`,
-                    inline: true
-                }
-            ]
-        }
-    })
+    if(message.content == prefix + 'server') {
+        var servername = message.guild.name
+        var اونر = message.guild.owner
+        var اعضاء = message.guild.memberCount
+        var ايدي = message.guild.id
+        var بلدالسيرفر = message.guild.region
+        var الرومات = message.guild.channels.size
+        var الرتب = message.guild.roles
+        var عمل = message.guild.createdAt
+        var الروم = message.guild.defaultChannel
+        var server = new Discord.RichEmbed()
+        .setThumbnail(message.guild.iconURL)
+        .addField('اسم السيرفر', servername)
+        .addField('اي دي السيرفر ' , [ايدي])
+        .addField('أعضاء السيرفر', اعضاء)
+        .addField('رومات السيرفر', الرومات)
+        .addField('روم الشات الأساسي', الروم)
+        .addField('صاحب السيرفر', اونر)
+        .addField('بلد السيرفر', بلدالسيرفر)
+        .addField('تاريخ افتتاح السيرفر', عمل)
+        .setColor('RANDOM')
+
+        message.channel.sendEmbed(server)
+    }
+});
 
 
 
+  var prefix = "-";
+    client.on('message', message => {
+    if(message.content.startsWith(prefix + '2avatar')) {
+         var men = message.mentions.users.first();
+      var heg;
+      if(men) {
+          heg = men
+      } else {
+          heg = message.author
+      }
+  var avatar = new Discord.RichEmbed()
+.setColor('RANDOM')
+.setTitle(heg.username)
+.setImage(heg.avatarURL)
 
-
+message.channel.sendEmbed(avatar)
+    }
+});
 /*
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
