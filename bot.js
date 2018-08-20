@@ -812,7 +812,7 @@ client.on("message", message => {
 
 
 client.on('message', message => {
-if (message.content.startsWith('*server')) {
+if (message.content.startsWith('-server')) {
  message.channel.send(`Here is the different information of **${message.guild.name}**`, {
         embed: {
             color: 0xDF9C9D,
