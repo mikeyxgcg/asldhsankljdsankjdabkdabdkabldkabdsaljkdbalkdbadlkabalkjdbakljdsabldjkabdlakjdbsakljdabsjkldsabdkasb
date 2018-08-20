@@ -132,33 +132,33 @@ client.on("message", message => {
   
       .setFooter('======================================================')
   
-      .setFooter('اوامر الاعضاء')
+        .setFooter('اوامر الاعضاء')
 	  
-     .addField('-مريم', `لعبه مريم`)
+        .addField('-مريم', `لعبه مريم`)
 
-      .addField('-كت تويت`', `لعبه كت تويت`)
+        .addField('-كت تويت`', `لعبه كت تويت`)
   
-      .addField('-invite', `لاضافة البوت الى سيرفرك`)
+        .addField('-invite', `لاضافة البوت الى سيرفرك`)
   
-     .addField('-roles', `لمعرفة الرتب الي في السيرفر`)
+        .addField('-ask', `يعطيك معلومات عن الكلمة يلي تكتب`)
   
-      .addField('-leave', `لاخراج البوت من الروم الصوتي او لاقف البوت.`)
+        .addField('-leave', `لاخراج البوت من الروم الصوتي او لاقف البوت.`)
 
         .addField('-join', `لسحب البوت الي الروم الصوتي .`)
     
-      .addField('-avatar', ` يجبلك الافتار حقك يعني صورة حسابك او حساب شخص ثاني بل منشن`)
+        .addField('-avatar', ` يجبلك الافتار حقك يعني صورة حسابك او حساب شخص ثاني بل منشن`)
   
-       .addField('-support', `سيرفر الدعم`)
+        .addField('-support', `سيرفر الدعم`)
   
-	  .addField('-server', `يجبلك معلومات السيرفر`)
+	.addField('-server', `  لمعرفه بينات السرفر + لمعرفه رت الموجوده في السرفر`)
   
-	  .addField('-id', `يجبلك الملف الشخصي حقك`)
+	.addField('-id', `يجبلك الملف الشخصي حقك`)
   
-	  .addField('-clear', `البوت يمسح  100 رسايل`)
+	.addField('-clear', `البوت يمسح  100 رسايل`)
   
-	  .addField('-say', `البوت يكرر الكلام الي انت تقوله`)
+	.addField('-say', `البوت يكرر الكلام الي انت تقوله`)
 	  
-          .addField('-ping', `يقلك كم بنق البوت`)
+        .addField('-ping', `يقلك كم بنق البوت`)
 .setFooter('======================================================')
       .addField('-kiss' , ' يعطي قبله لمن تختار في السيرفر' , true)
       .addField('-slap' , ' يعطي كف لمن تختاره في السيرفر' , true)
@@ -168,15 +168,15 @@ client.on("message", message => {
 	  
       .addField('-play', `لتسمع الاغنيه`)
 	  	  
-	   .addField('-puase', ` لتوقيف الاغاني مؤقتا `)
+      .addField('-puase', ` لتوقيف الاغاني مؤقتا `)
 	   
-	   .addField('-unpuase', ` لعد تشغيل الاغنيه المتوقفه موقتا `)
+      .addField('-unpuase', ` لعد تشغيل الاغنيه المتوقفه موقتا `)
 	  
       .addField('-غرد', `للتغريد`)
 	  
       .addField('-embed', `البوت يكرر الكلام الي قلته ب امبد`)
 	  
-	  .addField('-cat', `يجبلك صورة بسه`)
+      .addField('-cat', `يجبلك صورة بسه`)
   message.author.send({embed});
 
  }
@@ -638,7 +638,6 @@ if (command == "غرد") {
 
 
 
-
 client.on("message", message => {
     var prefix = "-";
  
@@ -723,6 +722,7 @@ client.on('message', message => {
 
 // -say
   if (command === "say") {
+  if(!meesgae.member.hasPermission("MANAGE_MESSAGES") return
           message.delete()
     message.channel.sendMessage(args.join(" ")).catch(console.error);
   }
@@ -850,25 +850,43 @@ if (message.content.startsWith('-server')) {
 }
 })
 
-
-  var prefix = "-";
-    client.on('message', message => {
-    if(message.content.startsWith(prefix + '2avatar')) {
-         var men = message.mentions.users.first();
-      var heg;
-      if(men) {
-          heg = men
-      } else {
-          heg = message.author
-      }
-  var avatar = new Discord.RichEmbed()
-.setColor('RANDOM')
-.setTitle(heg.username)
-.setImage(heg.avatarURL)
-
-message.channel.sendEmbed(avatar)
+ const fetch = require('snekfetch');
+ client.on('message', message => {
+if (message.content.startsWith('-ask')) {
+      let args = message.content.split(' ').slice(1).join(' ');
+    const hexcols = [0xFFB6C1, 0x4C84C0, 0xAD1A2C, 0x20B046, 0xF2E807, 0xF207D1, 0xEE8419];
+    if (!args) {
+        return message.reply('add a urban search, u pleb!');
     }
-});
+    fetch.get('http://api.urbandictionary.com/v0/define?term=' + args).then(res => {
+        if (res.body.list[0] === undefined) {
+            return message.channel.send('**»Error**: Couldnt find the word');
+        }
+        const definition = res.body.list[0].definition;
+        const word = res.body.list[0].word;
+        const Author = res.body.list[0].author;
+        const exam = res.body.list[0].example;
+        const thumup = res.body.list[0].thumbs_up;
+        const thumdown = res.body.list[0].thumbs_down;
+        const embed = new Discord.RichEmbed()
+    .setColor(hexcols[~~(Math.random() * hexcols.length)])
+    .setTitle(`This is the info for the word: **${word}**`)
+    .addField('definition:', `${definition}`)
+    .addField('Author:', `${Author}`)
+    .addField('Example:', `${exam}`)
+    .addField('Rating', `👍 ${thumup} 👎 ${thumdown}`, true)
+    .setThumbnail('https://pbs.twimg.com/profile_images/3518201800/3ddffc081e6999872a2e5e05fa59cd3a_400x400.jpeg');
+        message.channel.send({embed}).catch(e => console.log(e));
+    }).catch(err => {
+        if (err) {
+            console.log(err);
+        }
+
+    });
+};
+  });
+
+
 /*
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
