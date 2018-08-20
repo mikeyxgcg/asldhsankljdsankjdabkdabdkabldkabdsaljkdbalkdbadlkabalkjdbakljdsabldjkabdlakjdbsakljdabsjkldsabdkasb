@@ -175,7 +175,6 @@ client.on('message', message => {
                     Welcome
 ╚[❖════════════❖]╝
 
-to enable welcome message do channel name "welcome"
 `);
     }
 });
