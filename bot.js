@@ -9,6 +9,7 @@ const fs = require('fs');
 const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
+const discord_token = "NDIyMDM3NzQwNTkxMzgyNTI4.DYV8zA.6vBJjF7Op9T_bH_YOwRMXqwh9vc";
 var table = require('table').table
 
 client.on('ready', () => {
@@ -132,31 +133,33 @@ client.on("message", message => {
   
       .setFooter('======================================================')
   
-        .setFooter('اوامر الاعضاء')
+      .setFooter('اوامر الاعضاء')
 	  
-        .addField('-مريم', `لعبه مريم`)
+     .addField('-مريم', `لعبه مريم`)
 
-        .addField('-كت تويت`', `لعبه كت تويت`)
+      .addField('-كت تويت`', `لعبه كت تويت`)
   
-        .addField('-invite', `لاضافة البوت الى سيرفرك`)
- 
-        .addField('-leave', `لاخراج البوت من الروم الصوتي او لاقف البوت.`)
+      .addField('-invite', `لاضافة البوت الى سيرفرك`)
+  
+     .addField('-roles', `لمعرفة الرتب الي في السيرفر`)
+  
+      .addField('-leave', `لاخراج البوت من الروم الصوتي او لاقف البوت.`)
 
         .addField('-join', `لسحب البوت الي الروم الصوتي .`)
     
-        .addField('-avatar', ` يجبلك الافتار حقك يعني صورة حسابك او حساب شخص ثاني بل منشن`)
+      .addField('-avatar', ` يجبلك الافتار حقك يعني صورة حسابك او حساب شخص ثاني بل منشن`)
   
-        .addField('-support', `سيرفر الدعم`)
+       .addField('-support', `سيرفر الدعم`)
   
-	.addField('-server', `  لمعرفه بينات السرفر + لمعرفه رت الموجوده في السرفر`)
+	  .addField('-server', `يجبلك معلومات السيرفر`)
   
-	.addField('-id', `يجبلك الملف الشخصي حقك`)
+	  .addField('-id', `يجبلك الملف الشخصي حقك`)
   
-	.addField('-clear', `البوت يمسح  100 رسايل`)
+	  .addField('-clear', `البوت يمسح  100 رسايل`)
   
-	.addField('-say', `البوت يكرر الكلام الي انت تقوله`)
+	  .addField('-say', `البوت يكرر الكلام الي انت تقوله`)
 	  
-        .addField('-ping', `يقلك كم بنق البوت`)
+          .addField('-ping', `يقلك كم بنق البوت`)
 .setFooter('======================================================')
       .addField('-kiss' , ' يعطي قبله لمن تختار في السيرفر' , true)
       .addField('-slap' , ' يعطي كف لمن تختاره في السيرفر' , true)
@@ -166,15 +169,15 @@ client.on("message", message => {
 	  
       .addField('-play', `لتسمع الاغنيه`)
 	  	  
-      .addField('-puase', ` لتوقيف الاغاني مؤقتا `)
+	   .addField('-puase', ` لتوقيف الاغاني مؤقتا `)
 	   
-      .addField('-unpuase', ` لعد تشغيل الاغنيه المتوقفه موقتا `)
+	   .addField('-unpuase', ` لعد تشغيل الاغنيه المتوقفه موقتا `)
 	  
       .addField('-غرد', `للتغريد`)
 	  
       .addField('-embed', `البوت يكرر الكلام الي قلته ب امبد`)
 	  
-      .addField('-cat', `يجبلك صورة بسه`)
+	  .addField('-cat', `يجبلك صورة بسه`)
   message.author.send({embed});
 
  }
@@ -523,6 +526,18 @@ if (message.content === 'باك') {
  }
  });
          
+         
+         
+client.on('message', message => {
+if (message.content === 'ترحيب') {
+message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/480791714471346178/5t4qyhsm.gif")
+}
+});
+
+
+
+
+
 client.on('ready', function(){
     var ms = 60000 ;
     var setGame = [`${client.guilds.size} Server`,'-help','Type -help',`${client.users.size} Members`,'-invite','By: n3k4a & Hosam | BaronTube'];
@@ -636,6 +651,7 @@ if (command == "غرد") {
 
 
 
+
 client.on("message", message => {
     var prefix = "-";
  
@@ -743,6 +759,15 @@ if (command == "embed") {
 
 
 
+
+
+
+
+
+
+
+
+
 client.on('message', message => {
    if (message.content === "-id") {
    let embed = new Discord.RichEmbed()
@@ -784,6 +809,7 @@ client.on("message", message => {
                             }
                           }
 });
+
 
 
 
@@ -843,6 +869,9 @@ if (message.content.startsWith('-server')) {
             ]
         }
     })
+
+
+
 
 
 /*
