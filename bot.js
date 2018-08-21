@@ -263,20 +263,6 @@ client.on('message', message => {
 
 
 
-
-
-
-client.on('message', message => {
-    if (message.content === "-roles") {
-		if(!message.channel.guild) return;
-        var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
-        const embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .addField('Roles:',`**[${roles}]**`)
-        message.channel.sendEmbed(embed);
-    }
-});
-
 client.on('message',  (message) => {
         if(message.content.startsWith('-slap')) {
   let user = message.mentions.users.first();
@@ -645,6 +631,7 @@ if (command == "غرد") {
 
 
 
+
 client.on("message", message => {
     var prefix = "-";
  
@@ -746,29 +733,17 @@ if (command == "embed") {
 
 });
 
-client.on('message' , message => {
-var prefix = "-"
-
-if (message.author.bot) return;
-if (message.content.startsWith(prefix + "callme")) {
-if (!message.channel.guild) return;
 
 
 
-let args = message.content.split(" ").slice(1).join(" ");
 
 
 
-client.on('message' , message => {
-var prefix = "-"
-
-if (message.author.bot) return;
-if (message.content.startsWith(prefix + "callowner")) {
-if (!message.channel.guild) return;
 
 
 
-let args = message.content.split(" ").slice(1).join(" ");
+
+
 
 
 
