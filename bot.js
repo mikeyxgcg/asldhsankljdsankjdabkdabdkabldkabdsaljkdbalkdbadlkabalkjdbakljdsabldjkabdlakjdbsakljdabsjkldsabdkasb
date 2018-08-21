@@ -108,12 +108,14 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (msg.content === 'مين يلعب؟') {
+  if(message.author.bot) return;
     msg.reply('انا العب ولا شي :)');
   }
 });
 
 
 client.on('message', msg => {
+  if(message.author.bot) return;
   if (msg.content === 'السلام عليكم ') {
     msg.reply('وعليكم السلام :)');
   }
@@ -122,6 +124,12 @@ client.on('message', msg => {
 client.on('message', message => {
      if (message.content === "-help") {
  message.author.sendMessage(`
+╭━━━╮╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━━╮╱╱╱╭╮
+┃╭━╮┃╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱┃╭╮┃╱╱╭╯╰╮
+┃╰━╯┣━┳━━┳╮╭┳┳╮╭┳╮╭╮┃╰╯╰┳━┻╮╭╯
+┃╭━━┫╭┫┃━┫╰╯┣┫┃┃┃╰╯┃┃╭━╮┃╭╮┃┃
+┃┃╱╱┃┃┃┃━┫┃┃┃┃╰╯┃┃┃┃┃╰━╯┃╰╯┃╰╮
+╰╯╱╱╰╯╰━━┻┻┻┻┻━━┻┻┻╯╰━━━┻━━┻━╯
 ╔[❖════════════❖]╗
             General  Commands
 ╚[❖════════════❖]╝
@@ -462,52 +470,38 @@ message.channel.sendEmbed(cat);
 });
 
 
-
-const Client = new Discord.Client();
- client.on('message', message => {
- if (message.content === 'برب') {
-message.channel.sendFile("./tyt.png");
- }
-  });
-
-
-
 client.on('message', message => {
-if (message.content === 'ق1') {
- message.channel.sendFile("./5.png");
- }
- });
-
-
-client.on('message', message => {
+if(message.author.bot) return;
 if (message.content === 'السلام عليكم') {
-message.channel.sendFile("./5bz.png");
+message.channel.sendFile("https://cdn.discordapp.com/attachments/462240606513659904/481475996122611712/images.jpg");
  }
 });
 
 
 client.on('message', message => {
+if(message.author.bot) return;
 if (message.content === 'حشيش') {
-message.channel.sendFile("./2.png");
+message.channel.sendFile("https://cdn.discordapp.com/attachments/462240606513659904/481474963925106708/images.jpg");
 }
 });
 
 
 
 client.on('message', message => {
+if(message.author.bot) return;
 if (message.content === 'باك') {
- message.channel.sendFile("./WLC.png");
+ message.channel.sendFile("https://cdn.discordapp.com/attachments/462240606513659904/481473773959381021/download.png");
  }
  });
          
          
          
 client.on('message', message => {
-if (message.content === 'ترحيب') {
+if(message.author.bot) return;
+if (message.content.startsWith('ترحيب')) {
 message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/480791714471346178/5t4qyhsm.gif")
 }
 });
-
 
 
 
