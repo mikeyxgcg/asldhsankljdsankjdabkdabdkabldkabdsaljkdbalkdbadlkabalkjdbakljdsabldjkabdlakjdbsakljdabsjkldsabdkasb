@@ -503,7 +503,7 @@ if (message.content === 'باك') {
          
          
 client.on('message', message => {
-if (message.content === '') {
+if (message.content === 'ترحيب') {
 message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/480791714471346178/5t4qyhsm.gif")
 }
 });
