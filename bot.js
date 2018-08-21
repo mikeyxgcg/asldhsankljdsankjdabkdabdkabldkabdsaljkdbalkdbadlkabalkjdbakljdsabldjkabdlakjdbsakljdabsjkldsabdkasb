@@ -99,28 +99,6 @@ if (message.author.bot) return;
 }
 });
 
-
-
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
-
-client.on('message', msg => {
-  if (msg.content === 'مين يلعب؟') {
-  if(message.author.bot) return;
-    msg.reply('انا العب ولا شي :)');
-  }
-});
-
-
-client.on('message', msg => {
-  if(message.author.bot) return;
-  if (msg.content === 'السلام عليكم ') {
-    msg.reply('وعليكم السلام :)');
-  }
-});
-
 client.on('message', message => {
      if (message.content === "-help") {
  message.author.sendMessage(`
