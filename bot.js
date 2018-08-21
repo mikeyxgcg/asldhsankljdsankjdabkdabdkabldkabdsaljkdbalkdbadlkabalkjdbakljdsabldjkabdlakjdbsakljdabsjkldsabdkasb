@@ -162,8 +162,6 @@ client.on('message', message => {
 
 ❖ -hug ➾  يعطي وحضن او ضمه لمن تختاره في السيرفر عن طريق المنشن
 
-❖ -callme ➾  للتواصل مع صاحب البوت او ارسال رساله
-
 ❖ -embed ➾ البوت يكرر الكلام الي قلته ب امبد
 
 ❖ -كت تويت ➾ لعبه كت تويت  
@@ -772,36 +770,6 @@ if (!message.channel.guild) return;
 
 
 let args = message.content.split(" ").slice(1).join(" ");
-
-
-
-Client.users.get("462006869834203159").send(
-    "\n" + "**" + "● https://discord.gg/ZnPDHaA :" + "**" +
-    "\n" + "**" + "» " + message.guild.name + "**" +
-    "\n" + "**" + " ● المرسل : " + "**" +
-    "\n" + "**" + "» " + message.author.tag + "**" +
-    "\n" + "**" + " ● الرسالة : " + "**" +
-    "\n" + "**" + args + "**")
-
-let embed = new Discord.RichEmbed()
-     .setAuthor(message.author.username, message.author.avatarURL)
-     .setDescription('📬 تم ارسال الرسالة الى صاحب البوت بنجاح')
-     .setThumbnail(message.author.avatarURL)
-     .setFooter("By : n3k4a // baron")
-                                                
-
-message.channel.send(embed);
-
-
-}
-    
-});
-
-
-
-
-
-
 
 
 
