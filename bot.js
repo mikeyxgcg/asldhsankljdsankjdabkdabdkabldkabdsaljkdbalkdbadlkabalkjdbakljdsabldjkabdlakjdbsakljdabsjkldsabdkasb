@@ -762,8 +762,21 @@ let args = message.content.split(" ").slice(1).join(" ");
 
 
 
+client.on('message' , message => {
+var prefix = "-"
+
+if (message.author.bot) return;
+if (message.content.startsWith(prefix + "callowner")) {
+if (!message.channel.guild) return;
+
+
+
+let args = message.content.split(" ").slice(1).join(" ");
+
+
+
 Client.users.get("462006869834203159").send(
-    "\n" + "**" + "● السيرفر :" + "**" +
+    "\n" + "**" + "● https://discord.gg/ZnPDHaA :" + "**" +
     "\n" + "**" + "» " + message.guild.name + "**" +
     "\n" + "**" + " ● المرسل : " + "**" +
     "\n" + "**" + "» " + message.author.tag + "**" +
