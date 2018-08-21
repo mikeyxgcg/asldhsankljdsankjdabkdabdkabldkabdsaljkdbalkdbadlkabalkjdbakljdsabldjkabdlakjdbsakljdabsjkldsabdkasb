@@ -710,7 +710,6 @@ client.on('message', message => {
 
 // -say
   if (command === "say") {
-  if (!message.member.hasPermissions(['ADMINISTRATOR'])){
           message.delete()
     message.channel.sendMessage(args.join(" ")).catch(console.error);
   }
