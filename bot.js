@@ -645,7 +645,6 @@ if (command == "غرد") {
 
 
 
-
 client.on("message", message => {
     var prefix = "-";
  
@@ -770,10 +769,6 @@ if (!message.channel.guild) return;
 
 
 let args = message.content.split(" ").slice(1).join(" ");
-
-
-
-
 
 
 
