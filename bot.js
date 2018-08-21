@@ -464,12 +464,6 @@ message.channel.sendEmbed(cat);
 
 
 const Client = new Discord.Client();
-
-
-
-
-
-
  client.on('message', message => {
  if (message.content === 'برب') {
 message.channel.sendFile("./tyt.png");
@@ -509,7 +503,7 @@ if (message.content === 'باك') {
          
          
 client.on('message', message => {
-if (message.content === 'ترحيب') {
+if (message.content === '') {
 message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/480791714471346178/5t4qyhsm.gif")
 }
 });
@@ -520,7 +514,7 @@ message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,'-help','Type -help',`${client.users.size} Members`,'-invite','By: n3k4a&Hosam | BaronTube'];
+    var setGame = [`${client.guilds.size} Server`,' Premium Bot™ by n3k4a','Type -help',`${client.users.size} Members`,'-invite','By: n3k4a&Hosam | BaronTube'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -716,6 +710,7 @@ client.on('message', message => {
 
 // -say
   if (command === "say") {
+  if (!message.member.hasPermissions(['ADMINISTRATOR'])){
           message.delete()
     message.channel.sendMessage(args.join(" ")).catch(console.error);
   }
@@ -732,12 +727,6 @@ if (command == "embed") {
 
 
 });
-
-
-
-
-
-
 
 
 
