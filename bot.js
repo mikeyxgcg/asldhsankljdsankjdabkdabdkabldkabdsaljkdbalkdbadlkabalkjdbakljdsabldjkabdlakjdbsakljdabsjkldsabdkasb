@@ -816,7 +816,6 @@ if (message.content.startsWith('-server')) {
 })
 
 
-
   var prefix = "-";
     client.on('message', message => {
     if(message.content.startsWith(prefix + '2avatar')) {
@@ -866,7 +865,7 @@ var download = function(uri, filename, callback) {
 
 		request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
 	});
-}
+};
 
 client.on('message', function(message) {
 	const member = message.member;
@@ -1099,7 +1098,7 @@ client.on('message', function(message) {
 	function getID(str, cb) {
 		if (isYoutube(str)) {
 			cb(getYoutubeID(str));
-		 }
+		}
 		else {
 			search_video(str, function(id) {
 				cb(id);
@@ -1128,5 +1127,5 @@ client.on('message', function(message) {
 		return str.toLowerCase().indexOf('youtube.com') > -1;
 	}
 });
-})
 client.login(process.env.BOT_TOKEN);
+	
