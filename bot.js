@@ -499,14 +499,16 @@ client.on('ready', function(){
         i = i+j;
         client.user.setGame(setGame[i],`http://www.twitch.tv/n3k4a`);
     }, ms);
-    console.log(` ╔═══╗──╔╗ |> Name: ${client.user.username}`);
- console.log(` ║╔═╗║──║║ |> Servers: ${client.guilds.size}`);
- console.log(` ║║─╚╬══╣║╔══╦╗╔╦╗─╔╗ |> Members: ${client.users.size}`);
- console.log(` ║║╔═╣╔╗║║║╔╗╠╬╬╣║─║║║ |> Channels: ${client.channels.size}`);
- console.log(` ║╚╩═║╔╗║╚╣╔╗╠╬╬╣╚═╝║ |> Channels: ${client.channels.size}`);
- console.log(` ╚═══╩╝╚╩═╩╝╚╩╝╚╩═╗╔╝ |> Id: ${client.user.id}`);
- console.log(` ───────────────╔═╝║`);
- console.log(` ───────────────╚══╝`);
+ 
+ console.log(` N3K4A IS ONE  |> Name: ${client.user.username}`);
+ console.log(` N3K4A IS ONE> Servers: ${client.guilds.size}`);
+ console.log(`  ╭━━━╮ |> Members: ${client.users.size}`);
+ console.log(`  ┃╭━╮┃ |> Channels: ${client.channels.size}`);
+ console.log(` ║┃╰━╯┣━┳━━┳╮╭┳┳╮╭┳╮╭╮ |> Channels: ${client.channels.size}`);
+ console.log(`  ┃╭━━┫╭┫┃━┫╰╯┣┫┃┃┃╰╯┃ |> Id: ${client.user.id}`);
+ console.log(`  ┃┃╱╱┃┃┃┃━┫┃┃┃┃╰╯┃┃┃┃`);
+ console.log(`  ╰╯╱╱╰╯╰━━┻┻┻┻┻━━┻┻┻╯`);
+
 
 
 
