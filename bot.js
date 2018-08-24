@@ -99,88 +99,68 @@ if (message.author.bot) return;
 }
 });
 
+client.on('message', message => {
+     if (message.content === "-help") {
+ message.author.sendMessage(`
+╭━━━╮╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━━╮╱╱╱╭╮
+┃╭━╮┃╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱┃╭╮┃╱╱╭╯╰╮
+┃╰━╯┣━┳━━┳╮╭┳┳╮╭┳╮╭╮┃╰╯╰┳━┻╮╭╯
+┃╭━━┫╭┫┃━┫╰╯┣┫┃┃┃╰╯┃┃╭━╮┃╭╮┃┃
+┃┃╱╱┃┃┃┃━┫┃┃┃┃╰╯┃┃┃┃┃╰━╯┃╰╯┃╰╮
+╰╯╱╱╰╯╰━━┻┻┻┻┻━━┻┻┻╯╰━━━┻━━┻━╯
+╔[❖════════════❖]╗
+            General  Commands
+╚[❖════════════❖]╝
 
+❖ -help ➾ help 
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
+❖ -server ➾  يجبلك معلومات السيرفر
 
+❖ -clear ➾  البوت يمسح الرسال برقم حد اقصي 100 رساله 
 
-client.on('message', msg => {
-  if (msg.content === 'مين يلعب؟') {
-    msg.reply('انا العب ولا شي :)');
-  }
-});
+❖ -say ➾  البوت يكرر الكلام الي انت تقوله
 
+❖ -play ➾  لتسمع الاغنيه
 
-client.on('message', msg => {
-  if (msg.content === 'السلام عليكم ') {
-    msg.reply('وعليكم السلام :)');
-  }
-});
+❖ -puase ➾  لتوقيف الاغاني مؤقتا
 
+❖ -unpuase ➾  لعد تشغيل الاغنيه المتوقفه موقتا
 
+❖ -leave ➾ لاخراج البوت من الروم الصوتي او لاقف البوت
 
-client.on("message", message => {
- if (message.content === "-help") {
-  const embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2018 لــبوت')
-  
-         .setFooter('اوامر الادمنيه')
-  
-	  .addField('-botin', `لمعرفه البوت في كام سرفر الان`)
-  
-      .setFooter('======================================================')
-  
-      .setFooter('اوامر الاعضاء')
-	  
-     .addField('-مريم', `لعبه مريم`)
+❖ -support ➾ للتواصل مع صاحب البوت
 
-      .addField('-كت تويت`', `لعبه كت تويت`)
-  
-      .addField('-invite', `لاضافة البوت الى سيرفرك`)
-  
-     .addField('-roles', `لمعرفة الرتب الي في السيرفر`)
-  
-      .addField('-leave', `لاخراج البوت من الروم الصوتي او لاقف البوت.`)
+❖ -id ➾ معلومات عنك
 
-        .addField('-join', `لسحب البوت الي الروم الصوتي .`)
-    
-      .addField('-avatar', ` يجبلك الافتار حقك يعني صورة حسابك او حساب شخص ثاني بل منشن`)
-  
-       .addField('-support', `سيرفر الدعم`)
-  
-	  .addField('-server', `يجبلك معلومات السيرفر`)
-  
-	  .addField('-id', `يجبلك الملف الشخصي حقك`)
-  
-	  .addField('-clear', `البوت يمسح  100 رسايل`)
-  
-	  .addField('-say', `البوت يكرر الكلام الي انت تقوله`)
-	  
-          .addField('-ping', `يقلك كم بنق البوت`)
-.setFooter('======================================================')
-      .addField('-kiss' , ' يعطي قبله لمن تختار في السيرفر' , true)
-      .addField('-slap' , ' يعطي كف لمن تختاره في السيرفر' , true)
-      .addField('-hug' , 'يعطي وحضن او ضمه لمن تختاره في السيرفر' , true)
-      .setFooter('======================================================')
-      .setFooter('اوامر تحت الصيانه(يمكنك تجربتها) وشكرا')
-	  
-      .addField('-play', `لتسمع الاغنيه`)
-	  	  
-	   .addField('-puase', ` لتوقيف الاغاني مؤقتا `)
-	   
-	   .addField('-unpuase', ` لعد تشغيل الاغنيه المتوقفه موقتا `)
-	  
-      .addField('-غرد', `للتغريد`)
-	  
-      .addField('-embed', `البوت يكرر الكلام الي قلته ب امبد`)
-	  
-	  .addField('-cat', `يجبلك صورة بسه`)
-  message.author.send({embed});
+❖ -avatar ➾ للعرض صورتك او صورة شخص فقط قم بعمل منشن له 
 
- }
+❖ -join ➾ -لسحب البوت الي الروم الصوتي
+
+❖ -ping ➾ لمعرفة سرعة اتصال البوت
+
+❖ -botin ➾ لمعرفه البوت في كام سرفر الان
+
+❖ -invite ➾  لدعوة البوت لسرفرك
+
+❖ -kiss ➾  يعطي قبله لمن تختار في السيرفر عن طريق المنشن 
+
+❖ -slap ➾  يعطي كف لمن تختاره في السيرفرعن طريق المنشن
+
+❖ -hug ➾  يعطي وحضن او ضمه لمن تختاره في السيرفر عن طريق المنشن
+
+❖ -embed ➾ البوت يكرر الكلام الي قلته ب امبد
+
+❖ -كت تويت ➾ لعبه كت تويت  
+
+❖ -مريم ➾  لعبه مريم المخيفه
+
+❖ -غرد  ➾  للتغريد للشخص عن طريق المنشن
+╔[❖════════════❖]╗
+                    Welcome
+╚[❖════════════❖]╝
+
+`);
+    }
 });
 
 
@@ -268,20 +248,6 @@ client.on('message', message => {
 });
 
 
-
-
-
-
-client.on('message', message => {
-    if (message.content === "-roles") {
-		if(!message.channel.guild) return;
-        var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
-        const embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .addField('Roles:',`**[${roles}]**`)
-        message.channel.sendEmbed(embed);
-    }
-});
 
 client.on('message',  (message) => {
         if(message.content.startsWith('-slap')) {
@@ -482,26 +448,6 @@ message.channel.sendEmbed(cat);
 });
 
 
-
-const Client = new Discord.Client();
-
-
-
-
-
-
- client.on('message', message => {
- if(message.author.bot) return;
- if (message.content === 'برب') {
-message.channel.sendFile("https://cdn.discordapp.com/attachments/462240606513659904/482414475841110036/brb_by_mrcrapinson.jpg");
- }
-  });
-
-
-
-
-
-
 client.on('message', message => {
 if(message.author.bot) return;
 if (message.content === 'السلام عليكم') {
@@ -530,7 +476,7 @@ if (message.content === 'باك') {
          
 client.on('message', message => {
 if(message.author.bot) return;
-if (message.content === 'ترحيب') {
+if (message.content.startsWith('ترحيب')) {
 message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/480791714471346178/5t4qyhsm.gif")
 }
 });
@@ -538,10 +484,9 @@ message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/
 
 
 
-
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,'-help','Type -help',`${client.users.size} Members`,'-invite','By: Hosam | BaronTube'];
+    var setGame = [`${client.guilds.size} Server`,' Premium Bot™ by n3k4a','Type -help',`${client.users.size} Members`,'-invite','By: n3k4a&Hosam | BaronTube'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -711,7 +656,7 @@ const cuttweet = [
      '‏كت تويت|‏اكثر شي يرضيك اذا زعلت بدون تفكير ؟',
      '‏كت تويت|وش محتاج عشان تكون مبسوط ؟',
      '‏كت تويت|مطلبك الوحيد الحين ؟',
-     '‏كت تويت|- هل حدث وشعرت بأنك ارتكبت أحد الذنوب أثناء الصيام؟',
+     '‏كت تويت|- ه�� حدث وشعرت بأنك ارتكبت أحد الذنوب أثناء الصيام؟',
 ]
 
 client.on('message', message => {
@@ -762,12 +707,6 @@ if (command == "embed") {
 
 
 
-
-
-
-
-
-
 client.on('message', message => {
    if (message.content === "-id") {
    let embed = new Discord.RichEmbed()
@@ -809,7 +748,6 @@ client.on("message", message => {
                             }
                           }
 });
-
 
 
 
@@ -873,8 +811,10 @@ if (message.content.startsWith('-server')) {
 
 
 
+
 }
 })
+
 
 
   var prefix = "-";
@@ -1159,7 +1099,7 @@ client.on('message', function(message) {
 	function getID(str, cb) {
 		if (isYoutube(str)) {
 			cb(getYoutubeID(str));
-		}
+		 }
 		else {
 			search_video(str, function(id) {
 				cb(id);
