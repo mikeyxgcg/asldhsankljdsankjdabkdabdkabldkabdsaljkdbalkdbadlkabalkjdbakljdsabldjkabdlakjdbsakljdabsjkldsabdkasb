@@ -486,7 +486,7 @@ message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,' Premium Bot™ by n3k4a','Type -help',`${client.users.size} Members`,'-invite','By: n3k4a&Hosam | BaronTube'];
+    var setGame = [`${client.guilds.size} Server`,'-help','Type -help',`${client.users.size} Members`,'-invite','By: Hosam | BaronTube'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -499,8 +499,7 @@ client.on('ready', function(){
         i = i+j;
         client.user.setGame(setGame[i],`http://www.twitch.tv/n3k4a`);
     }, ms);
- 
-   console.log(` ╔═══╗──╔╗ |> Name: ${client.user.username}`);
+    console.log(` ╔═══╗──╔╗ |> Name: ${client.user.username}`);
  console.log(` ║╔═╗║──║║ |> Servers: ${client.guilds.size}`);
  console.log(` ║║─╚╬══╣║╔══╦╗╔╦╗─╔╗ |> Members: ${client.users.size}`);
  console.log(` ║║╔═╣╔╗║║║╔╗╠╬╬╣║─║║║ |> Channels: ${client.channels.size}`);
@@ -508,7 +507,6 @@ client.on('ready', function(){
  console.log(` ╚═══╩╝╚╩═╩╝╚╩╝╚╩═╗╔╝ |> Id: ${client.user.id}`);
  console.log(` ───────────────╔═╝║`);
  console.log(` ───────────────╚══╝`);
-
 
 
 
