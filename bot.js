@@ -1099,7 +1099,7 @@ client.on('message', function(message) {
 	function getID(str, cb) {
 		if (isYoutube(str)) {
 			cb(getYoutubeID(str));
-		}
+		 }
 		else {
 			search_video(str, function(id) {
 				cb(id);
