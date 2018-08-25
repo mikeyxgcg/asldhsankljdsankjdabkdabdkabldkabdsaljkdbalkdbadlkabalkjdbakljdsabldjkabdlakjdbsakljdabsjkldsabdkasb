@@ -88,7 +88,7 @@ var al7arthyCodes2 = ["📙__60%__  **|**  📘__40%__","📙__63%__  **|**  �
 client.on('message', message => {
     if(!message.guild) return;
     if (message.author.bot) return;
-      let id = message.author.id,prefix="!";//البريفكس
+      let id = message.author.id,prefix="-";//البريفكس
       if (ti[id] && (new Date).getTime() - ti[id] < 20*1000) {
           let r = (new Date).getTime() - ti[id];
           r = 20*1000 - r;
