@@ -156,11 +156,12 @@ client.on('message', message => {
 
 ❖ -embed ➾ البوت يكرر الكلام الي قلته ب امبد
 
-❖ -كت تويت ➾ لعبه كت تويت  
+❖  لعبه كت تيوت ➾-كت تويت 
 
-❖ -مريم ➾  لعبه مريم المخيفه
+❖ لعبه مريم المخيفه ➾ -مريم
 
-❖ -غرد  ➾  للتغريد للشخص عن طريق المنشن
+❖ - للتغريد للشخص عن طريق المنشن ➾  -غرد
+
 ╔[❖════════════❖]╗
                     Welcome
 ╚[❖════════════❖]╝
@@ -175,7 +176,7 @@ client.on("message", message => {
  if (message.content === "-invite") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2018 لــبوت')
+      .setFooter('© Premium Bot :heart: جميع الحقوق محفوظة 2018 لــبوت')
       .addField('شكرا لك لاستخدامك ل بروميوم بوت', `http://premium-bot.bitballoon.com`)
   message.author.send({embed});
 
@@ -185,14 +186,11 @@ client.on("message", message => {
 
 
 
-
-
-
 client.on("message", message => {
  if (message.content === "-support") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('© Premium Bot:heart: جميع الحقوق محفوظة 2018 لــبوت')  
+      .setFooter('© Premium Bot :heart: جميع الحقوق محفوظة 2018 لــبوت')  
       .addField('سيرفر الدعم الفني', ` https://discord.gg/kH2tWAr  `)
   message.author.send({embed});
 
@@ -208,20 +206,19 @@ const TOKEN = "";
 
 function commandIs(str, msg){
     return msg.content.toLowerCase().startsWith('-' + str);
-}
+ }
 
 function pluck(array) {
     return array.map(function(item) { return item["name"]; });
-}
+ }
 function hasRole(mem, role) {
     if(pluck(mem.roles).includes(role)){
         return true;
-    } else {
+      } else {
         return false;
     }
 
   }
-  
   
   
 
@@ -1060,8 +1057,8 @@ client.on('message', function(message) {
 			getID(args, function(id) {
 				add_to_queue(id);
 				fetchVideoInfo(id, function(err, videoInfo) {
-					if (err) throw new Error(err);
-					let play_info = new Discord.RichEmbed()
+					 if (err) throw new Error(err);
+					 let play_info = new Discord.RichEmbed()
 						.setAuthor("أضيف إلى قائمة الانتظار", message.author.avatarURL)
 						.setDescription(`**${videoInfo.title}**`)
 						.setColor("BLACK")
@@ -1096,7 +1093,7 @@ client.on('message', function(message) {
 			});
 		}
 	}
-		if (mess.startsWith('سيبيشسبيسب')) {
+		if (mess.startsWith('n3k4a')) {
 		if (!message.member.hasPermission('ADMINISTRATOR')) return message.reply(':x:');
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		// if user is not insert the URL or song title
