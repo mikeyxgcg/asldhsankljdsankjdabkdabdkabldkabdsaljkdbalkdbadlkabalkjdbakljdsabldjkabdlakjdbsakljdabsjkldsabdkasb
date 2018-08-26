@@ -111,7 +111,9 @@ client.on('message', message => {
 ╚[❖════════════❖]╝
 
 ❖ -help ➾ help
- 
+
+-----------------اوامر ادارية-------------
+
 ❖ -kick	➾ لعطاء كيك للعضو عن طريق المنشن
 
 ❖ -ban ➾ لعطاء بان للعضو عن طريق المنشن
@@ -124,6 +126,11 @@ client.on('message', message => {
 
 ❖ -say ➾  البوت يكرر الكلام الي انت تقوله
 
+---------------------❖❖❖-------------------
+
+
+----------------- اوامر الاغاني--------------
+
 ❖ -play ➾  لتسمع الاغنيه
 
 ❖ -puase ➾  لتوقيف الاغاني مؤقتا
@@ -131,6 +138,10 @@ client.on('message', message => {
 ❖ -unpuase ➾  لعد تشغيل الاغنيه المتوقفه موقتا
 
 ❖ -leave ➾ لاخراج البوت من الروم الصوتي او لاقف البوت
+
+---------------------❖❖❖-----------------
+
+-------------------اوامر عامه-------------
 
 ❖ -support ➾ للتواصل مع صاحب البوت
 
@@ -146,9 +157,13 @@ client.on('message', message => {
 
 ❖ -invite ➾  لدعوة البوت لسرفرك
 
+---------------------❖❖❖-------------------
+
+-----------------اومر مميزه نادره-----------
+
 ❖ -kiss ➾  يعطي قبله لمن تختار في السيرفر عن طريق المنشن 
 
-❖  -love ➾ يعبر بشعورك بلحب  لمن تختار في السيرفر عن طريق المنشن
+❖ -love ➾ يعبر بشعورك بلحب  لمن تختار في السيرفر عن طريق المنشن
 
 ❖ -miss ➾ يرسله اشتقت لك لمن تختار في السيرفر عن طريق المنشن
 
@@ -158,11 +173,24 @@ client.on('message', message => {
 
 ❖ -embed ➾ البوت يكرر الكلام الي قلته ب امبد
 
+-------------العاب موجوده في البوت-----------
+
 ❖  لعبه كت تيوت ➾-كت تويت 
 
 ❖ لعبه مريم المخيفه ➾ -مريم
 
-❖ - للتغريد للشخص عن طريق المنشن ➾  -غرد
+❖ للتغريد للشخص عن طريق المنشن ➾  -غرد
+
+-------------------اومراضافيه----------------
+
+❖ ترحيب
+
+❖السلام عليكم 
+
+❖باك 
+
+---------جميع الاوامر تحت الصيانه------------
+ 
 
 ╔[❖════════════❖]╗
                     Welcome
@@ -256,47 +284,6 @@ client.on('message', message => {
      var prefix = "-"   
 
 
-
-
-
-   client.on("message", async message => {
-	   var prefix = "-";
-    if(message.content == prefix+"فكك"){
-        if(UserBlocked.has(message.guild.id)) return message.channel.send("هناك جلسة .")
-        UserBlocked.add(message.guild.id)
-        var ask = fkk[Math.floor(Math.random() * fkk.length)];
-        let embed = new Discord.RichEmbed()
-        .setTitle('لعبة فكك')
-        .setAuthor(message.author.username, message.author.avatarURL)
-        .setColor("RANDOM")
-        .setDescription(ask.f);
-        message.channel.sendEmbed(embed).then(msg=> msg.delete(200000))
-        const msgs = await message.channel.awaitMessages(msg => msg.author.id !== client.user.id ,{maxMatches:1,time:100000});
-            UserBlocked.delete(message.guild.id)
-        msgs.forEach(result => {
-           if(result.author.id == client.user.id) return;
-           if(result.content == "فكك") return
-           if(result.content == ask.k){
-
-             let embeds = new Discord.RichEmbed()
-             .setTitle(':white_check_mark: اجابة صحيحة')
-             .setAuthor(message.author.username, message.author.avatarURL)
-             .setColor("RANDOM")
-             .setDescription(`**${result.author.username}** الإجابة صحيحة`);
-                message.channel.sendEmbed(embeds);                return;
-           } else {
-
-                               var embedx = new Discord.RichEmbed()
-             .setTitle(':x:خطاء')
-             .setAuthor(message.author.username, message.author.avatarURL)
-             .setColor("RANDOM")
-             .setDescription(`**${result.author.username}** الإجابة خاطئة`);
-
-                message.channel.sendEmbed(embedx);
-           }
-     });
-  }
-});
 
 
 
@@ -660,7 +647,7 @@ message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,' Premium Bot™ by n3k4a','Type -help',`${client.users.size} Members`,'-invite','By: n3k4a&Hosam | BaronTube'];
+    var setGame = [`${client.guilds.size} Server`,' Premium Bot™ by n3k4a & Bron','Type -help',`${client.users.size} Members`,'-invite','By: n3k4a & Hosam | BaronTube'];
     var i = -1;
     var j = 0;
     setInterval(function (){
