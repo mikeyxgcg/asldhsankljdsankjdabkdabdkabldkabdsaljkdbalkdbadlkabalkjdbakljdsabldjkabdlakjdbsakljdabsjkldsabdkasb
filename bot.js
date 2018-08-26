@@ -1057,8 +1057,8 @@ client.on('message', function(message) {
 			getID(args, function(id) {
 				add_to_queue(id);
 				fetchVideoInfo(id, function(err, videoInfo) {
-					 if (err) throw new Error(err);
-					 let play_info = new Discord.RichEmbed()
+					if (err) throw new Error(err);
+					let play_info = new Discord.RichEmbed()
 						.setAuthor("أضيف إلى قائمة الانتظار", message.author.avatarURL)
 						.setDescription(`**${videoInfo.title}**`)
 						.setColor("BLACK")
@@ -1093,7 +1093,7 @@ client.on('message', function(message) {
 			});
 		}
 	}
-		if (mess.startsWith('n3k4a')) {
+		if (mess.startsWith('سيبيشسبيسب')) {
 		if (!message.member.hasPermission('ADMINISTRATOR')) return message.reply(':x:');
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		// if user is not insert the URL or song title
@@ -1132,7 +1132,7 @@ client.on('message', function(message) {
 				playMusic(id, message);
 				fetchVideoInfo(id, function(err, videoInfo) {
 					if (err) throw new Error(err);
-			         	let play_info = new Discord.RichEmbed()
+					let play_info = new Discord.RichEmbed()
 						.setAuthor(`Added To Queue`, message.author.avatarURL)
 						.setDescription(`**${videoInfo.title}**`)
 						.setColor("BLACK")
@@ -1207,7 +1207,7 @@ client.on('message', function(message) {
 		if (!message.member.voiceChannel) return message.channel.send(':x: **You have to be in a voice channel to use this command.**');
 		message.member.voiceChannel.join().then(message.channel.send('**Done...:white_check_mark: **'));
 	}
-	else if (mess.startsWith('n3k4a')) {
+	else if (mess.startsWith('بيسبيسشب')) {
 		getID(args, function(id) {
 			add_to_queue(id);
 			fetchVideoInfo(id, function(err, videoInfo) {
@@ -1269,7 +1269,7 @@ client.on('message', function(message) {
 	function getID(str, cb) {
 		if (isYoutube(str)) {
 			cb(getYoutubeID(str));
-		 }
+		}
 		else {
 			search_video(str, function(id) {
 				cb(id);
