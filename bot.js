@@ -936,35 +936,21 @@ if (command == "embed") {
 });
 
 
-
-client.on('message',async message => {
-  if(message.content.startsWith(prefix + "-id")) {
-    if(message.author.bot) return;
-    if(message.channel.type === 'dm') return;
-      message.guild.fetchInvites().then(invs => {
-    let user = message.author;
-    let personalInvites = invs.filter(i => i.inviter.id === user.id);
-    let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-    const millis = new Date().getTime() - message.author.createdAt.getTime();
-    const noww = new Date();
-    dateFormat(noww, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
-    const created = millis / 1000 / 60 / 60 / 24;
-    const milliss = new Date().getTime() - message.guild.member(message.author).joinedAt.getTime();
-    const nows = new Date();
-    dateFormat(nows, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
-    const joined = milliss / 1000 / 60 / 60 / 24;
-    let embed = new Discord.RichEmbed()
-    .setAuthor(message.author.username, message.author.avatarURL)
-    .setColor('#36393e')
-    .setThumbnail(message.author.avatarURL)
-    .addField('» مضى على دخولك الدسكورد', ${created.toFixed(0)} يومّا,true)
-    .addField('» مضى على دخولك السيرفر', ${joined.toFixed(0)} يومّا,true)
-    .setFooter(' STAR CODE © | 2018.');
-
-    message.channel.send(embed);
-  });
-  }
+client.on('message', message => {
+   if (message.content === "-id") {
+   let embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setThumbnail(message.author.avatarURL)
+  .addField("Name:",`${message.author.username}`, true)
+  .addField('Discrim:',"#" +  message.author.discriminator, true)
+  .addField("ID:", message.author.id, true)
+  .addField("Create At:", message.author.createdAt, true)
+     
+     
+  message.channel.sendEmbed(embed);
+    }
 });
+
 
 
 client.on("message", message => {
