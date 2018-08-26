@@ -110,8 +110,8 @@ client.on('message', message => {
             General  Commands
 ╚[❖════════════❖]╝
 
-❖ -help ➾ help 
-
+❖ -help ➾ help
+ 
 ❖ -kick	➾ لعطاء كيك للعضو عن طريق المنشن
 
 ❖ -ban ➾ لعطاء بان للعضو عن طريق المنشن
@@ -147,6 +147,8 @@ client.on('message', message => {
 ❖ -invite ➾  لدعوة البوت لسرفرك
 
 ❖ -kiss ➾  يعطي قبله لمن تختار في السيرفر عن طريق المنشن 
+
+❖ -miss ➾ يرسله اشتقت لك لمن تختار في السيرفر عن طريق المنشن
 
 ❖ -slap ➾  يعطي كف لمن تختاره في السيرفرعن طريق المنشن
 
@@ -480,6 +482,59 @@ client.on('message',  (message) => {
 });
 
 
+client.on('message',  (message) => {
+        if(message.content.startsWith('-miss')) {
+  let user = message.mentions.users.first();
+  if (!user) {
+
+    return message.emit('commandUsage', message, this.help);
+  }
+  let misss = [
+    'https://media.giphy.com/media/3o6vXUgk6M0h07MnuM/giphy.gif',
+    'https://media.giphy.com/media/NfOD0Bv11XnhK/giphy.gif',
+    'https://media.giphy.com/media/2Jl7a8ixNlNHa/giphy.gif',
+    'https://media.giphy.com/media/WkNXHaiV9HLji/giphy.gif',
+    'https://media.giphy.com/media/3DiUM4dGYyali/giphy.gif',
+    'https://media.giphy.com/media/17CdXoPQo7Un6/giphy.gif',
+    'https://media.giphy.com/media/pjgaGMqsNhjhe/giphy.gif',
+    'https://media.giphy.com/media/qdhgMbi5mwS9W/giphy.gif',
+    'https://media.giphy.com/media/xTgJVYEHoVzpe/giphy.gif',
+    'https://media.giphy.com/media/o1UKv4TutEOUo/giphy.gif',
+    'https://media.giphy.com/media/3o6QLcNZgGKvFBluKs/giphy.gif',
+    'https://media.giphy.com/media/to8AmZ3lEUhqg/giphy.gif',
+    'https://media.giphy.com/media/3o6QKXms0mJznYVkm4/giphy.gif',
+    'https://media.giphy.com/media/148LYpgc9AIUdW/giphy.gif',
+    'https://media.giphy.com/media/4MDnmxVxCZcYM/giphy.gif',
+    'https://media.giphy.com/media/5XHHIFJZpQsXS/giphy.gif',
+    'https://media.giphy.com/media/3o7TKzEQfYQ7inapoI/giphy.gif',
+    'https://media.giphy.com/media/l2Je61TcDeJ4ZOIyk/giphy.gif',
+    'https://media.giphy.com/media/3o6Mb3mYI1yuqEwgFi/giphy.gif',
+    'https://media.giphy.com/media/mfAGXwxCd3D8Y/giphy.gif',
+    'https://media.giphy.com/media/l0HlFinR4G1JvptjG/giphy.gif',
+    'https://media.giphy.com/media/9iVgOohm2SKT6/giphy.gif',
+    'https://media.giphy.com/media/26gsj4kyT3LwhPufK/giphy.gif',
+    'https://media.giphy.com/media/116mAogyorg84U/giphy.gif',
+    'https://media.giphy.com/media/l2ZDOR1uY9yo6MJyM/giphy.gif',
+    'https://media.giphy.com/media/l2ZDWLIIZLhLiuMSs/giphy.gif',
+    'https://media.giphy.com/media/OT89Nuhy3GAFbW359x/giphy.gif',
+    'https://media.giphy.com/media/82AkGaEtqrybM2RFSh/giphy.gif',
+    'https://media.giphy.com/media/1o1ouZSWwFVwysKcnm/giphy.gif',
+    'https://media.giphy.com/media/8mqyDwYRdzdRof6fzu/giphy.gif',
+    'https://media.giphy.com/media/3oriO0bDWiobwAWqGY/giphy.gif'
+  ];
+
+  message.channel.send({
+    embed: {
+      description: `${message.author.username} اشتاق اليك كثيرا  ${user.username}!`,
+      image: {
+        url: misss[Math.floor(Math.random() * misss.length)]
+      }
+    }
+  }).catch(e => {
+    client.log.error(e);
+  })
+        }  
+});
 
 
    var prefix = "-";
