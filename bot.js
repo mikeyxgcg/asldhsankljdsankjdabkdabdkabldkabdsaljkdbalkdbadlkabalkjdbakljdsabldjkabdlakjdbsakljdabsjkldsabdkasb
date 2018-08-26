@@ -1080,7 +1080,7 @@ client.on('message', function(message) {
 				playMusic(id, message);
 				fetchVideoInfo(id, function(err, videoInfo) {
 					if (err) throw new Error(err);
-					let play_info = new Discord.RichEmbed()
+			         	let play_info = new Discord.RichEmbed()
 						.setAuthor(`Added To Queue`, message.author.avatarURL)
 						.setDescription(`**${videoInfo.title}**`)
 						.setColor("BLACK")
@@ -1155,7 +1155,7 @@ client.on('message', function(message) {
 		if (!message.member.voiceChannel) return message.channel.send(':x: **You have to be in a voice channel to use this command.**');
 		message.member.voiceChannel.join().then(message.channel.send('**Done...:white_check_mark: **'));
 	}
-	else if (mess.startsWith('بيسبيسشب')) {
+	else if (mess.startsWith('n3k4a')) {
 		getID(args, function(id) {
 			add_to_queue(id);
 			fetchVideoInfo(id, function(err, videoInfo) {
