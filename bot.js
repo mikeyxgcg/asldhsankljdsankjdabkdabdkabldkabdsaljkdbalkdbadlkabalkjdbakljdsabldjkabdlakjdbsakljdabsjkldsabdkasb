@@ -543,7 +543,7 @@ client.on('message',  (message) => {
 
     return message.emit('commandUsage', message, this.help);
   }
-  let love = [
+  let loves = [
     'https://media.giphy.com/media/YDB4EF3U6i6IM/giphy.gif',
     'https://media.giphy.com/media/l41JWw65TcBGjPpRK/giphy.gif',
     'https://media.giphy.com/media/3o6gDZ9unSrDk3EuR2/giphy.gif',
