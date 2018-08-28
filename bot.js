@@ -980,7 +980,7 @@ client.on('message',async message => {
  client.on('message', async message => {
   let messageArray = message.content.split(' ');
   let args = messageArray.slice(1);
-  if(message.content.startsWith(prefix + "invite?) {
+  if(message.content.startsWith(prefix + "inviter) {
     if(!args) return message.reply('**حدد اسم دعوة**');
     message.guild.fetchInvites().then(i => {
       let inv = i.get(args[0]);
