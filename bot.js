@@ -118,6 +118,8 @@ client.on('message', message => {
 
 ❖ -ban ➾ لعطاء بان للعضو عن طريق المنشن
 
+❖ -banlist ➾ يعرض لك عدد الاشخاص المتبندين في السيرفر
+
 ❖ -members ➾ يظهر لك حالات اعضاء السيرفر ( اون لاين , عدم الازعاج , بعيد عن الكيبورد , اوف لاين , وعدد اعضاء سيرفرك كله  
 
 ❖ -server ➾  يجبلك معلومات السيرفر
@@ -768,7 +770,22 @@ client.on("message", async message => {
         }
         });
 
+var prefix = "-"
 
+client.on('message', message => {
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
+    if (command === "banlist") {
+        message.delete(5000)
+         if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.reply("Error : \` I Dont Have ADMINISTRATOR Permission\`").then(message => message.delete(5000));
+        if(!message.member.hasPermission('ADMINISTRATOR')) return;
+        if(!message.channel.guild) return;
+        message.guild.fetchBans()
+        .then(bans => message.channel.send(`\`${bans.size}\` ***: عدد الاشخاص المحظورين من السيرفر ***`)).then(message => message.delete(5000))
+
+  .catch(console.error);
+}
+});
 
 
 
