@@ -1328,7 +1328,7 @@ client.on('message', function(message) {
 		}
 		else {
 			queue.push(strID);
-		}
+	}
 	}
 
 	function search_video(query, cb) {
