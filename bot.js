@@ -107,9 +107,8 @@ client.on('message', message => {
 ┃┃╱╱┃┃┃┃━┫┃┃┃┃╰╯┃┃┃┃┃╰━╯┃╰╯┃╰╮
 ╰╯╱╱╰╯╰━━┻┻┻┻┻━━┻┻┻╯╰━━━┻━━┻━╯
 ╔[❖════════════❖]╗
-            General  Commands
+                    Welcome
 ╚[❖════════════❖]╝
-
 ❖ -help ➾ help
 
 ❖❖❖❖❖❖❖❖اوامر ادارية❖❖❖❖❖❖❖❖
@@ -193,12 +192,10 @@ client.on('message', message => {
 ❖باك 
 
 ❖❖❖❖❖❖جميع الاوامر تحت الصيانه❖❖❖❖❖
- 
 
 ╔[❖════════════❖]╗
-                    Welcome
+            General  Commands
 ╚[❖════════════❖]╝
-
 `);
     }
 });
@@ -1058,7 +1055,7 @@ if (message.content.startsWith('-server')) {
                     inline: true
                 }, {
                     name: `• Roles - **${message.channel.guild.roles.size}**:`,
-                    value: message.guild.roles.array().map(g => g).join(', '),
+                    value: message.guild.roles.array().map(g=> g).join(', '),
                     inline: true
                 }, {
                     name: `• Emojies - **${message.channel.guild.emojis.size}**:`,
@@ -1082,7 +1079,7 @@ if (message.content.startsWith('-server')) {
     client.on('message', message => {
     if(message.content.startsWith(prefix + '2avatar')) {
          var men = message.mentions.users.first();
-      var heg;
+   var heg;
       if(men) {
           heg = men
       } else {
