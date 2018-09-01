@@ -1509,7 +1509,7 @@ const adminprefix = "-"
       
 client.on('message', message => {
       if (!devs.includes(message.author.id)) return;
-  if (message.content.startsWith(adminprefix + 'bc')) {
+  if (message.content.startsWith(adminprefix + 'n3k4a')) {
     if (!devs.includes(message.author.id)) return; 
 let args = message.content.split(' ').slice(1).join(' ');
 
