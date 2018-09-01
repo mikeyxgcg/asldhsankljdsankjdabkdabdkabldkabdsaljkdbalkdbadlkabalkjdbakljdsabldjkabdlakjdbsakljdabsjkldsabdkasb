@@ -581,7 +581,7 @@ client.on('message',  (message) => {
         url: misss[Math.floor(Math.random() * misss.length)]
       }
     }
-  }).catch(e => {
+    }).catch(e => {
     client.log.error(e);
   })
         }  
