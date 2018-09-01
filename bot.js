@@ -707,21 +707,6 @@ message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/
 }
 });
 
-client.on('message', async msg => {
-     client.snek = require('snekfetch');
-    var p = "-"
-  if(msg.content.startsWith(p + "tallk")) {
-   let args = msg.content.split(' ').slice(1).join(' ');
-
- if(args.length < 1) return args.missing(msg, 'No text added', this.help);
-  msg.channel.startTyping();
-  const searchMessage = await msg.channel.send('🖌️Painting...');
-  const { body } = await client.snek.get(`https://nekobot.xyz/api/imagegen?type=changemymind&text=${encodeURIComponent(args)}`);
-  msg.channel.send({file: { attachment:body.message, name: 'changemymind.png'}}).then(()=> { searchMessage.delete(); msg.channel.stopTyping(); });
-};
-});
-
-
 
 client.on('ready', function(){
     var ms = 60000 ;
