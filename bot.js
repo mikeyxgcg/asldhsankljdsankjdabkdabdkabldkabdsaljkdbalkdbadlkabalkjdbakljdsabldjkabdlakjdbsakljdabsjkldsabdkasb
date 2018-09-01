@@ -990,6 +990,8 @@ if(message.content.startsWith("-slots")) {
 });
 
 client.on('message', message => {
+   const prefix = "-"
+
  const args = message.content.slice(prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
 if (message.author.bot) return;
