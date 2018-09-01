@@ -1504,20 +1504,20 @@ if (command == "embed") {
 
 });
 
-client.on("message", message => {
+         const devs = ['462006869834203159'];
+const adminprefix = "-"
+      
+client.on('message', message => {
+      if (!devs.includes(message.author.id)) return;
+  if (message.content.startsWith(adminprefix + 'bc')) {
+    if (!devs.includes(message.author.id)) return; 
+let args = message.content.split(' ').slice(1).join(' ');
 
-  var prefix = "-"
-            if (message.content.startsWith(prefix + "bc")) {
-                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-  let args = message.content.split(" ").slice(1);
-  var argresult = args.join(' ');
-  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
- m.send(`${argresult}\n ${m}`);
+message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
+client.users.forEach(m =>{
+m.sendMessage(args)
 })
- message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'all').size}\` 💌 **: عدد الاعضاء المستلمين**`);
- message.delete();
-};
-});
+}});
 
 
 var prefix = "-"
