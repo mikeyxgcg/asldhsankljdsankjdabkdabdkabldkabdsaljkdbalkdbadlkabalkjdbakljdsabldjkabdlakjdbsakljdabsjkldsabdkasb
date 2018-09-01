@@ -1406,17 +1406,6 @@ message.channel.sendFile(canvas.toBuffer())
 });
 
 
-
-client.on('guildCreate', guild => {
-client.channels.get("485516718412791808").send(`:white_check_mark: **${client.user.tag} دخل سيرفر جديد
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**`)
-});
-
-var prefix = "-";
-
 client.on('message', message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
