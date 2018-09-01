@@ -35,7 +35,7 @@ const x5bz4 = [
    '*** ابتعد عني قليل انني متعبة ***',
    '*** هل انت نادم على ماقلت ؟ ***',
    '*** هل تود مساعدتي ؟ ***',
-   '*** واو اشك��ك انك شخصاَ رائع ! ***',
+   '*** واو اشك??ك انك شخصاَ رائع ! ***',
    '*** ابحث معي عن منزلي لقد كان قريباَ من هنا ***',
    '*** ولاكن عندما حل الليل لم اعد ارى اي شيء ***',
    '*** مذا تظن اين يوجد ؟ يمين او يسار ***',
@@ -56,7 +56,7 @@ const x5bz4 = [
    '*** لماذا لم تدخل الغرفة ؟ ***',
    '*** ههههههههههههههههههه انت الان مسجون في هذه الغرفة ***',
    '*** لن تخرج حتى اعود لك بعد قليل ***',
-   '*** المفت����ح معك ! اكتب .مريم  ***',
+   '*** المفت????ح معك ! اكتب .مريم  ***',
    '*** مفتاح احمر , هل حصلت عليه ؟ ***',
    '*** ان لم تحصل عليه , اكتب .مريم مرة اخرى ***',
    '*** مفتاح اسود . هل حصلت عليه ؟ ***',
@@ -64,7 +64,7 @@ const x5bz4 = [
    '*** لقد عادت من جديد الى المنزل ***',
    '*** لا تصدر اي صوت ! ***',
    '*** مريم : لقد عدت ***',
-   '*** مريم : يا ايها ا��مخادع اين انت ***',
+   '*** مريم : يا ايها ا??مخادع اين انت ***',
    '*** مريم : اعلم انك هنا في المنزل ***',
    '*** مريم : ماذا تريد ان تسمع ***',
    '*** مريم : اضغط على الرابط اهداء مني لك | https://www.youtube.com/watch?v=hvSiuQccmtg ***',
@@ -92,7 +92,7 @@ if(!message.channel.guild) return
 if (message.author.bot) return;
         if (!message.member.hasPermissions(['ADMINISTRATOR'])){
         message.delete()
-    return message.reply(`**  No Invite Links للاسف ما تقدر تنشر :) ههههههههههايي 😠 :angry: ! **`)
+    return message.reply(`**  No Invite Links للاسف ما تقدر تنشر :) ههههههههههايي ?? :angry: ! **`)
     }
 }
 });
@@ -108,59 +108,59 @@ client.on('message', message => {
 **
         ***__General orders__***
 **
-『-server/يعرض لك معلومات عن السيرفر』
-『-bot/يعرض لك كل معلومات البوت』
-『-support /للتواصل مع صاحب البوت
-『-invite/لدعوه البوت الي سيرفرك 』
-『-avatar/للعرض صورتك او صورة شخص فقط قم بعمل منشن له 』
-『-embed/البوت يكرر الكلام الي قلته ب امبد
-『-members/��عرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص』
-『-id/معلومات عنك』
-『-banlist / عدد الاشخاص المبندة 』』
-『-avatar/صورتك او صورة الي تمنشنو』
-『-support/سيرفر الدعم』
-『-image/يجبلك صوره السيرفر』
-『-tallk/اي شي كتبته بيكتبو فصوره』
-『-inv-info/معلومات  عن دعوة بشكل حلو يطلع اك حتى شخص يلي تمشنه』
-『❖❖❖اومر مميزه نادره❖❖❖』
-『-kiss/يعطي قبله لمن تختار في السيرفر عن طريق المنشن』
-『-love / يعبر بشعورك بلحب  لمن تختار في السيرفر عن طريق المنشن』
-『-miss / يرسله اشتقت لك لمن تختار في السيرفر عن طريق المنشن』
-『-slap / يعطي كف لمن تختاره في السيرفرعن طريق المنشن』
-『-hug /  يعطي وحضن او ضمه لمن تختاره في السيرفر عن طريق المنشن』
-『ترحيب』
-『السلام عليكم』
-『باك』
-『حشيش』
+?-server/يعرض لك معلومات عن السيرفر?
+?-bot/يعرض لك كل معلومات البوت?
+?-support /للتواصل مع صاحب البوت
+?-invite/لدعوه البوت الي سيرفرك ?
+?-avatar/للعرض صورتك او صورة شخص فقط قم بعمل منشن له ?
+?-embed/البوت يكرر الكلام الي قلته ب امبد
+?-members/??عرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص?
+?-id/معلومات عنك?
+?-banlist / عدد الاشخاص المبندة ??
+?-avatar/صورتك او صورة الي تمنشنو?
+?-support/سيرفر الدعم?
+?-image/يجبلك صوره السيرفر?
+?-tallk/اي شي كتبته بيكتبو فصوره?
+?-inv-info/معلومات  عن دعوة بشكل حلو يطلع اك حتى شخص يلي تمشنه?
+????اومر مميزه نادره????
+?-kiss/يعطي قبله لمن تختار في السيرفر عن طريق المنشن?
+?-love / يعبر بشعورك بلحب  لمن تختار في السيرفر عن طريق المنشن?
+?-miss / يرسله اشتقت لك لمن تختار في السيرفر عن طريق المنشن?
+?-slap / يعطي كف لمن تختاره في السيرفرعن طريق المنشن?
+?-hug /  يعطي وحضن او ضمه لمن تختاره في السيرفر عن طريق المنشن?
+?ترحيب?
+?السلام عليكم?
+?باك?
+?حشيش?
 **
   `,`
         ***__Administrative Orders__***
 **
-『-clear <numbr> / البوت يمسح الرسال برقم حد اقصي 100 رساله』
-『-say / البوت يكرر الكلام الي انت تقوله』
-『-kick @user <reason> / طرد الشخص من السيرفر』
-『-ban @user <reason> / حضر الشخص من السيرفر』
-『-ccolor/يقوم بعمل رتب ملونه』
-『-color/يعرض الرتب الملونه』
-『-setstats/يسوي روم بعددالموجودين في الروم الصوتي والتريخ ورومات الكتابيه وصوتيه』
-『-bc/خصيه البرود كاست يرسل لكل السرفرات الرساله الي تحتبها』
+?-clear <numbr> / البوت يمسح الرسال برقم حد اقصي 100 رساله?
+?-say / البوت يكرر الكلام الي انت تقوله?
+?-kick @user <reason> / طرد الشخص من السيرفر?
+?-ban @user <reason> / حضر الشخص من السيرفر?
+?-ccolor/يقوم بعمل رتب ملونه?
+?-color/يعرض الرتب الملونه?
+?-setstats/يسوي روم بعددالموجودين في الروم الصوتي والتريخ ورومات الكتابيه وصوتيه?
+?-bc/خصيه البرود كاست يرسل لكل السرفرات الرساله الي تحتبها?
    `,`
         ***__Music orders__***
 **
-『-{prefix}play / لتشغيل أغنية برآبط أو بأسم』
-『-{prefix}skip / لتجآوز الأغنية الحآلية』
-『-{prefix}pause / إيقآف الأغنية مؤقتا』
-『-{prefix}unpause / لموآصلة الإغنية بعد إيقآفهآ مؤقتا』
-『-{prefix}vol / لتغيير درجة الصوت 100 - 0』
-『-{prefix}leave / لإخرآج البوت من الروم』
+?-{prefix}play / لتشغيل أغنية برآبط أو بأسم?
+?-{prefix}skip / لتجآوز الأغنية الحآلية?
+?-{prefix}pause / إيقآف الأغنية مؤقتا?
+?-{prefix}unpause / لموآصلة الإغنية بعد إيقآفهآ مؤقتا?
+?-{prefix}vol / لتغيير درجة الصوت 100 - 0?
+?-{prefix}leave / لإخرآج البوت من الروم?
 **
         ***__Games orders__***
  **       
-『-slots / ['🍏''🍇' '🍒' '🍍' '🍅' '🍆' '🍑' '🍓'] جمع 3 من نفس الشي تفوز』
-『لعبه التهكير الوهمي /تهكير منشن الشخص 』
-『-لعبة كت تويت / كت تويت』
-『-لعبة مريم / مريم』
-『تغريد  للشخص عن طريق المنشن /-غرد』
+?-slots / ['??''??' '??' '??' '??' '??' '??' '??'] جمع 3 من نفس الشي تفوز?
+?لعبه التهكير الوهمي /تهكير منشن الشخص ?
+?-لعبة كت تويت / كت تويت?
+?-لعبة مريم / مريم?
+?تغريد  للشخص عن طريق المنشن /-غرد?
 **
    
 `]
@@ -173,12 +173,12 @@ client.on('message', message => {
 
     message.author.sendEmbed(embed).then(msg => {
 
-        msg.react('◀').then( r => {
-            msg.react('▶')
+        msg.react('?').then( r => {
+            msg.react('?')
 
 
-        const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
-        const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
 
 
         const backwards = msg.createReactionCollector(backwardsFilter, { time: 2000000});
@@ -272,12 +272,12 @@ client.on('message',async message => {
     var star = new Discord.RichEmbed() 
     .setTitle(`${client.user.username} معلومات عن بوت`)
     .setColor('#36393e')
-    .addField('🌟 امر البوت', prefix, true)
-    .addField('🌟 الرامات المستخدمة', `${(process.memoryUsage().rss / 1048576).toFixed()} ميجا بايت`,true)
-    .addField('🌟 سرعة البوت', `${Math.round(client.ping)} ملي سكند`,true)
-    .addField('🌟 تم تشغيل البوت منذ', `${timeCon(process.uptime())}`, true)
-    .addField('🌟 السيرفرات', client.guilds.size,true)
-    .addField('🌟 المستخدمين', client.users.size,true)
+    .addField('?? امر البوت', prefix, true)
+    .addField('?? الرامات المستخدمة', `${(process.memoryUsage().rss / 1048576).toFixed()} ميجا بايت`,true)
+    .addField('?? سرعة البوت', `${Math.round(client.ping)} ملي سكند`,true)
+    .addField('?? تم تشغيل البوت منذ', `${timeCon(process.uptime())}`, true)
+    .addField('?? السيرفرات', client.guilds.size,true)
+    .addField('?? المستخدمين', client.users.size,true)
     message.channel.send(star);
   }
 });
@@ -287,14 +287,14 @@ client.on('message', message => {
       var kayan = new Discord.RichEmbed()
       .setThumbnail(message.author.avatarURL)
       .setFooter(message.author.username, message.author.avatarURL) 
-      .setTitle('🌷| Members info')
+      .setTitle('??| Members info')
       .addBlankField(true)
-      .addField('📗| Online',
+      .addField('??| Online',
       `${message.guild.members.filter(m=>m.presence.status == 'online').size}`)
-      .addField('📕| DND',`${message.guild.members.filter(m=>m.presence.status == 'dnd').size}`)
-      .addField('📙| Idle',`${message.guild.members.filter(m=>m.presence.status == 'idle').size}`)
-      .addField('📓| Offline',`${message.guild.members.filter(m=>m.presence.status == 'offline').size}`)
-      .addField('➡| Server Members',`${message.guild.memberCount}`)
+      .addField('??| DND',`${message.guild.members.filter(m=>m.presence.status == 'dnd').size}`)
+      .addField('??| Idle',`${message.guild.members.filter(m=>m.presence.status == 'idle').size}`)
+      .addField('??| Offline',`${message.guild.members.filter(m=>m.presence.status == 'offline').size}`)
+      .addField('?| Server Members',`${message.guild.memberCount}`)
       message.channel.send(kayan);
     
     });
@@ -319,7 +319,7 @@ possibleInvites.push([inviteCount, exec]);
         let daysJoined = millisJoined / 1000 / 60 / 60 / 24;
 const alpha = new Discord.RichEmbed()
 .setAuthor(img)
-.addField('🏆 Invite Infos',  `\n\n► لقد قمت بدعوة ما مجموعه \`\`${Number(inviteCount)}\`\` عضو.\n\n► لقد انضممت لسرفر مند\`${daysJoined.toFixed(0)}\`يوم .\n\n► لقد انضممت بهذه الدعوة\`${exec}\``,true)
+.addField('?? Invite Infos',  `\n\n? لقد قمت بدعوة ما مجموعه \`\`${Number(inviteCount)}\`\` عضو.\n\n? لقد انضممت لسرفر مند\`${daysJoined.toFixed(0)}\`يوم .\n\n? لقد انضممت بهذه الدعوة\`${exec}\``,true)
 .setThumbnail(imagemm)
 .setColor(0x4959e9);
 message.channel.send(alpha);
@@ -498,7 +498,7 @@ client.on('message',  (message) => {
 
   message.channel.send({
     embed: {
-      description: `${message.author.username}اداك قبله ا�� بوسه ${user.username}!`,
+      description: `${message.author.username}اداك قبله ا?? بوسه ${user.username}!`,
       image: {
         url: kiss[Math.floor(Math.random() * kiss.length)]
       }
@@ -700,14 +700,14 @@ client.on('ready', function(){
         i = i+j;
         client.user.setGame(setGame[i],`http://www.twitch.tv/n3k4a`);
     }, ms);
-    console.log(` ╔═══╗──╔╗ |> Name: ${client.user.username}`);
- console.log(` ║╔═╗║──║║ |> Servers: ${client.guilds.size}`);
- console.log(` ║║─╚╬══╣║╔══╦╗╔╦╗─╔╗ |> Members: ${client.users.size}`);
- console.log(` ║║╔═╣╔╗║║║╔╗╠╬╬╣║─║║║ |> Channels: ${client.channels.size}`);
- console.log(` ║╚╩═║╔╗║╚╣╔╗╠╬╬╣╚═╝║ |> Channels: ${client.channels.size}`);
- console.log(` ╚═══╩╝╚╩═╩╝╚╩╝╚╩═╗╔╝ |> Id: ${client.user.id}`);
- console.log(` ───────────────╔═╝║`);
- console.log(` ───────────────╚══╝`);
+    console.log(` ????????? |> Name: ${client.user.username}`);
+ console.log(` ????????? |> Servers: ${client.guilds.size}`);
+ console.log(` ???????????????????? |> Members: ${client.users.size}`);
+ console.log(` ????????????????????? |> Channels: ${client.channels.size}`);
+ console.log(` ???????????????????? |> Channels: ${client.channels.size}`);
+ console.log(` ???????????????????? |> Id: ${client.user.id}`);
+ console.log(` ???????????????????`);
+ console.log(` ???????????????????`);
 
 
 
@@ -730,7 +730,7 @@ client.on('ready', function(){
 
 client.on("message", async message => {
   if(message.author.bot) return;
-  if(message.channel.type === "dm") return;
+  if(message.channel.type === "old") return;
 
   let prefix = "-";
   let messageArray = message.content.split (" ");
@@ -771,7 +771,7 @@ client.on("message", async message => {
 
 client.on("message", async message => {
       if(message.author.bot) return;
-      if(message.channel.type === "dm") return;
+      if(message.channel.type === "old") return;
 
       let prefix = "-";
       let messageArray = message.content.split (" ");
@@ -882,7 +882,7 @@ client.on("message", message => {
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix - "clear")) {
 				if(!message.channel.guild) return;
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | *** ⚠ لا يوجد لك مانج ماسج ***');
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('? | *** ? لا يوجد لك مانج ماسج ***');
         var msg;
         msg = parseInt();
       
@@ -914,19 +914,19 @@ const cuttweet = [
      'كت تويت ‏- ما الشيء الذي يُفارقك؟',
      'كت تويت ‏- موقف مميز فعلته مع شخص ولا يزال يذكره لك؟',
      'كت تويت ‏- أيهما ينتصر، الكبرياء أم الحب؟',
-     'كت ��ويت| بعد ١٠ سنين ايش بتكون ؟',
+     'كت ??ويت| بعد 10 سنين ايش بتكون ؟',
 
      'كت تويت ‏- مِن أغرب وأجمل الأسماء التي مرت عليك؟',
      '‏كت تويت| عمرك شلت مصيبة عن شخص برغبتك ؟',
 'كت تويت ‏- أكثر سؤال وجِّه إليك مؤخرًا؟',
      '‏كت تويت|ما هو الشيء الذي يجعلك تشعر بالخوف؟',
      '‏كت تويت|وش يفسد الصداقة؟',
-     '‏كت ت��ي����|شخص ل��ترفض له طلبا ؟',
+     '‏كت ت??ي????|شخص ل??ترفض له طلبا ؟',
      '‏كت تويت|كم مره خسرت شخص تحبه؟.',
      '‏كت تويت|كيف تتعامل مع الاشخاص السلبيين ؟',
      '‏كت تويت|كلمة تشعر بالخجل اذا قيلت لك؟',
      '‏كت تويت|هل تُخفي نجاحك أو كت كت تويت | هل تخفي نجاحك أو أشيائك الجميلة خوفاً من العين والحسد؟',
-     '‏كت تويت|جسمك اكبر من عٌ��رك او ��لعكسّ ؟!',
+     '‏كت تويت|جسمك اكبر من عٌ??رك او ??لعكسّ ؟!',
      '‏كت تويت|أقوى كذبة مشت عليك ؟',
      '‏كت تويت|تتأثر بدموع شخص يبكي قدامك قبل تعرف السبب ؟',
      'كت تويت|هل حدث وضحيت من أجل شخصٍ أحببت؟',
@@ -934,7 +934,7 @@ const cuttweet = [
      '‏كت تويت|‏اكثر شي يرضيك اذا زعلت بدون تفكير ؟',
      '‏كت تويت|وش محتاج عشان تكون مبسوط ؟',
      '‏كت تويت|مطلبك الوحيد الحين ؟',
-     '‏كت تويت|- ه�� حدث وشعرت بأنك ارتكبت أحد الذنوب أثناء الصيام؟',
+     '‏كت تويت|- ه?? حدث وشعرت بأنك ارتكبت أحد الذنوب أثناء الصيام؟',
 ]
 
 client.on('message', message => {
@@ -958,19 +958,19 @@ message.channel.sendMessage({embed: {
                                      }//jackeo جاكيو
                  message.channel.send({embed: new Discord.RichEmbed().setTitle('Loading ' + virusname + "...").setColor(0xFF0000)}).then(function(m) {
              setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading  [▓] 1%**`).setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading  [?] 1%**`).setColor(0xFF0000)})
              }, 5500)//jackeo جاكيو
              setTimeout(function() {
-                m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [▓▓▓▓] 25%**`).setColor(0xFF0000)})
+                m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [????] 25%**`).setColor(0xFF0000)})
               }, 10500)//jackeo جاكيو
               setTimeout(function() {
-                 m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [▓▓▓▓▓▓▓▓] 50%**`).setColor(0xFF0000)})
+                 m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [????????] 50%**`).setColor(0xFF0000)})
                }, 15500)//jackeo جاكيو
                setTimeout(function() {
-                  m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 75%**`).setColor(0xFF0000)})
+                  m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [??????????????] 75%**`).setColor(0xFF0000)})
                 }, 25500)//jackeo جاكيو
            setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle(`** Hacking Done [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%**`).setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle(`** Hacking Done [??????????????????] 100%**`).setColor(0xFF0000)})
              }, 30500)//jackeo جاكيو
                 setTimeout(function() {
                m.edit({embed: new Discord.RichEmbed().setTitle(`** ..يتم الدخول للحساب** `).setColor(0xFF0000)})
@@ -995,7 +995,7 @@ message.channel.sendMessage({embed: {
 
   client.on('message', message => {
 if(message.content.startsWith("-slots")) {
-  let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
+  let slot1 = ['??', '??', '??', '??', '??', '??', '??', '??'];
   let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let slots2 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let slots3 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
@@ -1410,19 +1410,19 @@ client.on('message', async msg => {
 
  if(args.length < 1) return args.missing(msg, 'No text added', this.help);
   msg.channel.startTyping();
-  const searchMessage = await msg.channel.send('🖌️Painting...');
+  const searchMessage = await msg.channel.send('???Painting...');
   const { body } = await client.snek.get(`https://nekobot.xyz/api/imagegen?type=changemymind&text=${encodeURIComponent(args)}`);
   msg.channel.send({file: { attachment:body.message, name: 'changemymind.png'}}).then(()=> { searchMessage.delete(); msg.channel.stopTyping(); });
 };
 });
 
 client.on('message',async msg => {
-     if(msg.channel.type === "dm") return;
+     if(msg.channel.type === "old") return;
   if(msg.author.bot) return;
   var p = "-";
   if(msg.content.startsWith(p + "setstats")) {
-  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **go play minecraft**');
-  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
+  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('? **go play minecraft**');
+  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('? **البوت لا يمتلك صلاحية**');
   var ggg= msg.guild.createChannel('SERVER STATS', 'category').then(kk => {
            var ccc =msg.guild.createChannel('SERVER STATS', 'voice').then(al => {
                 var aa =msg.guild.createChannel('SERVER STATS', 'voice').then(alp => {
@@ -1510,7 +1510,7 @@ var prefix = "-"
 client.on('message',async message => {
   if(message.content.startsWith(prefix + "id")) {
     if(message.author.bot) return;
-    if(message.channel.type === 'dm') return;
+    if(message.channel.type === 'old') return;
       message.guild.fetchInvites().then(invs => {
     let user = message.author;
     let personalInvites = invs.filter(i => i.inviter.id === user.id);
