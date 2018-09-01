@@ -120,6 +120,7 @@ client.on('message', message => {
 『-banlist / عدد الاشخاص المبندة 』』
 『-avatar/صورتك او صورة الي تمنشنو』
 『-support/سيرفر الدعم』
+『-image/يجبلك صوره السيرفر』
 『❖❖❖اومر مميزه نادره❖❖❖』
 『-kiss/يعطي قبله لمن تختار في السيرفر عن طريق المنشن』
 『-love / يعبر بشعورك بلحب  لمن تختار في السيرفر عن طريق المنشن』
@@ -138,6 +139,13 @@ client.on('message', message => {
 『-say / البوت يكرر الكلام الي انت تقوله』
 『-kick @user <reason> / طرد الشخص من السيرفر』
 『-ban @user <reason> / حضر الشخص من السيرفر』
+『لقفل الشات للكل /قفل الشات』
+『لفتح الشات للكل /فتح الشات』
+『-ccolor/يقوم بعمل رتب ملونه』
+『-color/يعرض الرتب الملونه』
+『-setstats/يسوي روم بعدد الاعضاء والبوتات ورومات الكتابيه وصوتيه』
+『-setDate/يعمل روم بلتاريخ』
+『-bc/خصيه البرود كاست يرسل لكل السرفرات الرساله الي تحتبها』
    `,`
         ***__Music orders__***
 **
@@ -299,22 +307,6 @@ client.on('message', message => {
       message.channel.send(kayan);
     
     });
-
-      client.on('guildCreate', guild => {
-client.channels.get("ROOM ID").send(`:white_check_mark: **${client.user.tag} دخل سيرفر جديد
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**`)
-});
-client.on('guildDelete', guild => {
-  client.channels.get("ROOM ID").send(`:negative_squared_cross_mark: **${client.user.tag} طلع من سيرفر
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**`)
-});
-  
 
 client.on('message', message => {
      if (message.content === "-ping") {
@@ -997,7 +989,503 @@ if(message.content.startsWith("-slots")) {
   message.channel.send(`${slots1} | ${slots2} | ${slots3} - ${we}`)
 }
 });
+
+client.on('message', message => {
+ const args = message.content.slice(prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
+if (message.author.bot) return;
+    if (command === 'قفل الشات') {
+                        if(!message.channel.guild) return;
+  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
+if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('هذا الأمر للاداره فقط').then(message => message.delete(5000))
+           message.channel.overwritePermissions(message.guild.id, {
+         SEND_MESSAGES: false
+
+           }).then(() => {
+ const starEmbed = new Discord.RichEmbed()
+               .setAuthor('تم قفل الشات بواسطه : '+message.author.username)
+                .setColor('RANDOM')
+               
+               message.channel.send(starEmbed)
+               });
+             }
+if (command === "فتح الشات") {
+    
+    if(!message.channel.guild) return;
+  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
+if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('هذا الأمر للاداره فقط').then(message => message.delete(5000))
+           message.channel.overwritePermissions(message.guild.id, {
+         SEND_MESSAGES: true
+
+           }).then(() => {
+               const starEmbed = new Discord.RichEmbed()
+               .setAuthor('تم فتح الشات بواسطه : '+message.author.username)
+                        .setColor('RANDOM')
+               
+               message.channel.send(starEmbed)
+           });
+             }
+
+
+
+});
   
+client.on("message", message => {
+    const prefix = "-"
+              
+          if(!message.channel.guild) return;
+   if(message.author.bot) return;
+      if(message.content === prefix + "image"){ 
+          const embed = new Discord.RichEmbed()
+  
+      .setTitle(`This is  ** ${message.guild.name} **  Photo !`)
+  .setAuthor(message.author.username, message.guild.iconrURL)
+    .setColor(0x164fe3)
+    .setImage(message.guild.iconURL)
+    .setURL(message.guild.iconrURL)
+                    .setTimestamp()
+
+   message.channel.send({embed});
+      }
+  });
+
+client.on('message', function(message) {
+    if (message.content ===  '-ccolor'){
+              if (!message.member.hasPermission("MANAGE_ROLES"))  return;
+                     
+                         if(message.guild.roles.find("name","5")) return message.reply("You're Already Have Colors ! :art:");
+                           if(message.guild.roles.find("name","10")) return message.reply("You're Already Have Colors ! :art:");
+                             if(message.guild.roles.find("name","15")) return message.reply("You're Already Have Colors ! :art:");
+                               if(message.guild.roles.find("name","20")) return message.reply("You're Already Have Colors ! :art:");
+                                 if(message.guild.roles.find("name","25")) return message.reply("You're Already Have Colors ! :art:");
+                                  if(message.guild.roles.find("name","30")) return message.reply("You're Already Have Colors ! :art:");
+        if(!message.channel.guild) return message.reply('** This command only for servers **');
+       
+     
+                setInterval(function(){})
+                  let count = 0;
+                  let ecount = 0;
+        for(let x = 1; x < 31; x++){
+            message.guild.createRole({name:x,
+            color: "RANDOM"})
+            }
+           
+          message.channel.send(":white_check_mark: | Working On Colors")
+   
+ 
+    }
+});
+ 
+client.on('message', message => {
+   if (message.content.startsWith("-color")) {
+       var no = "لا توجد الاوان حاول انشاء الالوان بستخدام `*ccolors`"
+     if(!message.guild.roles.find("name","1")) return message.reply(no);
+     if(!message.guild.roles.find("name","2")) return message.reply(no);
+     if(!message.guild.roles.find("name","3")) return message.reply(no);
+     if(!message.guild.roles.find("name","4")) return message.reply(no);
+     if(!message.guild.roles.find("name","5")) return message.reply(no);
+     if(!message.guild.roles.find("name","6")) return message.reply(no);
+     if(!message.guild.roles.find("name","7")) return message.reply(no);
+     if(!message.guild.roles.find("name","8")) return message.reply(no);
+     if(!message.guild.roles.find("name","9")) return message.reply(no);
+     if(!message.guild.roles.find("name","10")) return message.reply(no);
+     if(!message.guild.roles.find("name","11")) return message.reply(no);
+     if(!message.guild.roles.find("name","12")) return message.reply(no);
+     if(!message.guild.roles.find("name","13")) return message.reply(no);
+     if(!message.guild.roles.find("name","14")) return message.reply(no);
+     if(!message.guild.roles.find("name","15")) return message.reply(no);
+     if(!message.guild.roles.find("name","16")) return message.reply(no);
+     if(!message.guild.roles.find("name","17")) return message.reply(no);
+     if(!message.guild.roles.find("name","18")) return message.reply(no);
+     if(!message.guild.roles.find("name","19")) return message.reply(no);
+     if(!message.guild.roles.find("name","20")) return message.reply(no);
+     if(!message.guild.roles.find("name","21")) return message.reply(no);
+     if(!message.guild.roles.find("name","22")) return message.reply(no);
+     if(!message.guild.roles.find("name","23")) return message.reply(no);
+     if(!message.guild.roles.find("name","24")) return message.reply(no);
+     if(!message.guild.roles.find("name","25")) return message.reply(no);
+      if(!message.guild.roles.find("name","26")) return message.reply(no);
+       if(!message.guild.roles.find("name","27")) return message.reply(no);
+        if(!message.guild.roles.find("name","28")) return message.reply(no);
+         if(!message.guild.roles.find("name","29")) return message.reply(no);
+           if(!message.guild.roles.find("name","30")) return message.reply(no);
+if(!message.channel.guild) return;
+const w = [];
+var Canvas = require('canvas')
+var jimp = require('jimp')
+     let Image = Canvas.Image,
+            canvas = new Canvas(500, 200),
+            ctx = canvas.getContext('2d');
+        ctx.patternQuality = 'bilinear';
+        ctx.filter = 'bilinear';
+        ctx.antialias = 'subpixel';
+ 
+        fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+            if (err) return console.log(err);
+            let BG = Canvas.Image;
+            let ground = new Image;
+            ground.src = Background;
+            ctx.drawImage(ground, 0, 0, 500, 200);
+ 
+})
+ 
+ 
+                let url = message.author.displayAvatarURL.endsWith(".webp") ? message.author.displayAvatarURL.slice(20, 20) + ".png" : message.author.displayAvatarURL;
+                jimp.read(url, (err, ava) => {
+                    if (err) return console.log(err);
+                    ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+                        if (err) return console.log(err);
+ 
+                        let Avatar = Canvas.Image;
+                        let ava = new Avatar;
+                        ava.src = buf;
+                        ctx.drawImage(ava, -100 , -100, 70, 70);
+                                   
+ctx.fillStyle = `${message.guild.roles.find("name","1").hexColor}`;
+  ctx.fillRect(52, 68, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","2").hexColor}`;
+  ctx.fillRect(88, 68, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","3").hexColor}`;
+  ctx.fillRect(124, 68, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","4").hexColor}`;
+  ctx.fillRect(160, 68, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","5").hexColor}`;
+  ctx.fillRect(196, 68, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","6").hexColor}`;
+  ctx.fillRect(232, 68, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","7").hexColor}`;
+  ctx.fillRect(268, 68, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","8").hexColor}`;
+  ctx.fillRect(304, 68, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","9").hexColor}`;
+  ctx.fillRect(340, 68, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","10").hexColor}`;
+  ctx.fillRect(376, 68, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","11").hexColor}`;
+  ctx.fillRect(412, 68, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","12").hexColor}`;
+  ctx.fillRect(52, 105, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","13").hexColor}`;
+  ctx.fillRect(88, 105, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","14").hexColor}`;
+  ctx.fillRect(124, 105, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","15").hexColor}`;
+  ctx.fillRect(160, 105, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","16").hexColor}`;
+  ctx.fillRect(196, 105, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","17").hexColor}`;
+  ctx.fillRect(232, 105, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","18").hexColor}`;
+  ctx.fillRect(268, 105, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","19").hexColor}`;
+  ctx.fillRect(304, 105, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","20").hexColor}`;
+  ctx.fillRect(340, 105, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","21").hexColor}`;
+  ctx.fillRect(376, 105, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","22").hexColor}`;
+  ctx.fillRect(412, 105, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","23").hexColor}`;
+  ctx.fillRect(52, 142, 30, 30);
+ 
+ctx.fillStyle = `${message.guild.roles.find("name","24").hexColor}`;
+  ctx.fillRect(88, 142, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","25").hexColor}`;
+  ctx.fillRect(124, 142, 30, 30);
+   
+   ctx.fillStyle = `${message.guild.roles.find("name","26").hexColor}`;
+  ctx.fillRect(160, 142, 30, 30);
+ 
+  ctx.fillStyle = `${message.guild.roles.find("name","27").hexColor}`;
+  ctx.fillRect(196, 142, 30, 30);
+ 
+   ctx.fillStyle = `${message.guild.roles.find("name","28").hexColor}`;
+  ctx.fillRect(232, 142, 30, 30);
+ 
+   ctx.fillStyle = `${message.guild.roles.find("name","29").hexColor}`;
+   ctx.fillRect(268, 142, 30, 30);
+   
+    ctx.fillStyle = `${message.guild.roles.find("name","30").hexColor}`;
+   ctx.fillRect(304, 142, 30, 30);
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("1", 67.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("2", 103.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("3", 139.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("4", 175.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("5", 211.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("6", 247.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("7", 283.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("8", 319.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("9", 355.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("10", 391.5  , 88 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("11", 427.5  , 88 );
+ 
+   ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("12", 67.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("13", 103.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("14", 139.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("15", 175.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("16", 211.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("17", 247.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("18", 283.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("19", 319.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("20", 355.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("21", 391.5  , 125 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("22", 427.5  , 125 );
+ 
+   ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("23", 67.5  , 162 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("24", 103.5  , 162 );
+ 
+ ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("25", 139.5  , 162 );  
+ 
+ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("26", 175 , 162);  
+ 
+ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("27",  213, 162);  
+ 
+ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("28",  247.5, 162);  
+ 
+ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("29", 283.5, 162);
+ 
+ctx.font = '15px Bold';
+ctx.fontSize = '15px';
+ctx.fillStyle = "#ffffff";
+ctx.textAlign = "center";
+ctx.fillText("30", 319.5, 162);
+ 
+ 
+                                           
+message.channel.sendFile(canvas.toBuffer())
+ 
+           
+        })
+    })
+ 
+}
+ 
+});
+
+client.on('message',async msg => {
+     if(msg.channel.type === "dm") return;
+  if(msg.author.bot) return;
+   var everyone = msg.guild.defaultRole;
+  var p = "-";
+  if(msg.content.startsWith(p + "setstats")) {
+  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **go play minecraft**');
+  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
+  var ggg= msg.guild.createChannel('SERVER STATS', 'category').then(kk => {
+           var ccc =msg.guild.createChannel('SERVER STATS', 'voice').then(al => {
+                var aa =msg.guild.createChannel('SERVER STATS', 'voice').then(alp => {
+                   var aaa =msg.guild.createChannel('SERVER STATS', 'voice').then(alph => {
+                       var a =msg.guild.createChannel('SERVER STATS', 'voice').then(yo => {
+       al.setParent(kk);
+       alp.setParent(kk);
+       alph.setParent(kk);
+       yo.setParent(kk);
+     al.overwritePermissions(everyone, { CONNECT: false });
+      alp.overwritePermissions(everyone, { CONNECT: false });
+       alph.overwritePermissions(everyone, { CONNECT: false });
+        yo.overwritePermissions(everyone, { CONNECT: false });
+  setInterval(() => {
+     al.setName('Members: ' + msg.guild.members.filter(m => !(m.user.bot)).size, 'voice');
+      alp.setName('Bots: ' + msg.guild.members.filter(m => m.user.bot).size, 'voice');
+        alph.setName('Text channels: ' + msg.guild.channels.filter(c => c.type == 'text').size, 'voice');
+         yo.setName('Voice channels: ' + (msg.guild.channels.filter(c => c.type == 'voice').size - 3), 'voice');
+ },1000);
+                       })
+                   })
+    
+                })
+           })
+  })
+          
+  }
+ 
+});
+
+client.on('message',async msg => {
+  if(msg.content.startsWith(prefix + "-setDate")) {
+  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **أنت لا تملك الصلاحيه **');
+  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
+    var args = msg.content.split(' ').slice(1).join(' ');
+
+
+  msg.channel.send(':white_check_mark: » تم عمل روم التاريخ   بنجاح');
+  msg.guild.createChannel(`DATE : []`, 'voice').then(time => {
+
+    time.overwritePermissions(msg.guild.id, {
+      CONNECT: false,
+      SPEAK: false
+    });
+  setInterval(() => {
+      var currentTime = new Date(),
+Year = currentTime.getFullYear(),
+Month = currentTime.getMonth() + 1,
+Dat = currentTime.getDate()
+      time.setName(` ${args} : [${Year} - ${Month} - ${Dat}]`);
+ },1000);
+  });
+  }
+ 
+});
 
 var prefix = "-";
 
@@ -1027,6 +1515,21 @@ if (command == "embed") {
   }
 
 
+});
+
+client.on("message", message => {
+
+  var prefix = "-"
+            if (message.content.startsWith(prefix + "bc")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+  let args = message.content.split(" ").slice(1);
+  var argresult = args.join(' ');
+  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
+ m.send(`${argresult}\n ${m}`);
+})
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'all').size}\` 💌 **: عدد الاعضاء المستلمين**`);
+ message.delete();
+};
 });
 
 
