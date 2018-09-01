@@ -106,9 +106,13 @@ client.on('message', message => {
 ┃╭━━┫╭┫┃━┫╰╯┣┫┃┃┃╰╯┃┃╭━╮┃╭╮┃┃
 ┃┃╱╱┃┃┃┃━┫┃┃┃┃╰╯┃┃┃┃┃╰━╯┃╰╯┃╰╮
 ╰╯╱╱╰╯╰━━┻┻┻┻┻━━┻┻┻╯╰━━━┻━━┻━╯
+
+Administrator :ملحوظه يجب اعطاء رتبه التاليه
+
 ╔[❖════════════❖]╗
                     Welcome
 ╚[❖════════════❖]╝
+
 ❖ -help ➾ help
 
 ❖❖❖❖❖❖❖❖اوامر ادارية❖❖❖❖❖❖❖❖
@@ -182,6 +186,10 @@ client.on('message', message => {
 ❖ لعبه مريم المخيفه ➾ -مريم
 
 ❖ للتغريد للشخص عن طريق المنشن ➾  -غرد
+
+❖ -slots ➾   ['🍏''🍇' '🍒' '🍍' '🍅' '🍆' '🍑' '🍓'] جمع 3 من نفس الشي تفوز
+
+❖  لعبه التهكير عن طريق المنشن ➾  تهكير
 
 ❖❖❖❖❖❖❖❖❖❖اومراضافيه-❖❖❖❖❖❖❖❖❖
 
@@ -301,11 +309,21 @@ client.on('message', message => {
     
     });
 
-     var prefix = "-"   
-
-
-
-
+      client.on('guildCreate', guild => {
+client.channels.get("ROOM ID").send(`:white_check_mark: **${client.user.tag} دخل سيرفر جديد
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**`)
+});
+client.on('guildDelete', guild => {
+  client.channels.get("ROOM ID").send(`:negative_squared_cross_mark: **${client.user.tag} طلع من سيرفر
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**`)
+});
+  
 
 client.on('message', message => {
      if (message.content === "-ping") {
@@ -926,6 +944,69 @@ message.channel.sendMessage({embed: {
 };
 });
 
+ client.on('message', message => { //jackeo جاكيو
+    if (message.content.startsWith("تهكير")) {
+  if(!message.channel.guild) return message.reply(' ');//jackeo جاكيو
+      if (message.author.bot) return//jackeo جاكيو
+           message.delete();//jackeo جاكيو
+             let args = message.content.split(' ').slice(1);//jackeo جاكيو
+                   let virusname = args.join(' ');//jackeo جاكيو
+                 if (virusname < 1) {//jackeo جاكيو//jackeo جاكيو
+                     return message.channel.send("** رجائاََ منشن من تريد تهكيرة ** ");//jackeo جاكيو
+                                     }//jackeo جاكيو
+                 message.channel.send({embed: new Discord.RichEmbed().setTitle('Loading ' + virusname + "...").setColor(0xFF0000)}).then(function(m) {
+             setTimeout(function() {
+               m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading  [▓] 1%**`).setColor(0xFF0000)})
+             }, 5500)//jackeo جاكيو
+             setTimeout(function() {
+                m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [▓▓▓▓] 25%**`).setColor(0xFF0000)})
+              }, 10500)//jackeo جاكيو
+              setTimeout(function() {
+                 m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [▓▓▓▓▓▓▓▓] 50%**`).setColor(0xFF0000)})
+               }, 15500)//jackeo جاكيو
+               setTimeout(function() {
+                  m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 75%**`).setColor(0xFF0000)})
+                }, 25500)//jackeo جاكيو
+           setTimeout(function() {
+               m.edit({embed: new Discord.RichEmbed().setTitle(`** Hacking Done [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%**`).setColor(0xFF0000)})
+             }, 30500)//jackeo جاكيو
+                setTimeout(function() {
+               m.edit({embed: new Discord.RichEmbed().setTitle(`** ..يتم الدخول للحساب** `).setColor(0xFF0000)})
+             }, 40500)//jackeo جاكيو
+                setTimeout(function() {
+               m.edit({embed: new Discord.RichEmbed().setTitle(`** .. يتم حفظ بينات الحساب** `).setColor(0xFF0000)})
+             }, 45500)//jackeo جاكيو
+                setTimeout(function() {
+               m.edit({embed: new Discord.RichEmbed().setTitle(`** ..يتم رفع البينات** `).setColor(0xFF0000)})
+             }, 50500)//jackeo جاكيو
+              setTimeout(function() {
+               m.delete()//jackeo جاكيو
+           }, 55000)//jackeo جاكيو
+             setTimeout(function() {
+               message.channel.send('** تم الاختراق  __Done Hacking__ **').then(msg => msg.delete(25000));
+           }, 60500)//jackeo جاكيو
+           });//jackeo جاكيو
+         }//jackeo جاكيو
+ });//jackeo جاكيو
+
+
+
+  client.on('message', message => {
+if(message.content.startsWith("-slots")) {
+  let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
+  let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
+  let slots2 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
+  let slots3 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
+  let we;
+  if(slots1 === slots2 && slots2 === slots3) {
+    we = "Win!"
+  } else {
+    we = "Lose!"
+  }
+  message.channel.send(`${slots1} | ${slots2} | ${slots3} - ${we}`)
+}
+});
+  
 
 var prefix = "-";
 
