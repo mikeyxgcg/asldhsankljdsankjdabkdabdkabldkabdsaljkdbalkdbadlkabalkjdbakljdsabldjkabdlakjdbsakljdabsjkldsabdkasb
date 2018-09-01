@@ -221,22 +221,6 @@ client.on("message", message => {
  }
 });
 
-if(!message.content.startsWith(prefix)) return;
-  if(cooldown.has(message.author.id)){
-    message.delete();
-  return  message.reply("You have to wait 5 seconds between commands.")
-  }
-  if(!message.member.hasPermission("ADMINISTRATOR")){
-    cooldown.add(message.author.id);
-  }
-  let messageArray = message.content.split (" ");
-  let cmd = messageArray[0];
-  let args = messageArray.slice(1);
-setTimeout(() => {
-  cooldown.delete(message.author.id)
-}, cdseconds * 1000)
-
-
 client.on("message", message => {
  if (message.content === "-support") {
   const embed = new Discord.RichEmbed()
@@ -247,10 +231,6 @@ client.on("message", message => {
 
  }
 });
-
-
-
-
 
 
 const TOKEN = "";
