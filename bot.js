@@ -989,8 +989,11 @@ if(message.content.startsWith("-slots")) {
 }
 });
 
-client.on('message', message => {
-   const prefix = "-"
+client.on("message", message => {
+    const prefix = "-"
+              
+          if(!message.channel.guild) return;
+   if(message.author.bot) return;
 
  const args = message.content.slice(prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
@@ -1461,9 +1464,12 @@ client.on('message',async msg => {
   }
  
 });
-
 client.on('message',async msg => {
-  if(msg.content.startsWith(prefix + "-setDate")) {
+     if(msg.channel.type === "dm") return;
+  if(msg.author.bot) return;
+   var everyone = msg.guild.defaultRole;
+  var p = "-";
+  if(msg.content.startsWith(prefix + "setDate")) {
   if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **أنت لا تملك الصلاحيه **');
   if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
     var args = msg.content.split(' ').slice(1).join(' ');
