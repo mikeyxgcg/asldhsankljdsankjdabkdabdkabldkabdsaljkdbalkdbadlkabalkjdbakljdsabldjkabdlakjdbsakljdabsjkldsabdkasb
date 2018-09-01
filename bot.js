@@ -989,12 +989,11 @@ if(message.content.startsWith("-slots")) {
 }
 });
 
-client.on("message", message => {
-    const prefix = "-"
-              
-          if(!message.channel.guild) return;
-   if(message.author.bot) return;
-
+client.on('message',async msg => {
+     if(msg.channel.type === "dm") return;
+  if(msg.author.bot) return;
+   var everyone = msg.guild.defaultRole;
+  var p = "-";
  const args = message.content.slice(prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
 if (message.author.bot) return;
