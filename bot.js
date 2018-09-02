@@ -86,7 +86,7 @@ const x5bz4 = [
 var prefix = "-";
 
 client.on('message', message => {
-if (message.content.startsWith(prefix + '-help')) {
+if (message.content === "-help") {
     let pages = [`
 ***__وصف عن البوت__***
 **
