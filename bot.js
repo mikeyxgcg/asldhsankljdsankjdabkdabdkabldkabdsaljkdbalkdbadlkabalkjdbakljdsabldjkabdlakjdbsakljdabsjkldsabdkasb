@@ -914,16 +914,7 @@ const cuttweet = [
      '‏كت تويت|- ه?? حدث وشعرت بأنك ارتكبت أحد الذنوب أثناء الصيام؟',
 ]
 
-client.on('message', message => {
-  if (message.content === `-كت تويت`) {
-message.channel.sendMessage({embed: {
-  color: 3547003,
-  description: `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`
-}});
-};
-});
-
- client.on('message', message => { //jackeo جاكيو
+client.on('message', message => { //jackeo جاكيو
     if (message.content.startsWith("تهكير")) {
   if(!message.channel.guild) return message.reply(' ');//jackeo جاكيو
       if (message.author.bot) return//jackeo جاكيو
@@ -935,19 +926,19 @@ message.channel.sendMessage({embed: {
                                      }//jackeo جاكيو
                  message.channel.send({embed: new Discord.RichEmbed().setTitle('Loading ' + virusname + "...").setColor(0xFF0000)}).then(function(m) {
              setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading  [?] 1%**`).setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading  [▓] 1%**`).setColor(0xFF0000)})
              }, 5500)//jackeo جاكيو
              setTimeout(function() {
-                m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [????] 25%**`).setColor(0xFF0000)})
+                m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [▓▓▓▓] 25%**`).setColor(0xFF0000)})
               }, 10500)//jackeo جاكيو
               setTimeout(function() {
-                 m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [????????] 50%**`).setColor(0xFF0000)})
+                 m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [▓▓▓▓▓▓▓▓] 50%**`).setColor(0xFF0000)})
                }, 15500)//jackeo جاكيو
                setTimeout(function() {
-                  m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [??????????????] 75%**`).setColor(0xFF0000)})
+                  m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 75%**`).setColor(0xFF0000)})
                 }, 25500)//jackeo جاكيو
            setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle(`** Hacking Done [??????????????????] 100%**`).setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle(`** Hacking Done [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%**`).setColor(0xFF0000)})
              }, 30500)//jackeo جاكيو
                 setTimeout(function() {
                m.edit({embed: new Discord.RichEmbed().setTitle(`** ..يتم الدخول للحساب** `).setColor(0xFF0000)})
@@ -972,7 +963,7 @@ message.channel.sendMessage({embed: {
 
   client.on('message', message => {
 if(message.content.startsWith("-slots")) {
-  let slot1 = ['??', '??', '??', '??', '??', '??', '??', '??'];
+  let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
   let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let slots2 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let slots3 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
