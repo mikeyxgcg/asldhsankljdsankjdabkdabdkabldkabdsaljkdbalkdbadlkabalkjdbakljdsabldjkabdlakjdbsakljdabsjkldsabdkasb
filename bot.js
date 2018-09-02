@@ -87,80 +87,59 @@ const x5bz4 = [
 
 
 client.on('message', message => {
-    if(message.content.includes('discord.gg')){
-if(!message.channel.guild) return 
-if (message.author.bot) return;
-        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
-        message.delete()
-    return message.reply(`**  No Invite Links للاسف ما تقدر تنشر :) ههههههههههايي ?? :angry: ! **`)
-    }
-}
-});
-var prefix = "-";
-
-client.on('message', message => {
-    if (message.content === "-help") {
+if (message.content.startsWith(prefix + '-help')) {
     let pages = [`
 ***__وصف عن البوت__***
 **
 :gem:  البوت فيه كثير ميزات حلوة و جميلة
  ا:rocket: البوت يعمل 24 ساعه 
+
 **
         ***__General orders__***
 **
-?-server/يعرض لك معلومات عن السيرفر?
-?-bot/يعرض لك كل معلومات البوت?
-?-support /للتواصل مع صاحب البوت
-?-invite/لدعوه البوت الي سيرفرك ?
-?-avatar/للعرض صورتك او صورة شخص فقط قم بعمل منشن له ?
-?-embed/البوت يكرر الكلام الي قلته ب امبد
-?-members/??عرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص?
-?-id/معلومات عنك?
-?-banlist / عدد الاشخاص المبندة ??
-?-avatar/صورتك او صورة الي تمنشنو?
-?-support/سيرفر الدعم?
-?-image/يجبلك صوره السيرفر?
-?-tallk/اي شي كتبته بيكتبو فصوره?
-?-inv-info/معلومات  عن دعوة بشكل حلو يطلع اك حتى شخص يلي تمشنه?
-????اومر مميزه نادره????
-?-kiss/يعطي قبله لمن تختار في السيرفر عن طريق المنشن?
-?-love / يعبر بشعورك بلحب  لمن تختار في السيرفر عن طريق المنشن?
-?-miss / يرسله اشتقت لك لمن تختار في السيرفر عن طريق المنشن?
-?-slap / يعطي كف لمن تختاره في السيرفرعن طريق المنشن?
-?-hug /  يعطي وحضن او ضمه لمن تختاره في السيرفر عن طريق المنشن?
-?ترحيب?
-?السلام عليكم?
-?باك?
-?حشيش?
+『-server/يعرض لك معلومات عن السيرفر』
+『-bot/يعرض لك كل معلومات البوت』
+『-support /للتواصل مع صاحب البوت
+『-id/معلومات عنك
+『-invite/لدعوه البوت الي سيرفرك 』
+『-avatar/للعرض صورتك او صورة شخص فقط قم بعمل منشن له 』
+『-embed/البوت يكرر الكلام الي قلته ب امبد
+『-members/��عرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص』
+『-id/معلومات عنك』
+『-banlist / عدد الاشخاص المبندة 』』
+『-avatar/صورتك او صورة الي تمنشنو』
+『-support/سيرفر الدعم』
+『❖❖❖اومر مميزه نادره❖❖❖』
+『-kiss/يعطي قبله لمن تختار في السيرفر عن طريق المنشن』
+『-love / يعبر بشعورك بلحب  لمن تختار في السيرفر عن طريق المنشن』
+『-miss / يرسله اشتقت لك لمن تختار في السيرفر عن طريق المنشن』
+『-slap / يعطي كف لمن تختاره في السيرفرعن طريق المنشن』
+『-hug /  يعطي وحضن او ضمه لمن تختاره في السيرفر عن طريق المنشن』
 **
   `,`
         ***__Administrative Orders__***
 **
-?-clear <numbr> / البوت يمسح الرسال برقم حد اقصي 100 رساله?
-?-say / البوت يكرر الكلام الي انت تقوله?
-?-kick @user <reason> / طرد الشخص من السيرفر?
-?-ban @user <reason> / حضر الشخص من السيرفر?
-?-ccolor/يقوم بعمل رتب ملونه?
-?-color/يعرض الرتب الملونه?
-?-setstats/يسوي روم بعددالموجودين في الروم الصوتي والتريخ ورومات الكتابيه وصوتيه?
-?-bc/خصيه البرود كاست يرسل لكل السرفرات الرساله الي تحتبها?
+『-clear <numbr> / البوت يمسح الرسال برقم حد اقصي 100 رساله』
+『-say / البوت يكرر الكلام الي انت تقوله』
+『-kick @user <reason> / طرد الشخص من السيرفر』
+『-ban @user <reason> / حضر الشخص من السيرفر』
    `,`
         ***__Music orders__***
 **
-?-{prefix}play / لتشغيل أغنية برآبط أو بأسم?
-?-{prefix}skip / لتجآوز الأغنية الحآلية?
-?-{prefix}pause / إيقآف الأغنية مؤقتا?
-?-{prefix}unpause / لموآصلة الإغنية بعد إيقآفهآ مؤقتا?
-?-{prefix}vol / لتغيير درجة الصوت 100 - 0?
-?-{prefix}leave / لإخرآج البوت من الروم?
+『-{prefix}play / لتشغيل أغنية برآبط أو بأسم』
+『-{prefix}skip / لتجآوز الأغنية الحآلية』
+『-{prefix}pause / إيقآف الأغنية مؤقتا』
+『-{prefix}unpause / لموآصلة الإغنية بعد إيقآفهآ مؤقتا』
+『-{prefix}vol / لتغيير درجة الصوت 100 - 0』
+『-{prefix}leave / لإخرآج البوت من الروم』
 **
         ***__Games orders__***
  **       
-?-slots / ['??''??' '??' '??' '??' '??' '??' '??'] جمع 3 من نفس الشي تفوز?
-?لعبه التهكير الوهمي /تهكير منشن الشخص ?
-?-لعبة كت تويت / كت تويت?
-?-لعبة مريم / مريم?
-?تغريد  للشخص عن طريق المنشن /-غرد?
+『-slots / ['🍏''🍇' '🍒' '🍍' '🍅' '🍆' '🍑' '🍓'] جمع 3 من نفس الشي تفوز』
+『لعبه التهكير الوهمي /تهكير منشن الشخص 』
+『-لعبة كت تويت / كت تويت』
+『-لعبة مريم / مريم』
+『تغريد  للشخص عن طريق المنشن /-غرد』
 **
    
 `]
@@ -173,12 +152,12 @@ client.on('message', message => {
 
     message.author.sendEmbed(embed).then(msg => {
 
-        msg.react('?').then( r => {
-            msg.react('?')
+        msg.react('◀').then( r => {
+            msg.react('▶')
 
 
-        const backwardsFilter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
-        const forwardsFilter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
 
 
         const backwards = msg.createReactionCollector(backwardsFilter, { time: 2000000});
@@ -218,6 +197,9 @@ client.on("message", message => {
  }
 });
 
+
+
+
 client.on("message", message => {
  if (message.content === "-support") {
   const embed = new Discord.RichEmbed()
@@ -228,6 +210,10 @@ client.on("message", message => {
 
  }
 });
+
+
+
+
 
 
 const TOKEN = "";
@@ -272,12 +258,12 @@ client.on('message',async message => {
     var star = new Discord.RichEmbed() 
     .setTitle(`${client.user.username} معلومات عن بوت`)
     .setColor('#36393e')
-    .addField('?? امر البوت', prefix, true)
-    .addField('?? الرامات المستخدمة', `${(process.memoryUsage().rss / 1048576).toFixed()} ميجا بايت`,true)
-    .addField('?? سرعة البوت', `${Math.round(client.ping)} ملي سكند`,true)
-    .addField('?? تم تشغيل البوت منذ', `${timeCon(process.uptime())}`, true)
-    .addField('?? السيرفرات', client.guilds.size,true)
-    .addField('?? المستخدمين', client.users.size,true)
+    .addField('🌟 امر البوت', prefix, true)
+    .addField('🌟 الرامات المستخدمة', `${(process.memoryUsage().rss / 1048576).toFixed()} ميجا بايت`,true)
+    .addField('🌟 سرعة البوت', `${Math.round(client.ping)} ملي سكند`,true)
+    .addField('🌟 تم تشغيل البوت منذ', `${timeCon(process.uptime())}`, true)
+    .addField('🌟 السيرفرات', client.guilds.size,true)
+    .addField('🌟 المستخدمين', client.users.size,true)
     message.channel.send(star);
   }
 });
@@ -287,47 +273,33 @@ client.on('message', message => {
       var kayan = new Discord.RichEmbed()
       .setThumbnail(message.author.avatarURL)
       .setFooter(message.author.username, message.author.avatarURL) 
-      .setTitle('??| Members info')
+      .setTitle('🌷| Members info')
       .addBlankField(true)
-      .addField('??| Online',
+      .addField('📗| Online',
       `${message.guild.members.filter(m=>m.presence.status == 'online').size}`)
-      .addField('??| DND',`${message.guild.members.filter(m=>m.presence.status == 'dnd').size}`)
-      .addField('??| Idle',`${message.guild.members.filter(m=>m.presence.status == 'idle').size}`)
-      .addField('??| Offline',`${message.guild.members.filter(m=>m.presence.status == 'offline').size}`)
-      .addField('?| Server Members',`${message.guild.memberCount}`)
+      .addField('📕| DND',`${message.guild.members.filter(m=>m.presence.status == 'dnd').size}`)
+      .addField('📙| Idle',`${message.guild.members.filter(m=>m.presence.status == 'idle').size}`)
+      .addField('📓| Offline',`${message.guild.members.filter(m=>m.presence.status == 'offline').size}`)
+      .addField('➡| Server Members',`${message.guild.memberCount}`)
       message.channel.send(kayan);
     
     });
 
-client.on('message', message => {
-if (message.content.startsWith('-inv-info')) {
-let oi = message.mentions.users.first() ? message.mentions.users.first().id : message.author.id ; 
-  let img = message.mentions.users.first() ? message.mentions.users.first().username : message.author.username;
-  let imagemm = message.mentions.users.first() ? message.mentions.users.first().avatarURL : message.author.avatarURL
-  message.guild.fetchInvites().then(invs => {
-    let member = client.guilds.get(message.guild.id).members.get(oi);
-    let personalInvites = invs.filter(i => i.inviter.id === oi);
-    let urll = invs.filter(i => i.inviter.id === oi);
-    let link = urll.reduce((p , v) => v.url +` , Total de membros recrutados no convite: ${v.uses}.\n`+ p, `\nServidor: ${message.guild.name} \n `);
-    let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-   let exec = personalInvites.reduce((p, v) => v.inviter);
- let possibleInvites = [['Total de membros recrutados:']];
-possibleInvites.push([inviteCount, exec]);
-        let user = message.mentions.users.first() || message.author;
-        let mem = message.guild.member(user);
-        let millisJoined = new Date().getTime() - mem.joinedAt.getTime();
-        let daysJoined = millisJoined / 1000 / 60 / 60 / 24;
-const alpha = new Discord.RichEmbed()
-.setAuthor(img)
-.addField('?? Invite Infos',  `\n\n? لقد قمت بدعوة ما مجموعه \`\`${Number(inviteCount)}\`\` عضو.\n\n? لقد انضممت لسرفر مند\`${daysJoined.toFixed(0)}\`يوم .\n\n? لقد انضممت بهذه الدعوة\`${exec}\``,true)
-.setThumbnail(imagemm)
-.setColor(0x4959e9);
-message.channel.send(alpha);
-
+      client.on('guildCreate', guild => {
+client.channels.get("ROOM ID").send(`:white_check_mark: **${client.user.tag} دخل سيرفر جديد
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**`)
 });
-
-};
-  });
+client.on('guildDelete', guild => {
+  client.channels.get("ROOM ID").send(`:negative_squared_cross_mark: **${client.user.tag} طلع من سيرفر
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**`)
+});
+  
 
 client.on('message', message => {
      if (message.content === "-ping") {
@@ -498,7 +470,7 @@ client.on('message',  (message) => {
 
   message.channel.send({
     embed: {
-      description: `${message.author.username}اداك قبله ا?? بوسه ${user.username}!`,
+      description: `${message.author.username}اداك قبله ا�� بوسه ${user.username}!`,
       image: {
         url: kiss[Math.floor(Math.random() * kiss.length)]
       }
@@ -558,7 +530,7 @@ client.on('message',  (message) => {
         url: misss[Math.floor(Math.random() * misss.length)]
       }
     }
-    }).catch(e => {
+  }).catch(e => {
     client.log.error(e);
   })
         }  
@@ -685,6 +657,8 @@ message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/
 });
 
 
+
+
 client.on('ready', function(){
     var ms = 60000 ;
     var setGame = [`${client.guilds.size} Server`,' Premium Bot™ by n3k4a & Bron','Type -help',`${client.users.size} Members`,'-invite','By: n3k4a & Hosam | BaronTube'];
@@ -700,7 +674,7 @@ client.on('ready', function(){
         i = i+j;
         client.user.setGame(setGame[i],`http://www.twitch.tv/n3k4a`);
     }, ms);
-   console.log(` ╔═══╗──╔╗ |> Name: ${client.user.username}`);
+    console.log(` ╔═══╗──╔╗ |> Name: ${client.user.username}`);
  console.log(` ║╔═╗║──║║ |> Servers: ${client.guilds.size}`);
  console.log(` ║║─╚╬══╣║╔══╦╗╔╦╗─╔╗ |> Members: ${client.users.size}`);
  console.log(` ║║╔═╣╔╗║║║╔╗╠╬╬╣║─║║║ |> Channels: ${client.channels.size}`);
@@ -723,6 +697,7 @@ client.on('ready', function(){
 
     }
 });
+
 
 
 
