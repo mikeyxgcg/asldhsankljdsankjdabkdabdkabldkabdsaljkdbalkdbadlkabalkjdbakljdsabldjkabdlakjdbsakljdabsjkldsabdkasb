@@ -83,8 +83,7 @@ const x5bz4 = [
   }
 });
 
- 
-
+var prefix = "-";
 
 client.on('message', message => {
 if (message.content.startsWith(prefix + '-help')) {
