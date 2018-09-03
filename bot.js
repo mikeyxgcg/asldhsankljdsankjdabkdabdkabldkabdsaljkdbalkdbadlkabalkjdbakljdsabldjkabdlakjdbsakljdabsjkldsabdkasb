@@ -842,7 +842,7 @@ if (command == "غرد") {
     .setColor('RANDOM')
     .setAuthor(msg.author.username, msg.author.avatarURL)
     .setDescription(args.join(" "))
-    .setFooter('© . :AG || Copyright')
+    .setFooter('© premium bot|| Copyright')
     msg.channel.sendEmbed(embed);
     msg.delete();
   }
@@ -962,7 +962,7 @@ client.on('message', message => { //jackeo جاكيو
 
 
   client.on('message', message => {
-if(message.content.startsWith("-slots")) {
+  if(message.content.startsWith("-slots")) {
   let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
   let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let slots2 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
@@ -1411,6 +1411,7 @@ client.on('message',async msg => {
       CONNECT: false,
       SPEAK: false
     });
+
   setInterval(() => {
       var currentTime = new Date(),
 hours = currentTime.getHours() + 3 ,
