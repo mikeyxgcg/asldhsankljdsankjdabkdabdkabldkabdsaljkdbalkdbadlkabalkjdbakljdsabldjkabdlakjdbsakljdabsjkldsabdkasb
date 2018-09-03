@@ -1920,4 +1920,4 @@ client.on('message', function(message) {
 	}
 });
 })
-client.login(process.env.token);
+client.login(process.env.BOT_TOKEN);
