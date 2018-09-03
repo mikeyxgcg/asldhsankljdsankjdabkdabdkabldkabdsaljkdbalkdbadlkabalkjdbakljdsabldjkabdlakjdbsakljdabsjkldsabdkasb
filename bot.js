@@ -11,10 +11,13 @@ const fetchVideoInfo = require('youtube-info');
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
 const discord_token = "NDIyMDM3NzQwNTkxMzgyNTI4.DYV8zA.6vBJjF7Op9T_bH_YOwRMXqwh9vc";
 var table = require('table').table
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,' Premium Bot™ by n3k4a & Bron','Type -help',`${client.users.size} Members`,'-invite','By: n3k4a & Hosam | BaronTube'];
+    var setGame = [`${client.guilds.size} Server`,' Premium Bot™ by n3k4a & Baron','Type -help',`${client.users.size} Members`,'-invite','By: n3k4a & Hosam | BaronTube'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -50,11 +53,6 @@ client.on('ready', function(){
 
     }
 });
-
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
 
 
 
@@ -122,11 +120,10 @@ const x5bz4 = [
   }
 });
 
- 
-
+var prefix = "-";
 
 client.on('message', message => {
-if (message.content.startsWith(prefix + '-help')) {
+if (message.content === "-help") {
     let pages = [`
 ***__وصف عن البوت__***
 **
@@ -154,6 +151,8 @@ if (message.content.startsWith(prefix + '-help')) {
 『-miss / يرسله اشتقت لك لمن تختار في السيرفر عن طريق المنشن』
 『-slap / يعطي كف لمن تختاره في السيرفرعن طريق المنشن』
 『-hug /  يعطي وحضن او ضمه لمن تختاره في السيرفر عن طريق المنشن』
+『-tallk/يجبلك الكلام الي تكتبه في صوره』
+『-cat/صور قطط صغيره』
 **
   `,`
         ***__Administrative Orders__***
@@ -162,6 +161,7 @@ if (message.content.startsWith(prefix + '-help')) {
 『-say / البوت يكرر الكلام الي انت تقوله』
 『-kick @user <reason> / طرد الشخص من السيرفر』
 『-ban @user <reason> / حضر الشخص من السيرفر』
+『-setstats/ يعمل روم لك بلوقت والتاريخ والاشخاص المتصليف في الرومات』
    `,`
         ***__Music orders__***
 **
@@ -225,13 +225,12 @@ if (message.content.startsWith(prefix + '-help')) {
 });
 
 
-
 client.on("message", message => {
  if (message.content === "-invite") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© Premium Bot :heart: جميع الحقوق محفوظة 2018 لــبوت')
-      .addField('شكرا لك لاستخدامك ل بروميوم بوت', `https://modest-lewin-146a75.netlify.com`)
+      .addField('شكرا لك لاستخدامك ل بروميوم بوت', `http://premium-bot.bitballoon.com`)
   message.author.send({embed});
 
  }
@@ -245,7 +244,7 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© Premium Bot :heart: جميع الحقوق محفوظة 2018 لــبوت')  
-      .addField('سيرفر الدعم الفني', ` https://discord.gg/ZnPDHaA `)
+      .addField('سيرفر الدعم الفني', ` https://discord.gg/kH2tWAr  `)
   message.author.send({embed});
 
  }
@@ -698,7 +697,6 @@ message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/
 
 
 
-
 client.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "old") return;
@@ -836,7 +834,7 @@ if (command == "غرد") {
     .setColor('RANDOM')
     .setAuthor(msg.author.username, msg.author.avatarURL)
     .setDescription(args.join(" "))
-    .setFooter('© . :AG || Copyright')
+    .setFooter('© premium bot|| Copyright')
     msg.channel.sendEmbed(embed);
     msg.delete();
   }
@@ -908,16 +906,7 @@ const cuttweet = [
      '‏كت تويت|- ه?? حدث وشعرت بأنك ارتكبت أحد الذنوب أثناء الصيام؟',
 ]
 
-client.on('message', message => {
-  if (message.content === `-كت تويت`) {
-message.channel.sendMessage({embed: {
-  color: 3547003,
-  description: `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`
-}});
-};
-});
-
- client.on('message', message => { //jackeo جاكيو
+client.on('message', message => { //jackeo جاكيو
     if (message.content.startsWith("تهكير")) {
   if(!message.channel.guild) return message.reply(' ');//jackeo جاكيو
       if (message.author.bot) return//jackeo جاكيو
@@ -929,19 +918,19 @@ message.channel.sendMessage({embed: {
                                      }//jackeo جاكيو
                  message.channel.send({embed: new Discord.RichEmbed().setTitle('Loading ' + virusname + "...").setColor(0xFF0000)}).then(function(m) {
              setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading  [?] 1%**`).setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading  [▓] 1%**`).setColor(0xFF0000)})
              }, 5500)//jackeo جاكيو
              setTimeout(function() {
-                m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [????] 25%**`).setColor(0xFF0000)})
+                m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [▓▓▓▓] 25%**`).setColor(0xFF0000)})
               }, 10500)//jackeo جاكيو
               setTimeout(function() {
-                 m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [????????] 50%**`).setColor(0xFF0000)})
+                 m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [▓▓▓▓▓▓▓▓] 50%**`).setColor(0xFF0000)})
                }, 15500)//jackeo جاكيو
                setTimeout(function() {
-                  m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [??????????????] 75%**`).setColor(0xFF0000)})
+                  m.edit({embed: new Discord.RichEmbed().setTitle(`** Loading [▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 75%**`).setColor(0xFF0000)})
                 }, 25500)//jackeo جاكيو
            setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle(`** Hacking Done [??????????????????] 100%**`).setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle(`** Hacking Done [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%**`).setColor(0xFF0000)})
              }, 30500)//jackeo جاكيو
                 setTimeout(function() {
                m.edit({embed: new Discord.RichEmbed().setTitle(`** ..يتم الدخول للحساب** `).setColor(0xFF0000)})
@@ -965,8 +954,8 @@ message.channel.sendMessage({embed: {
 
 
   client.on('message', message => {
-if(message.content.startsWith("-slots")) {
-  let slot1 = ['??', '??', '??', '??', '??', '??', '??', '??'];
+  if(message.content.startsWith("-slots")) {
+  let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
   let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let slots2 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let slots3 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
@@ -1414,6 +1403,7 @@ client.on('message',async msg => {
       CONNECT: false,
       SPEAK: false
     });
+
   setInterval(() => {
       var currentTime = new Date(),
 hours = currentTime.getHours() + 3 ,
