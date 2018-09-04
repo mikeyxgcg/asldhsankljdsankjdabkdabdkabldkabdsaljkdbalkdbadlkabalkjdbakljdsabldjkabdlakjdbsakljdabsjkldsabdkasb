@@ -325,7 +325,7 @@ client.on('message', message => {
     });
 
       client.on('guildCreate', guild => {
-client.channels.get("ROOM ID").send(`:white_check_mark: **${client.user.tag} دخل سيرفر جديد
+client.channels.get("486488936206827541").send(`:white_check_mark: **${client.user.tag} دخل سيرفر جديد
 Server name: __${guild.name}__
 Server owner: __${guild.owner}__
 Server id: __${guild.id}__ 
