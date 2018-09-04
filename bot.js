@@ -1450,38 +1450,55 @@ if (command == "embed") {
 });
 
 
-var prefix = "-"
-
-client.on('message',async message => {
-  if(message.content.startsWith(prefix + "id")) {
-    if(message.author.bot) return;
-    if(message.channel.type === 'old') return;
-      message.guild.fetchInvites().then(invs => {
-    let user = message.author;
-    let personalInvites = invs.filter(i => i.inviter.id === user.id);
-    let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-    const millis = new Date().getTime() - message.author.createdAt.getTime();
-    const noww = new Date();
-    dateFormat(noww, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
-    const created = millis / 1000 / 60 / 60 / 24;
-    const milliss = new Date().getTime() - message.guild.member(message.author).joinedAt.getTime();
-    const nows = new Date();
-    dateFormat(nows, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
-    const joined = milliss / 1000 / 60 / 60 / 24;
-    let embed = new Discord.RichEmbed()
-    .setAuthor(message.author.username, message.author.avatarURL)
-    .setColor('#36393e')
-    .setThumbnail(message.author.avatarURL)
-    .addField('» مضى على دخولك الدسكورد', `${created.toFixed(0)} يومّا`,true)
-    .addField('» مضى على دخولك السيرفر', `${joined.toFixed(0)} يومّا`,true)
-    .addField('» دعوات',inviteCount,true)
-    .setFooter(' Premium Bot™ © | 2018.');
-
-    message.channel.send(embed);
-  });
+client.on("message", msg => {
+  if(msg.content === '-' + "id") {
+      const embed = new Discord.RichEmbed();
+  embed.addField("🔱| اسم الحساب :", `${msg.author.username}#${msg.author.discriminator}`, true)
+          .addField("🆔| الاي دي :", `${msg.author.id}`, true)
+          .setColor("RANDOM")
+          .setFooter(msg.author.username , msg.author.avatarURL)
+          .setThumbnail(`${msg.author.avatarURL}`)
+          .setTimestamp()
+          .setURL(`${msg.author.avatarURL}`)
+          .addField('📛| الحالة :', `${msg.author.presence.status.toUpperCase()}`, true)
+          .addField('🎲| بلاينج :', `${msg.author.presence.game === null ? "No Game" : msg.author.presence.game.name}`, true)
+          .addField('🏅| الرتب : ', `${msg.member.roles.filter(r => r.name).size}`, true)
+          .addField('📅| تم الانضمام للديسكورد في :', `${msg.createdAt}`,true)
+          .addField('🤖| هل هو بوت ؟', `${msg.author.bot.toString().toUpperCase()}`, true);
+      msg.channel.send({embed: embed})
   }
 });
   
+
+client.on('message', message => {
+if (message.content.startsWith('-inv-info')) {
+let oi = message.mentions.users.first() ? message.mentions.users.first().id : message.author.id ; 
+  let img = message.mentions.users.first() ? message.mentions.users.first().username : message.author.username;
+  let imagemm = message.mentions.users.first() ? message.mentions.users.first().avatarURL : message.author.avatarURL
+  message.guild.fetchInvites().then(invs => {
+    let member = client.guilds.get(message.guild.id).members.get(oi);
+    let personalInvites = invs.filter(i => i.inviter.id === oi);
+    let urll = invs.filter(i => i.inviter.id === oi);
+    let link = urll.reduce((p , v) => v.url +` , Total de membros recrutados no convite: ${v.uses}.\n`+ p, `\nServidor: ${message.guild.name} \n `);
+    let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
+   let exec = personalInvites.reduce((p, v) => v.inviter);
+ let possibleInvites = [['Total de membros recrutados:']];
+possibleInvites.push([inviteCount, exec]);
+        let user = message.mentions.users.first() || message.author;
+        let mem = message.guild.member(user);
+        let millisJoined = new Date().getTime() - mem.joinedAt.getTime();
+        let daysJoined = millisJoined / 1000 / 60 / 60 / 24;
+const alpha = new Discord.RichEmbed()
+.setAuthor(img)
+.addField('🏆 Invite Infos',  `\n\n► لقد قمت بدعوة ما مجموعه \`\`${Number(inviteCount)}\`\` عضو.\n\n► لقد انضممت لسرفر مند\`${daysJoined.toFixed(0)}\`يوم .\n\n► لقد انضممت بهذه الدعوة\`${exec}\``,true)
+.setThumbnail(imagemm)
+.setColor(0x4959e9);
+message.channel.send(alpha);
+
+});
+
+};
+  });
 
 var prefix = "-"
 
@@ -1519,7 +1536,7 @@ client.on("message", message => {
                           }
 });
 
-
+var prefix = "-"
 
 client.on('message', message => {
 if (message.content.startsWith('-server')) {
