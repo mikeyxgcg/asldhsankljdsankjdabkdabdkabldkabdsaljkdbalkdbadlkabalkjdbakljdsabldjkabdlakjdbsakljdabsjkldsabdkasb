@@ -238,7 +238,16 @@ client.on("message", message => {
 });
 
 
-
+  client.on('guildMemberAdd', member => {
+   if(member.presence.status === 'offline') {
+       member.guild.owner.send(`:eyes: في واحد دخل السيرفر ومسوي نفسه غامض اوفلاين `)
+}
+});
+client.on('guildMemberRemove', member => {
+   if(member.presence.status === 'offline') {
+       member.guild.owner.send(`في واحد خرج من سيرفرك وهو مسوي نفسه غامض اوف لاين :eyes: `)
+}
+});
 
 client.on("message", message => {
  if (message.content === "-support") {
