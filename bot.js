@@ -937,6 +937,42 @@ client.on('message', message => { //jackeo جاكيو
  });//jackeo جاكيو
 
 
+ const fetch = require('snekfetch');
+ client.on('message', message => {
+if (message.content.startsWith('-ask')) {
+      let args = message.content.split(' ').slice(1).join(' ');
+    const hexcols = [0xFFB6C1, 0x4C84C0, 0xAD1A2C, 0x20B046, 0xF2E807, 0xF207D1, 0xEE8419];
+    if (!args) {
+        return message.reply('add a urban search, u pleb!');
+    }
+    fetch.get('http://api.urbandictionary.com/v0/define?term=' + args).then(res => {
+        if (res.body.list[0] === undefined) {
+            return message.channel.send('**»Error**: Couldnt find the word');
+        }
+        const definition = res.body.list[0].definition;
+        const word = res.body.list[0].word;
+        const Author = res.body.list[0].author;
+        const exam = res.body.list[0].example;
+        const thumup = res.body.list[0].thumbs_up;
+        const thumdown = res.body.list[0].thumbs_down;
+        const embed = new Discord.RichEmbed()
+    .setColor(hexcols[~~(Math.random() * hexcols.length)])
+    .setTitle(`This is the info for the word: **${word}**`)
+    .addField('definition:', `${definition}`)
+    .addField('Author:', `${Author}`)
+    .addField('Example:', `${exam}`)
+    .addField('Rating', `👍 ${thumup} 👎 ${thumdown}`, true)
+    .setThumbnail('https://cdn.discordapp.com/attachments/486250425817890821/486526624112705617/ce5fb05919818916b5f598f3ee18afaa.png');
+        message.channel.send({embed}).catch(e => console.log(e));
+    }).catch(err => {
+        if (err) {
+            console.log(err);
+        }
+
+    });
+};
+  });
+
 
   client.on('message', message => {
   if(message.content.startsWith("-slots")) {
