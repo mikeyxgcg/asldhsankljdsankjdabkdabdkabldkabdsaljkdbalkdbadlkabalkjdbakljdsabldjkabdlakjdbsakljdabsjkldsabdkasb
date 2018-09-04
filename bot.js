@@ -259,6 +259,8 @@ client.on('guildMemberRemove', member => {
 }
 });
 
+var prefix = "-"
+
  client.on('message', message => {
     if(message.content.startsWith(prefix + '-move all')) {
      if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send('**لايوجد لديك صلاحية سحب الأعضاء**');
