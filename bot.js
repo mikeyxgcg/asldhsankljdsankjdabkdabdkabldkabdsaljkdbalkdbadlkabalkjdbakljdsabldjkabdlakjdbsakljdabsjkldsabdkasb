@@ -242,6 +242,9 @@ client.on("message", message => {
 client.on("message", message => {
  if (message.content === "-support") {
   const embed = new Discord.RichEmbed()
+      .setTitle('Click here')
+      .setURL(' https://discord.gg/ZnPDHaA ')
+      .setColor('RANDOM')
       .setColor("RANDOM")
       .setFooter('© Premium Bot :heart: جميع الحقوق محفوظة 2018 لــبوت')  
       .addField('سيرفر الدعم الفني', ` https://discord.gg/ZnPDHaA  `)
@@ -249,8 +252,6 @@ client.on("message", message => {
 
  }
 });
-
-
 
 
 
