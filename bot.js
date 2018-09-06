@@ -120,75 +120,6 @@ const x5bz4 = [
   }
 });
 
-var Za7f = [
-  "**صورة وجهك او رجلك او خشمك او يدك**.",
-  "**اصدر اي صوت يطلبه منك الاعبين**.",
-  "**سكر خشمك و قول كلمة من اختيار الاعبين الي معك**.",
-  "**روح الى اي قروب عندك في الواتس اب و اكتب اي شيء يطلبه منك الاعبين  الحد الاقصى 3 رسائل**.",
-  "**قول نكتة اذا و لازم احد الاعبين يضحك اذا محد ضحك يعطونك ميوت الى ان يجي دورك مرة ثانية**.",
-  "**سمعنا صوتك و غن اي اغنية من اختيار الاعبين الي معك**.",
-  "**ذي المرة لك لا تعيدها**.",
-  "**ارمي جوالك على الارض بقوة و اذا انكسر صور الجوال و ارسله في الشات العام**.",
-  "**صور اي شيء يطلبه منك الاعبين**.",
-  "**اتصل على ابوك و قول له انك رحت مع بنت و احين هي حامل....**.",
-  "**سكر خشمك و قول كلمة من اختيار الاعبين الي معك**.",
-  "**سو مشهد تمثيلي عن مصرية بتولد**.",
-  "**اعطي اي احد جنبك كف اذا مافيه احد جنبك اعطي نفسك و نبي نسمع صوت الكف**.",
-  "**ذي المرة لك لا تعيدها**.",
-  "**تعطي اي شخص 5 الاف كرديت**.",
-  "**ارمي جوالك على الارض بقوة و اذا انكسر صور الجوال و ارسله في الشات العام**.",
-  "**روح عند اي احد بالخاص و قول له انك تحبه و الخ**.",
-  "**اكتب في الشات اي شيء يطلبه منك الاعبين في الخاص**.",
-  "**قول نكتة اذا و لازم احد الاعبين يضحك اذا محد ضحك يعطونك ميوت الى ان يجي دورك مرة ثانية**.",
-  "**سامحتك خلاص مافيه عقاب لك :slight_smile:**.",
-  "**اتصل على احد من اخوياك  خوياتك , و اطلب منهم مبلغ على اساس انك صدمت بسيارتك**.",
-  "**غير اسمك الى اسم من اختيار الاعبين الي معك**.",
-  "**اتصل على امك و قول لها انك تحبها :heart:**.",
-  "**لا يوجد سؤال لك سامحتك :slight_smile:**.",
-  "**قل لواحد ماتعرفه عطني كف**.",
-  "**منشن الجميع وقل انا اكرهكم**.",
-  "**اتصل لاخوك و قول له انك سويت حادث و الخ....**.",
-  "**روح المطبخ و اكسر صحن او كوب**.",
-  "**اعطي اي احد جنبك كف اذا مافيه احد جنبك اعطي نفسك و نبي نسمع صوت الكف**.",
-  "**قول لاي بنت موجود في الروم كلمة حلوه**.",
-  "**تكلم باللغة الانجليزية الين يجي دورك مرة ثانية لازم تتكلم اذا ما تكلمت تنفذ عقاب ثاني**.",
-  "**لا تتكلم ولا كلمة الين يجي دورك مرة ثانية و اذا تكلمت يجيك باند لمدة يوم كامل من الس��رفر**.",
-  "**قول قصيدة **.",
-  "**تكلم باللهجة السودانية الين يجي دورك مرة ثانية**.",
-  "**اتصل على احد من اخوياك  خوياتك , و اطلب منهم مبلغ على اساس انك صدمت بسيارتك**.",
-  "**اول واحد تشوفه عطه كف**.",
-  "**سو مشهد تمثيلي عن اي شيء يطلبه منك الاعبين**.",
-  "**سامحتك خلاص مافيه عقاب لك :slight_smile:**.",
-  "**اتصل على ابوك و قول له انك رحت مع بنت و احين هي حامل....**.",
-  "**روح اكل ملح + ليمون اذا مافيه اكل اي شيء من اختيار الي معك**.",
-  "**تاخذ عقابين**.",
-  "**قول اسم امك افتخر بأسم امك**.",
-  "**ارمي اي شيء قدامك على اي احد موجود او على نفسك**.",
-  "**اذا انت ولد اكسر اغلى او احسن عطور عندك اذا انتي بنت اكسري الروج حقك او الميك اب حقك**.",
-  "**اذهب الى واحد ماتعرفه وقل له انا كيوت وابي بوسه**.",
-  "**تتصل على الوالده  و تقول لها خطفت شخص**.",
-  "** تتصل على الوالده  و تقول لها تزوجت با سر**.",
-  "**����تصل على الوالده  و تقول لها  احب وحده**.",
-    "**تتصل على شرطي تقول له عندكم مطافي**.",
-    "**خلاص سامحتك**.",
-    "** تصيح في الشارع انا  مجنوون**.",
-    "** تروح عند شخص تقول له احبك**.",
-
-];
-
-client.on('message', message => {
- if (message.content.startsWith("-عقاب")) {
-              if(!message.channel.guild) return message.reply('** This command only for servers**');
-var embed = new Discord.RichEmbed()
-.setColor('RANDOM')
- .setThumbnail(message.author.avatarURL) 
-.addField('Speed BOT' ,
-`${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
-message.channel.sendEmbed(embed);
-console.log('[38ab] Send By: ' + message.author.username)
-  }
-});
-
 
 var prefix = "-";
 
@@ -208,13 +139,10 @@ if (message.content === "-help") {
 『-bot/يعرض لك كل معلومات البوت』
 『-support /للتواصل مع صاحب البوت』
 『-id/معلومات عنك』
-『-google/يبحث في جوجل عن الكمه الي تكتبها』
 『-invite/لدعوه البوت الي سيرفرك 』
 『-avatar/للعرض صورتك او صورة شخص فقط قم بعمل منشن له 』
 『-embed/البوت يكرر الكلام الي قلته ب امبد
 『-members/��عرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص』
-『-id/معلومات عنك』
-『-skin/يجبلك سكنات مين كرافت』
 『-avatar/صورتك او صورة الي تمنشنو』
 『-ask/يبحث عن الكلمه الي تكتبها باالانجليزي』
 『-invites /لمعرفه كم شخص دعوت الي السيرفر』
@@ -262,13 +190,6 @@ if (message.content === "-help") {
 『-marry/لعبه الزواج لا تفهم غلط』
 『لعبه لو خيروك/-لو خيروك』
 『-rps/لعبه حجر ورقه مقص』
-『-يعطيك عقابات قاسية /عقاب』 
-『-فوائد ونصائح  / هل تعلم 』
-『-لعبه فكك  / فكك 』
-『-qus/لعبه اسئله 』
-『-speed/لعبه اسرع كتابه』
-『-نكت / نكت』
-『-لعبه العواصم صعبه / عواصم』
 **
    
 `]
@@ -425,7 +346,7 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© Premium Bot :heart: جميع الحقوق محفوظة 2018 لــبوت')
-      .addField('شكرا لك لاستخدامك ل بروميوم بوت', `http://premium-bot.bitballoon.com`)
+      .addField('شكرا لك لاستخدامك ل بروميوم بوت', `https://modest-lewin-146a75.netlify.com`)
   message.author.send({embed});
 
  }
@@ -513,33 +434,6 @@ client.on('message', message => {
     
     });
 
-client.on('message', message => {
-var prefix = "-";
-       if(message.content === prefix + "mutechannel") {
-                           if(!message.channel.guild) return message.reply('** This command only for servers**');
-
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
-              message.channel.overwritePermissions(message.guild.id, {
-            SEND_MESSAGES: false
-
-              }).then(() => {
-                  message.reply("**__تم تقفيل الشات__ :white_check_mark: **")
-              });
-                }
-//FIRE BOT
-    if(message.content === prefix + "unmutechannel") {
-                        if(!message.channel.guild) return message.reply('** This command only for servers**');
-
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
-              message.channel.overwritePermissions(message.guild.id, {
-            SEND_MESSAGES: true
-
-              }).then(() => {
-                  message.reply("**__تم فتح الشات__:white_check_mark:**")
-              });
-    }
-       
-});
 
 client.on('message', message => {
      if (message.content === "-ping") {
@@ -1105,65 +999,6 @@ const cuttweet = [
      '‏كت تويت|- ه�� حدث وشعرت بأنك ارتكبت أحد الذنوب أثناء الصيام؟',
 ]
 
-client.on('message', message => {
-  if (message.content === `-كت تويت`) {
-message.channel.sendMessage({embed: {
-  color: 3547003,
-  description: `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`
-}});
-};
-});
- var al7arthyCodes = ["https://f.top4top.net/p_682it2tg6.png","https://e.top4top.net/p_682a1cus5.png","https://d.top4top.net/p_682pycol4.png","https://c.top4top.net/p_682vqehy3.png","https://b.top4top.net/p_682mlf9d2.png","https://a.top4top.net/p_6827dule1.png","https://b.top4top.net/p_682g1meb10.png","https://a.top4top.net/p_682jgp4v9.png","https://f.top4top.net/p_682d4joq8.png","https://e.top4top.net/p_6828o0e47.png","https://d.top4top.net/p_6824x7sy6.png","https://c.top4top.net/p_682gzo2l5.png","https://b.top4top.net/p_68295qg04.png","https://a.top4top.net/p_682zrz6h3.png","https://f.top4top.net/p_6828vkzc2.png","https://e.top4top.net/p_682i8tb11.png"]
-var al7arthyCodes2 = ["📙__60%__  **|**  📘__40%__","📙__63%__  **|**  📘__37%__","📙__89%__  **|**  📘__11%__","📙__97%__  **|**  📘__3%__"]
-client.on('message', message => {
-    if(!message.guild) return;
-    if (message.author.bot) return;
-      let id = message.author.id,prefix="-";//البريفكس
-      if (ti[id] && (new Date).getTime() - ti[id] < 20*1000) {
-          let r = (new Date).getTime() - ti[id];
-          r = 20*1000 - r;
-      message.channel.send(` **Please wait ${pretty(r, {verbose:true})}**`).then(m => m.delete(5000));
-      return;
-      }
-      if ( message.content == prefix+'لو خيروك'){
-         
-          try{
-  //body
-  }catch(e){
- 
-  }
-         var Embed = new Discord.RichEmbed()
-.setImage(al7arthyCodes[Math.floor(Math.random() * al7arthyCodes.length)])
-message.channel.sendEmbed(Embed).then(msg => {
-    msg.react('📘').then( r => {
-        msg.react('📙')
- 
-        let blueFilter = (reaction, user) => reaction.emoji.name === '📘' && user.id === message.author.id;
-    let orangeFilter = (reaction, user) => reaction.emoji.name === '📙' && user.id === message.author.id;
- 
- 
-    let blue = msg.createReactionCollector(blueFilter, { time: 15000 });
-    let orange = msg.createReactionCollector(orangeFilter, { time: 15000 });
- 
- 
-    blue.on("collect", r => {
-        msg.delete();
-        message.channel.send(al7arthyCodes2[Math.floor(Math.random() * al7arthyCodes2.length)]).then(m => m.delete(60000));
- 
-        })
-       
- orange.on("collect", r => {
-        msg.delete();
-        message.channel.send(al7arthyCodes2[Math.floor(Math.random() * al7arthyCodes2.length)]).then(m => m.delete(60000));
- 
-        })
- 
-                                })
-                                })
-                              ti[id] = (new Date).getTime()
-                                }
-                                });
-
 client.on('message', message => { //jackeo جاكيو
     if (message.content.startsWith("تهكير")) {
   if(!message.channel.guild) return message.reply(' ');//jackeo جاكيو
@@ -1203,7 +1038,7 @@ client.on('message', message => { //jackeo جاكيو
                m.delete()//jackeo جاكيو
            }, 55000)//jackeo جاكيو
              setTimeout(function() {
-               message.channel.send('** تم الاختراق  __Done Hacking__ **').then(msg => msg.delete(25000));
+               message.channel.send('**  تم الاختراق  __Done Hacking__ **').then(msg => msg.delete(25000));
            }, 60500)//jackeo جاكيو
            });//jackeo جاكيو
          }//jackeo جاكيو
@@ -1261,36 +1096,6 @@ if (message.content.startsWith('-ask')) {
   message.channel.send(`${slots1} | ${slots2} | ${slots3} - ${we}`)
 }
 });
-
-client.on('message', message => {
-	var prefix ="-";
- let args = message.content.split(' ').slice(1);
-    if(message.content.startsWith(prefix + 'google')) {
-    const input = args.join(' ');
-
-google({ query: input, disableConsole: true }).then(results => {
-    return message.channel.send(`\n\n**Title**: ${results[0].title}\n***Link***: ${results[0].link}\nDescription: ${results[0].snippet}`);
-}).catch(error => {
-    if (error) throw error;
-});
-
-
-
-
-
-
-    client.on('message', message => {
-var prefix = "-";
-var cats = ["http://palestine-kitchen.ps/wp-content/uploads/2017/12/%D9%86%D9%83%D8%AA-%D8%AF%D8%A8%D8%A7%D9%86%D8%A9.png","http://www.i7lm.com/wp-content/uploads/2017/04/136769797816.jpg","https://4.bp.blogspot.com/-p62zmDIDXmI/WKzqNt9smaI/AAAAAAAAC4Q/sW_bSIB8OaQhwOYFeplc3uzz8PBN7l3YACEw/s1600/13602501135.jpg","https://www.universemagic.com/images/2016/03/7938-2-or-1457539273.jpg","https://1.bp.blogspot.com/-yFk-FzHSyE8/WR9fmPcsCUI/AAAAAAAAE6c/AmvjLadOiLY9GiCqMLHgA121bY2RS_dCwCLcB/s1600/%25D9%2586%25D9%2583%25D8%25AA%2B%25D9%2585%25D8%25B6%25D8%25AD%25D9%2583%25D8%25A9%2B1.jpg","https://l7zaat.com/wp-content/uploads/2018/02/423.jpg","https://www.petfinder.com/wp-content/uploads/2012/11/101438745-cat-conjunctivitis-causes.jpg","https://i.fatafeat.com/storage/attachments/15/image3_698123_large.jpg","http://www.shuuf.com/shof/uploads/2018/02/08/jpg/shof_97d686082bdb0a2.jpg"];
-        var args = message.content.split(" ").slice(1);
-    if(message.content.startsWith(prefix + 'نكت')) {
-         var cat = new Discord.RichEmbed()
-.setImage(cats[Math.floor(Math.random() * cats.length)])
-message.channel.sendEmbed(cat);
-    }
-});
-
-
 
 
 client.on("message", function(message) {
