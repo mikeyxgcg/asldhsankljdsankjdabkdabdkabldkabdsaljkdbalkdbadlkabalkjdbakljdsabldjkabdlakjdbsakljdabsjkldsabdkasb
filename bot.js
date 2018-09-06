@@ -167,9 +167,6 @@ if (message.content === "-help") {
 『-banlist / عدد الاشخاص المبندة 』
 『-mute / يعطي ميوت للشغص الي بتمنشن』
 『-unmute /  يفك الميوت عن العضو 』
-『-ccolors/يصنع لك رتب ملون مرتبه بالعدد الي تبيه』
-『-mutechannel /   يقفل الشات 』
-『-unmutechannel /   يفتح  الشات 』
    `,`
         ***__Music orders__***
 **
@@ -310,24 +307,6 @@ client.on("message", message => {
 
 
 
-
-const TOKEN = "";
-
-function commandIs(str, msg){
-    return msg.content.toLowerCase().startsWith('-' + str);
- }
-
-function pluck(array) {
-    return array.map(function(item) { return item["name"]; });
- }
-function hasRole(mem, role) {
-    if(pluck(mem.roles).includes(role)){
-        return true;
-      } else {
-        return false;
-    }
-
-  }
   
   
 
@@ -826,7 +805,6 @@ const command = args.shift().toLowerCase();
 
 
 
-
 client.on('message', message => {
     if (message.content.startsWith("-avatar")) {
         var mentionned = message.mentions.users.first();
@@ -843,11 +821,6 @@ client.on('message', message => {
       message.channel.sendEmbed(embed);
     }
 });
-
-
-
-
-
 
 
 
@@ -870,28 +843,6 @@ if (command == "غرد") {
     msg.delete();
   }
 });
-
-
-
-
-
-
-client.on('message', message => {
-	var prefix = "-";
-   if(!message.channel.guild) return;
-if(message.content.startsWith(prefix + 'clear')) {
-if(!message.channel.guild) return message.channel.send('**This Command is Just For Servers**').then(m => m.delete(5000));
-if(!message.member.hasPermission('MANAGE_MESSAGES')) return      message.channel.send('**You Do not have permission** `MANAGE_MESSAGES`' );
-let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-let request = `Requested By ${message.author.username}`;
-message.channel.send(`**Are You sure you want to clear the chat?**`).then(msg => {
-msg.react('✅')
-.then(() => msg.react('❌'))
-.then(() =>msg.react('✅'))
-
-
-
-
 
 const cuttweet = [
      'كت تويت ‏- تخيّل لو أنك سترسم شيء وحيد فيصبح حقيقة، ماذا سترسم؟',
