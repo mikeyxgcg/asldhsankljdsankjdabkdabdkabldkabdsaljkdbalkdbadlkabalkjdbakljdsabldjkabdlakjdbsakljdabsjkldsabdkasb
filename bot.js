@@ -964,11 +964,7 @@ if (command == "غرد") {
   }
 });
 
-
-
-
-
-
+ئ
 client.on('message', message => {
 	var prefix = "-";
    if(!message.channel.guild) return;
@@ -2181,6 +2177,8 @@ client.on('message', function(message) {
 
 	function isYoutube(str) {
 		return str.toLowerCase().indexOf('youtube.com') > -1;
-	}
-});
+        }
+
+      });
+
 client.login(process.env.BOT_TOKEN);
