@@ -208,7 +208,6 @@ if (message.content === "-help") {
 『-bot/يعرض لك كل معلومات البوت』
 『-support /للتواصل مع صاحب البوت』
 『-id/معلومات عنك』
-『-google/يبحث في جوجل عن الكمه الي تكتبها』
 『-invite/لدعوه البوت الي سيرفرك 』
 『-avatar/للعرض صورتك او صورة شخص فقط قم بعمل منشن له 』
 『-embed/البوت يكرر الكلام الي قلته ب امبد
@@ -1577,32 +1576,6 @@ client.on("message", message => {
       }
   });
 
-client.on('message', function(message) {
-    if (message.content ===  '-ccolor'){
-              if (!message.member.hasPermission("MANAGE_ROLES"))  return;
-                     
-                         if(message.guild.roles.find("name","5")) return message.reply("You're Already Have Colors ! :art:");
-                           if(message.guild.roles.find("name","10")) return message.reply("You're Already Have Colors ! :art:");
-                             if(message.guild.roles.find("name","15")) return message.reply("You're Already Have Colors ! :art:");
-                               if(message.guild.roles.find("name","20")) return message.reply("You're Already Have Colors ! :art:");
-                                 if(message.guild.roles.find("name","25")) return message.reply("You're Already Have Colors ! :art:");
-                                  if(message.guild.roles.find("name","30")) return message.reply("You're Already Have Colors ! :art:");
-        if(!message.channel.guild) return message.reply('** This command only for servers **');
-       
-     
-                setInterval(function(){})
-                  let count = 0;
-                  let ecount = 0;
-        for(let x = 1; x < 31; x++){
-            message.guild.createRole({name:x,
-            color: "RANDOM"})
-            }
-           
-          message.channel.send(":white_check_mark: | Working On Colors")
-   
- 
-    }
-});
  
 client.on('message', ra3d => {
 var prefix = "-";
@@ -1818,28 +1791,6 @@ client.on('message', message => {
 });
 
 
-client.on("message", message => {
-    var prefix = "-";
-            var args = message.content.substring(prefix.length).split(" ");
-            if (message.content.startsWith(prefix + "clear")) {
- if (!args[1]) {
-                                let x5bz1 = new Discord.RichEmbed()
-                                .setDescription("-clear <number>")
-                                .setColor("#0000FF")
-                                message.channel.sendEmbed(x5bz1);
-                            } else {
-                            let messagecount = parseInt(args[1]);
-                            message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
-                                                          message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
-                            message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
-                            let x5bz2 = new Discord.RichEmbed()
-                                                            .setColor("#008000")
-                                .setDescription(":white_check_mark: | Delete " + args[1] + " Message!")
-                                                                                        message.delete("..");
-                                message.channel.sendEmbed(x5bz2);
-                            }
-                          }
-});
 
  client.on('message', message => {
 	 var prefix ="-";
@@ -1885,7 +1836,6 @@ var prefix = "-";
 message.channel.sendEmbed(avatar)
     }
 });
-
 /*
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
