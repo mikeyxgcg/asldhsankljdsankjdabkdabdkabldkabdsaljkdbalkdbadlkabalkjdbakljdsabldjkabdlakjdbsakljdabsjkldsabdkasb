@@ -1303,6 +1303,52 @@ client.on('message', message => {
     }
 });
 
+var prefix = "-";
+
+client.on('message', message => {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+// -say
+  if (command === "say") {
+          message.delete()
+    message.channel.sendMessage(args.join(" ")).catch(console.error);
+  }
+  
+ 
+
+if (command == "embed") {
+    let say = new Discord.RichEmbed()
+    .setDescription(args.join("  "))
+    .setColor(0x23b2d6)
+    message.channel.sendEmbed(say);
+    message.delete();
+  }
+
+
+});
+
+
+});
+  
+
+var prefix = "-"
+
+client.on('message', message => {
+     if (message.content === (prefix + "help")) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+  .addField("Done" , " تــــم ارســالك في الخــاص")
+  message.channel.sendEmbed(embed);
+    }
+});
+
 
 client.on("message", message => {
     var prefix = "-";
@@ -1327,32 +1373,12 @@ client.on("message", message => {
                           }
 });
 
- client.on('message', message => {
-	 var prefix ="-";
- if(message.content.startsWith(prefix +"server")){
-if(!message.channel.guild) return message.reply(' ');
-const millis = new Date().getTime() - message.guild.createdAt.getTime();
-const now = new Date();
-dateFormat(now, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
-const verificationLevels = ['None', 'Low', 'Medium', 'Insane', 'Extreme'];
-const days = millis / 1000 / 60 / 60 / 24;
-let roles = client.guilds.get(message.guild.id).roles.map(r => r.name);
-var embed  = new Discord.RichEmbed()
-.setAuthor(message.guild.name, message.guild.iconURL)
-.addField("**🆔 Server ID:**", message.guild.id,true)
-.addField("**📅 Created On**", message.guild.createdAt.toLocaleString(),true)
-.addField("**👑 Owned by**",`${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
-.addField("👥 Members ",`[${message.guild.memberCount}]`,true)
-.addField('**💬 Channels **',`**${message.guild.channels.filter(m => m.type === 'text').size}**` + ' text | Voice  '+ `**${message.guild.channels.filter(m => m.type === 'voice').size}** `,true)
-.addField("**🌍 Others **" , message.guild.region,true)
-.addField("** 🔐 Roles **",`**[${message.guild.roles.size}]** Role `,true)
-.setColor('#000000')
-message.channel.sendEmbed(embed)
 
-}
-});
 
-var prefix = "-";
+
+
+
+  var prefix = "-";
     client.on('message', message => {
     if(message.content.startsWith(prefix + '2avatar')) {
          var men = message.mentions.users.first();
@@ -1532,7 +1558,7 @@ client.on('message', function(message) {
 			if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 		});
 	}
-			else if (message.content.startsWith('n3k4a')) {
+			else if (message.content.startsWith('بسيبيسبسيبv')) {
 		if (!message.member.voiceChannel) return message.channel.send(':x: **You have to be in a voice channel to use this command.**');
 		// console.log(args)
 		if (args > 100) return message.channel.send('**1 - 100 | لا أكثر ولا أقل **')
@@ -1659,9 +1685,9 @@ client.on('message', function(message) {
 	}
 
 
-		function isYoutube(str) {
+	function isYoutube(str) {
 		return str.toLowerCase().indexOf('youtube.com') > -1;
-	
+	}
 });
 })
 client.login(process.env.BOT_TOKEN);
