@@ -431,12 +431,6 @@ client.on("message", message => {
  }
 }); 
 
-client.on('guildCreate', guild => {
-  client.channels.get("487204416043220992").send(`**Woops new server ✅
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__**`)
-});
-
 client.on("message", message => {
  if (message.content === "-support") {
   const embed = new Discord.RichEmbed()
