@@ -203,7 +203,6 @@ if (message.content === "-help") {
 **
         ***__General orders__***
 **
-『-allbots/يعرض لك البوتات الموجوده في السيرفر』
 『-server/يعرض لك معلومات عن السيرفر』
 『-bot/يعرض لك كل معلومات البوت』
 『-support /للتواصل مع صاحب البوت』
@@ -212,7 +211,6 @@ if (message.content === "-help") {
 『-avatar/للعرض صورتك او صورة شخص فقط قم بعمل منشن له 』
 『-embed/البوت يكرر الكلام الي قلته ب امبد
 『-members/��عرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص』
-『-skin/يجبلك سكنات مين كرافت』
 『-avatar/صورتك او صورة الي تمنشنو』
 『-ask/يبحث عن الكلمه الي تكتبها باالانجليزي』
 『-invites /لمعرفه كم شخص دعوت الي السيرفر』
@@ -935,11 +933,6 @@ client.on('message', message => {
       message.channel.sendEmbed(embed);
     }
 });
-
-
-
-
-
 
 
 
@@ -1801,8 +1794,7 @@ message.channel.sendEmbed(embed)
 }
 });
 
-
-var prefix = "-";
+  var prefix = "-";
     client.on('message', message => {
     if(message.content.startsWith(prefix + '2avatar')) {
          var men = message.mentions.users.first();
@@ -2111,8 +2103,7 @@ client.on('message', function(message) {
 
 	function isYoutube(str) {
 		return str.toLowerCase().indexOf('youtube.com') > -1;
-        }
-
-      });
-
+	}
+});
+})
 client.login(process.env.BOT_TOKEN);
