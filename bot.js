@@ -267,7 +267,7 @@ client.on('message', async message => {
       message.delete(3500);
     });
  
-    if(isNaN(duration)) return message.reply('# - ملحوظه : يجب تحديد وقت زمني صحيح').then(msg => {
+    if(!isNaN(duration)) return message.reply('# - ملحوظه : يجب تحديد وقت زمني صحيح').then(msg => {
       msg.delete(3500);
       message.delete(3500);
     });
