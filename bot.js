@@ -1980,6 +1980,48 @@ message.channel.sendEmbed(embed)
 }
 });
 
+
+
+
+client.on('message', message => {
+     if(!message.channel.guild) return;
+var prefix = "-";
+                if(message.content.startsWith(prefix + 'allbots')) {
+
+    
+    if (message.author.bot) return;
+    let i = 1;
+        const botssize = message.guild.members.filter(m=>m.user.bot).map(m=>`${i++} - <@${m.id}>`);
+          const embed = new Discord.RichEmbed()
+          .setAuthor(message.author.tag, message.author.avatarURL)
+          .setDescription(`**Found ${message.guild.members.filter(m=>m.user.bot).size} bots in this Server**
+${botssize.join('\n')}`)
+.setFooter(client.user.username, client.user.avatarURL)
+.setTimestamp();
+message.channel.send(embed)
+
+ }
+});
+
+var prefix = "-";
+    client.on('message', message => {
+    if(message.content.startsWith(prefix + '2avatar')) {
+         var men = message.mentions.users.first();
+   var heg;
+      if(men) {
+          heg = men
+      } else {
+          heg = message.author
+      }
+  var avatar = new Discord.RichEmbed()
+.setColor('RANDOM')
+.setTitle(heg.username)
+.setImage(heg.avatarURL)
+
+message.channel.sendEmbed(avatar)
+    }
+});
+
 /*
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -2273,26 +2315,5 @@ client.on('message', function(message) {
 		return str.toLowerCase().indexOf('youtube.com') > -1;
 	}
 });
-
-
-client.on('message', message => {
-     if(!message.channel.guild) return;
-var prefix = "-";
-                if(message.content.startsWith(prefix + 'allbots')) {
-
-    
-    if (message.author.bot) return;
-    let i = 1;
-        const botssize = message.guild.members.filter(m=>m.user.bot).map(m=>`${i++} - <@${m.id}>`);
-          const embed = new Discord.RichEmbed()
-          .setAuthor(message.author.tag, message.author.avatarURL)
-          .setDescription(`**Found ${message.guild.members.filter(m=>m.user.bot).size} bots in this Server**
-${botssize.join('\n')}`)
-.setFooter(client.user.username, client.user.avatarURL)
-.setTimestamp();
-message.channel.send(embed)
-
- }
-});
-
+})
 client.login(process.env.BOT_TOKEN);
