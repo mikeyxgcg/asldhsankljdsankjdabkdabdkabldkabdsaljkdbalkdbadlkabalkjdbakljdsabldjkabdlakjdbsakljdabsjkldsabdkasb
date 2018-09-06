@@ -230,7 +230,7 @@ if (message.content === "-help") {
 var prefix = "-"
 
 client.on('message', async message => {
-  let args = message.content.split(" ");
+  let args = message.content.split(" ").slice(1).join(' ');
   if(message.content.startsWith(prefix + "mute")) {
     if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply('# - ملحوظة :  يجب ان يكون لديك برمشن أداري . ').then(msg => {
       msg.delete(3500);
@@ -261,7 +261,7 @@ client.on('message', async message => {
       message.delete(3500);
     });
  
-    let duration = args[2];
+    let duration = args[1];
     if(!duration) return message.reply('# - ملحوظه : يجب ان تضع وقت .').then(msg => {
       msg.delete(3500);
       message.delete(3500);
@@ -335,6 +335,17 @@ client.on('message', async message => {
       message.channel.send(`**:white_check_mark: ${mention.user.username} Unmuted ! **  `);
   }
 });	
+
+client.on("message", message => {
+ if (message.content === "-invite") {
+  const embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setFooter('© Premium Bot :heart: جميع الحقوق محفوظة 2018 لــبوت')
+      .addField('شكرا لك لاستخدامك ل بروميوم بوت', `https://modest-lewin-146a75.netlify.com`)
+  message.author.send({embed});
+
+ }
+});
 
 client.on("message", message => {
  if (message.content === "-invite") {
