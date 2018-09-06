@@ -2070,7 +2070,7 @@ client.on('message', function(message) {
 	}
 
 
-	function isYoutube(str) {
+		function isYoutube(str) {
 		return str.toLowerCase().indexOf('youtube.com') > -1;
 	}
 });
