@@ -1115,7 +1115,7 @@ client.on('message', async msg => {
 
  if(args.length < 1) return args.missing(msg, 'No text added', this.help);
   msg.channel.startTyping();
-  const searchMessage = await msg.channel.send('Painting...');
+  const searchMessage = await msg.channel.send('???Painting...');
   const { body } = await client.snek.get(`https://nekobot.xyz/api/imagegen?type=changemymind&text=${encodeURIComponent(args)}`);
   msg.channel.send({file: { attachment:body.message, name: 'changemymind.png'}}).then(()=> { searchMessage.delete(); msg.channel.stopTyping(); });
 };
@@ -1350,28 +1350,6 @@ var embed  = new Discord.RichEmbed()
 message.channel.sendEmbed(embed)
 
 }
-});
-
-client.on('message', message => {
-     if(!message.channel.guild) return;
-var prefix = "-";
-                if(message.content.startsWith(prefix + 'allbots')) {
-
-    
-    if (message.author.bot) return;
-    let i = 1;
-        const botssize = message.guild.members.filter(m=>m.user.bot).map(m=>`${i++} - <@${m.id}>`);
-          const embed = new Discord.RichEmbed()
-          .setAuthor(message.author.tag, message.author.avatarURL)
-          .setDescription(`**Found ${message.guild.members.filter(m=>m.user.bot).size} bots in this Server**
-${botssize.join('\n')}`)
-.setFooter(client.user.username, client.user.avatarURL)
-.setTimestamp();
-message.channel.send(embed)
-
-}
-
-
 });
 
 var prefix = "-";
