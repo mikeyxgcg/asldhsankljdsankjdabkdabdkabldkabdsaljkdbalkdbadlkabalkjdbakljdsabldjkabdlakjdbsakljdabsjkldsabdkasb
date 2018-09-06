@@ -55,7 +55,6 @@ client.on('ready', function(){
 });
 
 
-
 console.log('n3k4a is one ');
 client.on('ready', () => {
   console.log(`im redey`);
@@ -121,6 +120,8 @@ const x5bz4 = [
 });
 
 
+
+
 var prefix = "-";
 
 client.on('message', message => {
@@ -134,7 +135,6 @@ if (message.content === "-help") {
 **
         ***__General orders__***
 **
-『-allbots/يعرض لك البوتات الموجوده في السيرفر』
 『-server/يعرض لك معلومات عن السيرفر』
 『-bot/يعرض لك كل معلومات البوت』
 『-support /للتواصل مع صاحب البوت』
@@ -277,6 +277,65 @@ if (message.content.startsWith(prefix + 'trans')) {
     }
 }
 });
+
+client.on('message', async message =>{
+  if (message.author.boss) return;
+	var prefix = "-";
+
+if (!message.content.startsWith(prefix)) return;
+	let command = message.content.split(" ")[0];
+	 command = command.slice(prefix.length);
+	let args = message.content.split(" ").slice(1);
+	if (command == "mute") {
+		if (!message.channel.guild) return;
+		if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply("انت لا تملك صلاحيات !! ").then(msg => msg.delete(5000));
+		if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return message.reply("البوت لايملك صلاحيات ").then(msg => msg.delete(5000));;
+		let user = message.mentions.users.first();
+		let muteRole = message.guild.roles.find("name", "Muted");
+		if (!muteRole) return message.reply("** لا يوجد رتبة الميوت 'Muted' **").then(msg => {msg.delete(5000)});
+		if (message.mentions.users.size < 1) return message.reply('** يجب عليك المنشن اولاً **').then(msg => {msg.delete(5000)});
+		let reason = message.content.split(" ").slice(2).join(" ");
+		message.guild.member(user).addRole(muteRole);
+		const muteembed = new Discord.RichEmbed()
+		.setColor("RANDOM")
+		.setAuthor(`Muted!`, user.displayAvatarURL)
+		.setThumbnail(user.displayAvatarURL)
+		.addField("**:busts_in_silhouette:  المستخدم**",  '**[ ' + `${user.tag}` + ' ]**',true)
+		.addField("**:hammer:  تم بواسطة **", '**[ ' + `${message.author.tag}` + ' ]**',true)
+		.addField("**:book:  السبب**", '**[ ' + `${reason}` + ' ]**',true)
+		.addField("User", user, true)
+		message.channel.send({embed : muteembed});
+		var muteembeddm = new Discord.RichEmbed()
+		.setAuthor(`Muted!`, user.displayAvatarURL)
+		.setDescription(`      
+${user} انت معاقب بميوت كتابي بسبب مخالفة القوانين
+${message.author.tag} تمت معاقبتك بواسطة
+[ ${reason} ] : السبب
+اذا كانت العقوبة عن طريق الخطأ تكلم مع المسؤلين
+`)
+		.setFooter(`في سيرفر : ${message.guild.name}`)
+		.setColor("RANDOM")
+	user.send( muteembeddm);
+  }
+if(command === `unmute`) {
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.sendMessage("**ليس لديك صلاحية لفك عن الشخص ميوت**:x: ").then(m => m.delete(5000));
+if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return message.reply("**ما عندي برمشن**").then(msg => msg.delete(6000))
+
+  let toMute = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+  if(!toMute) return message.channel.sendMessage("**عليك المنشن أولاّ**:x: ");
+
+  let role = message.guild.roles.find (r => r.name === "Muted");
+  
+  if(!role || !toMute.roles.has(role.id)) return message.channel.sendMessage("**لم يتم اعطاء هذه شخص ميوت من الأساس**:x:")
+
+  await toMute.removeRole(role)
+  message.channel.sendMessage("**لقد تم فك الميوت عن شخص بنجاح**:white_check_mark:");
+
+  return;
+
+  }
+
+});
  
 
 client.on("message", message => {
@@ -284,13 +343,11 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© Premium Bot :heart: جميع الحقوق محفوظة 2018 لــبوت')
-      .addField('شكرا لك لاستخدامك ل بروميوم بوت', `https://modest-lewin-146a75.netlify.com`)
+      .addField('شكرا لك لاستخدامك ل بروميوم بوت', `http://premium-bot.bitballoon.com`)
   message.author.send({embed});
 
  }
 }); 
-
-
 
 client.on("message", message => {
  if (message.content === "-support") {
@@ -304,9 +361,6 @@ client.on("message", message => {
 
  }
 });
-
-
-
   
   
 
@@ -707,23 +761,6 @@ message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/
 
 
 
- client.on('message', message => {
-     if (message.content === "bot") {
-     let embed = new Discord.RichEmbed()
-
-  .setColor("#51cde6")
-  .addField("Playing on" , client.guilds.size)
-
-
-  message.channel.sendEmbed(embed);
-
-    }
-});
-
-
-
-
-
 client.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
@@ -1037,6 +1074,36 @@ if (command == "embed") {
 });
 
 
+var prefix = "-"
+
+client.on('message',async message => {
+  if(message.content.startsWith(prefix + "id")) {
+    if(message.author.bot) return;
+    if(message.channel.type === 'dm') return;
+      message.guild.fetchInvites().then(invs => {
+    let user = message.author;
+    let personalInvites = invs.filter(i => i.inviter.id === user.id);
+    let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
+    const millis = new Date().getTime() - message.author.createdAt.getTime();
+    const noww = new Date();
+    dateFormat(noww, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
+    const created = millis / 1000 / 60 / 60 / 24;
+    const milliss = new Date().getTime() - message.guild.member(message.author).joinedAt.getTime();
+    const nows = new Date();
+    dateFormat(nows, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
+    const joined = milliss / 1000 / 60 / 60 / 24;
+    let embed = new Discord.RichEmbed()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setColor('#36393e')
+    .setThumbnail(message.author.avatarURL)
+    .addField('» مضى على دخولك الدسكورد', `${created.toFixed(0)} يومّا`,true)
+    .addField('» مضى على دخولك السيرفر', `${joined.toFixed(0)} يومّا`,true)
+    .addField('» دعوات',inviteCount,true)
+    .setFooter(' Premium Bot™ © | 2018.');
+
+    message.channel.send(embed);
+  });
+  }
 });
   
 
@@ -1078,6 +1145,69 @@ client.on("message", message => {
 
 
 
+client.on('message', message => {
+if (message.content.startsWith('-server')) {
+ message.channel.send(`Here is the different information of **${message.guild.name}**`, {
+        embed: {
+            color: 0xDF9C9D,
+            author: {
+                name: client.user.username,
+                icon_url: client.user.displayAvatarURL
+            },
+            thumbnail: {
+                url: message.guild.iconURL
+            },
+            fields: [{
+                    name: "• name:",
+                    value: `${message.guild.name}`,
+                    inline: true
+                }, {
+                    name: "• ID:",
+                    value: `${message.guild.id}`,
+                    inline: true
+                }, {
+                    name: "• Crated at:",
+                    value: moment(message.guild.createdAt).format("LL"),
+                    inline: true
+                }, {
+                    name: "• Owner:",
+                    value: message.guild.owner.user.tag,
+                    inline: true
+                }, {
+                    name: "• Members:",
+                    value: `${message.guild.memberCount}`,
+                    inline: true
+                }, {
+                    name: "• Last members:",
+                    value: `${Array.from(message.channel.guild.members.values()).sort((a, b) => b.joinedAt - a.joinedAt).map(m => `<@!${m.id}>`).splice(0, 1)}`,
+                    inline: true
+                }, {
+                    name: "• Channel",
+                    value: `**${message.guild.channels.filter(channel => channel.type === 'text').size}** text - **${message.guild.channels.filter(channel => channel.type === 'voice').size}** audio`,
+                    inline: true
+                }, {
+                    name: "• AFK channel",
+                    value: `${message.guild.afkChannel}`,
+                    inline: true
+                }, {
+                    name: `• Roles - **${message.channel.guild.roles.size}**:`,
+                    value: message.guild.roles.array().map(g=> g).join(', '),
+                    inline: true
+                }, {
+                    name: `• Emojies - **${message.channel.guild.emojis.size}**:`,
+                    value: `${message.guild.emojis.map(e => e).join(', ')}`,
+                    inline: true
+                }
+            ]
+        }
+    })
+
+
+
+
+
+}
+})
 
 
 
