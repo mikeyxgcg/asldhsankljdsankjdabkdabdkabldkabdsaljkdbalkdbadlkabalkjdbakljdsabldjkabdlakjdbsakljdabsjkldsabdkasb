@@ -162,8 +162,8 @@ if (message.content === "-help") {
 『-ban @user <reason> / حضر الشخص من السيرفر』
 『-setstats/ يعمل روم لك بلوقت والتاريخ والاشخاص المتصليف في الرومات』
 『-banlist / عدد الاشخاص المبندة 』
-『-mute / يعطي ميوت للشغص مع السبب والوقت』
-『-unmute / يفك الميوت عن العضو』
+『-mute / يعطي ميوت للشغص الي بتمنشن』
+『-unmute /  يفك الميوت عن العضو 』
    `,`
         ***__Music orders__***
 **
@@ -182,6 +182,7 @@ if (message.content === "-help") {
 『-لعبة مريم / مريم』
 『تغريد  للشخص عن طريق المنشن /-غرد』
 『-marry/لعبه الزواج لا تفهم غلط』
+『لعبه لو خيروك/-لو خيروك』
 **
    
 `]
@@ -229,112 +230,33 @@ if (message.content === "-help") {
 
 var prefix = "-"
 
-client.on('message', async message => {
-  let args = message.content.split(" ").slice(1).join(' ');
-  if(message.content.startsWith(prefix + "mute")) {
-    if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply('# - ملحوظة :  يجب ان يكون لديك برمشن أداري . ').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
- 
-    if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply('# - ملحوظة : يجب ان يكون البوت لديه برمشن أداري').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
- 
-    let mention = message.mentions.members.first();
-    if(!mention) return message.reply('# - ملحوظة : يجب ان تقوم بمنشن شخص معين .').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
- 
-    if(mention.highestRole.position >= message.guild.member(message.author).highestRole.positon) return message.reply('# - ملحوظة : لا يمكنك اعطاء ميوت لشخص اعلي من رتبتك .').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
-    if(mention.highestRole.positon >= message.guild.member(client.user).highestRole.positon) return message.reply('# - ملحوظه : لا يمكنك اعطاء ميوت لشخص اعلي من رتبتك').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
-    if(mention.id === message.author.id) return message.reply('# - ملحوظه : لا يمكنك ان تعطي ميوت لنفسك .').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
- 
-    let duration = args[1];
-    if(!duration) return message.reply('# - ملحوظه : يجب ان تضع وقت .').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
- 
-    if(!isNaN(duration)) return message.reply('# - ملحوظه : يجب تحديد وقت زمني صحيح').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
- 
-    let sbb = message.content.split(" ").slice(3).join(" ");
-    if(!sbb) sbb = "غير معروف .";
- 
-    let thisEmbed = new Discord.RichEmbed()
-    .setAuthor(mention.user.username, mention.user.avatarURL)
-    .setTitle('# - لقد تم أعطائك ميوت .')
-    .setThumbnail(mention.user.avatarURL)
-    .addField('# - السيرفر',message.guild.name,true)
-    .addField('# - تم اعطائك ميوت بواسطة',message.author,true)
-    .addField('# - السبب',reason)
- 
-    let role = message.guild.roles.find('name', 'Muted') || message.guild.roles.get(r => r.name === 'Muted');
-    if(!role) try {
-      message.guild.createRole({
-        name: "Muted",
-        permissions: 0
-      }).then(r => {
-        message.guild.channels.forEach(c => {
-          c.overwritePermissions(r , {
-            SEND_MESSAGES: false,
-            READ_MESSAGES_HISTORY: false,
-            ADD_REACTIONS: false
-          });
-        });
-      });
-    } catch(e) {
-      console.log(e.stack);
-    }
-    mention.addRole(role).then(() => {
-      mention.send(thisEmbed);
-      message.channel.send(`**:white_check_mark: ${mention.user.username} Muted ! :zipper_mouth:  **  `);
-      mention.setMute(true);
-    });
-    setTimeout(() => {
-      if(duration === 0) return;
-      if(!mention.has.roles(role)) return;
-      mention.setMute(false);
-      mention.removeRole(role);
-      message.channel.send(`**:white_check_mark: ${mention.user.username} Unmuted **   `);
-    },duration * 60000);
-  } else if(message.content.startsWith(prefix + "-unmute")) {
-    let mention = message.mentions.members.first();
-    let role = message.guild.roles.find('name', 'Muted') || message.guild.roles.get(r => r.name === 'Muted');
-    if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply('# - ملحوظة :  يجب ان يكون لديك برمشن أداري . ').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
- 
-    if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply('# - ملحوظة : يجب ان يكون البوت لديه برمشن أداري').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
- 
-    if(!mention) return message.reply('# - ملحوظه : يجب منشن شخص لفك الميوت عنهه .').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
- 
-      mention.removeRole(role);
-      mention.setMute(false);
-      message.channel.send(`**:white_check_mark: ${mention.user.username} Unmuted ! **  `);
-  }
-});	
+client.on('message', message => {
+        let reason = message.content.split(" ").slice(2).join(" ")
+        let muterole = message.guild.roles.find("name", "muted")
+        let men = message.mentions.users.first()
+
+        if(message.content.startsWith(prefix + "mute")) {
+            if(!men) return message.channel.send("**Do you want me to mute you 🤔 ?, please @mention someone. `Ex. #mute @xRokz bad boy`**");
+            if(!reason) return message.channel.send("**Do you want me to mute " + men.username + " with no reason ?, `Ex. #mute @xRokz bad boy` or just use `none` for no reason **`")
+            if(!muterole) {
+                message.guild.createRole({name: "muted", color:"#505f74", permissions: [1115136]})
+
+            }
+            message.guild.member(men).addRole(muterole)
+                message.channel.send("**" + men.username + " has been muted! :zipper_mouth:**")
+        }
+
+        if(message.content.startsWith(prefix + "unmute")) {
+            if(!men) return message.channel.send("**please @mention someone. `Ex. #unmute <@!298732816995319809> bad boy`**");
+
+            if(!muterole) {
+                message.guild.createRole({name: "muted", color:"#505f74", permissions: [1115136]})
+
+            }
+            message.guild.member(men).removeRole(muterole)
+                message.channel.send("**" + men.username + " has been unmuted! 😀 **")
+        }
+    })
 
 client.on("message", message => {
  if (message.content === "-invite") {
@@ -344,21 +266,13 @@ client.on("message", message => {
       .addField('شكرا لك لاستخدامك ل بروميوم بوت', `https://modest-lewin-146a75.netlify.com`)
   message.author.send({embed});
 
- }
+ 
+
+client.on('guildCreate', guild => {
+  client.channels.get("487204416043220992").send(`**Woops new server ✅
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__**`)
 });
-
-client.on("message", message => {
- if (message.content === "-invite") {
-  const embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setFooter('© Premium Bot :heart: جميع الحقوق محفوظة 2018 لــبوت')
-      .addField('شكرا لك لاستخدامك ل بروميوم بوت', `https://modest-lewin-146a75.netlify.com`)
-  message.author.send({embed});
-
- }
-});
-
-
 
 client.on("message", message => {
  if (message.content === "-support") {
@@ -1018,6 +932,17 @@ message.channel.sendMessage({embed: {
   description: `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`
 }});
 };
+});
+   var prefix = "-";
+
+var rebel = ["https://f.top4top.net/p_682it2tg6.png","https://e.top4top.net/p_682a1cus5.png","https://d.top4top.net/p_682pycol4.png","https://c.top4top.net/p_682vqehy3.png","https://b.top4top.net/p_682mlf9d2.png","https://a.top4top.net/p_6827dule1.png","https://b.top4top.net/p_682g1meb10.png","https://a.top4top.net/p_682jgp4v9.png","https://f.top4top.net/p_682d4joq8.png","https://e.top4top.net/p_6828o0e47.png","https://d.top4top.net/p_6824x7sy6.png","https://c.top4top.net/p_682gzo2l5.png","https://b.top4top.net/p_68295qg04.png","https://a.top4top.net/p_682zrz6h3.png","https://f.top4top.net/p_6828vkzc2.png","https://e.top4top.net/p_682i8tb11.png","https://f.top4top.net/p_8816hvic1.png","https://d.top4top.net/p_882020461.png","https://e.top4top.net/p_882s3ftn1.png","https://a.top4top.net/p_882eg9c51.png","https://c.top4top.net/p_882xkcqd1.png","https://f.top4top.net/p_882w7pdi1.png","https://a.top4top.net/p_882gcpmo1.png"]
+    client.on('message', message => {
+        var args = message.content.split(" ").slice(1);
+    if(message.content.startsWith(prefix + 'لو خيروك')) {
+         var cat = new Discord.RichEmbed()
+.setImage(rebel[Math.floor(Math.random() * rebel.length)])
+message.channel.sendEmbed(cat);
+    }
 });
 
 client.on('message', message => { //jackeo جاكيو
