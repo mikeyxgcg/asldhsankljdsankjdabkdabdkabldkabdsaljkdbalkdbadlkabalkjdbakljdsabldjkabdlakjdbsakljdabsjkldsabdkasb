@@ -2311,6 +2311,7 @@ client.on('message', function(message) {
 
 		function isYoutube(str) {
 		return str.toLowerCase().indexOf('youtube.com') > -1;
-	}
-});
+        }
+});  
+
 client.login(process.env.BOT_TOKEN);
