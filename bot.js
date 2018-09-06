@@ -707,9 +707,26 @@ message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/
 
 
 
+ client.on('message', message => {
+     if (message.content === "bot") {
+     let embed = new Discord.RichEmbed()
+
+  .setColor("#51cde6")
+  .addField("Playing on" , client.guilds.size)
+
+
+  message.channel.sendEmbed(embed);
+
+    }
+});
+
+
+
+
+
 client.on("message", async message => {
   if(message.author.bot) return;
-  if(message.channel.type === "old") return;
+  if(message.channel.type === "dm") return;
 
   let prefix = "-";
   let messageArray = message.content.split (" ");
@@ -750,7 +767,7 @@ client.on("message", async message => {
 
 client.on("message", async message => {
       if(message.author.bot) return;
-      if(message.channel.type === "old") return;
+      if(message.channel.type === "dm") return;
 
       let prefix = "-";
       let messageArray = message.content.split (" ");
@@ -805,6 +822,7 @@ const command = args.shift().toLowerCase();
 
 
 
+
 client.on('message', message => {
     if (message.content.startsWith("-avatar")) {
         var mentionned = message.mentions.users.first();
@@ -824,6 +842,11 @@ client.on('message', message => {
 
 
 
+
+
+
+
+
 client.on('message', msg => {
   if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
@@ -838,11 +861,44 @@ if (command == "غرد") {
     .setColor('RANDOM')
     .setAuthor(msg.author.username, msg.author.avatarURL)
     .setDescription(args.join(" "))
-    .setFooter('© premium bot|| Copyright')
+    .setFooter('© . :AG || Copyright')
     msg.channel.sendEmbed(embed);
     msg.delete();
   }
 });
+
+
+
+
+
+
+client.on("message", message => {
+    var prefix = "-";
+ 
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix - "clear")) {
+				if(!message.channel.guild) return;
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | *** ⚠ لا يوجد لك مانج ماسج ***');
+        var msg;
+        msg = parseInt();
+      
+      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+      message.channel.sendMessage("", {embed: {
+        title: "Done | تــم",
+        color: 0x06DF00,
+        description: "تم مسح الرسائل بنجاح",
+        footer: {
+          text: "© Premium Bot ™."
+        }
+      }}).then(msg => {msg.delete(3000)});
+                          }
+
+     
+});
+
+
+
+
 
 const cuttweet = [
      'كت تويت ‏- تخيّل لو أنك سترسم شيء وحيد فيصبح حقيقة، ماذا سترسم؟',
