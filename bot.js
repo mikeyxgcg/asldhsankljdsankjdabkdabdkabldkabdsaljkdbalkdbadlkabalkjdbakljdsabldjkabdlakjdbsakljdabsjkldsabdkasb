@@ -759,6 +759,8 @@ message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/
 }
 });
 
+
+
 client.on("message", async message => {
             if(!message.channel.guild) return;
             var prefix = "-";
@@ -1084,6 +1086,44 @@ message.channel.sendMessage({embed: {
 
 
 
+ const fetch = require('snekfetch');
+ client.on('message', message => {
+if (message.content.startsWith('-ask')) {
+      let args = message.content.split(' ').slice(1).join(' ');
+    const hexcols = [0xFFB6C1, 0x4C84C0, 0xAD1A2C, 0x20B046, 0xF2E807, 0xF207D1, 0xEE8419];
+    if (!args) {
+        return message.reply('add a urban search, u pleb!');
+    }
+    fetch.get('http://api.urbandictionary.com/v0/define?term=' + args).then(res => {
+        if (res.body.list[0] === undefined) {
+            return message.channel.send('**»Error**: Couldnt find the word');
+        }
+        const definition = res.body.list[0].definition;
+        const word = res.body.list[0].word;
+        const Author = res.body.list[0].author;
+        const exam = res.body.list[0].example;
+        const thumup = res.body.list[0].thumbs_up;
+        const thumdown = res.body.list[0].thumbs_down;
+        const embed = new Discord.RichEmbed()
+    .setColor(hexcols[~~(Math.random() * hexcols.length)])
+    .setTitle(`This is the info for the word: **${word}**`)
+    .addField('definition:', `${definition}`)
+    .addField('Author:', `${Author}`)
+    .addField('Example:', `${exam}`)
+    .addField('Rating', `👍 ${thumup} 👎 ${thumdown}`, true)
+    .setThumbnail('https://cdn.discordapp.com/attachments/486250425817890821/486526624112705617/ce5fb05919818916b5f598f3ee18afaa.png');
+        message.channel.send({embed}).catch(e => console.log(e));
+    }).catch(err => {
+        if (err) {
+            console.log(err);
+        }
+
+    });
+};
+  });
+
+
+
 client.on('message', ra3d => {
 var prefix = "-";
                         let args = ra3d.content.split(" ").slice(1).join(" ")
@@ -1101,7 +1141,77 @@ if(ra3d.content.startsWith(prefix + 'ccolors')) {
             }
        });
 
+client.on("message", function(message) {
+	var prefix = "-";
+   if(message.content.startsWith(prefix + "rps")) {
+    let messageArgs = message.content.split(" ").slice(1).join(" ");
+    let messageRPS = message.content.split(" ").slice(2).join(" ");
+    let arrayRPS = ['**# - Rock**','**# - Paper**','**# - Scissors**'];
+    let result = `${arrayRPS[Math.floor(Math.random() * arrayRPS.length)]}`;
+    var RpsEmbed = new Discord.RichEmbed()
+    .setAuthor(message.author.username)
+    .setThumbnail(message.author.avatarURL)
+    .addField("Rock","🇷",true)
+    .addField("Paper","🇵",true)
+    .addField("Scissors","🇸",true)
+    message.channel.send(RpsEmbed).then(msg => {
+        msg.react(' 🇷')
+        msg.react("🇸")
+        msg.react("🇵")
+.then(() => msg.react('🇷'))
+.then(() =>msg.react('🇸'))
+.then(() => msg.react('🇵'))
+let reaction1Filter = (reaction, user) => reaction.emoji.name === '🇷' && user.id === message.author.id;
+let reaction2Filter = (reaction, user) => reaction.emoji.name === '🇸' && user.id === message.author.id;
+let reaction3Filter = (reaction, user) => reaction.emoji.name === '🇵' && user.id === message.author.id;
+let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
+	    
+let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
+let reaction3 = msg.createReactionCollector(reaction3Filter, { time: 12000 });
+reaction1.on("collect", r => {
+        message.channel.send(result)
+})
+reaction2.on("collect", r => {
+        message.channel.send(result)
+})
+reaction3.on("collect", r => {
+        message.channel.send(result)
+})
 
+    })
+}
+});
+
+
+  client.on('message', message => {
+      if(message.content.startsWith ("-marry")) {
+      if(!message.channel.guild) return message.reply('** This command only for servers **')
+      var proposed = message.mentions.members.first()
+     
+      if(!message.mentions.members.first()) return message.reply(' 😏 **لازم تطلب ايد وحدة**').catch(console.error);
+      if(message.mentions.users.size > 1) return message.reply(' 😳 **ولد ما يصحلك الا حرمة وحدة كل مرة**').catch(console.error);
+       if(proposed === message.author) return message.reply(`**خنثى ؟ **`);
+        if(proposed === client.user) return message.reply(`** تبي تتزوجني؟ **`);
+              message.channel.send(`**${proposed} 
+ بدك تقبلي عرض الزواج من ${message.author} 
+ العرض لمدة 15 ثانية  
+ اكتبي موافقة او لا**`)
+
+const filter = m => m.content.startsWith("موافقة");
+message.channel.awaitMessages(filter, { max: 1, time: 15000, errors: ['time'] })
+.then(collected =>{ 
+    message.channel.send(` **${message.author} و ${proposed} الف الف مبروك الله , يرزقكم الذرية الصالحة** `);
+})
+
+   const filte = m => m.content.startsWith("لا");
+message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
+.then(collected =>{ 
+   message.channel.send(`  **${message.author} تم رفض عرضك** `);
+})
+        
+  }
+});
+  
 
 
 
