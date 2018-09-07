@@ -421,7 +421,7 @@ client.on('message', message => {
 }
 });
 
-lient.on('message',async message => {
+client.on('message',async message => {
     var p = "-"
   function timeCon(time) {
   let days = Math.floor(time % 31536000 / 86400)
