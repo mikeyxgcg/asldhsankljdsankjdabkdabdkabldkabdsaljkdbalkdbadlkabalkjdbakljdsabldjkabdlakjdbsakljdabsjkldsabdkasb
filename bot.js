@@ -136,7 +136,8 @@ if (message.content === "-help") {
         ***__General orders__***
 **
 『-server/يعرض لك معلومات عن السيرفر』
-『-bot/يعرض لك كل معلومات البوت』
+『-bot/يعرضل معلومات البوت』
+『-botin/يعرض لك  كل معلومات البوت』
 『-support /للتواصل مع صاحب البوت』
 『-id/معلومات عنك』
 『-invite/لدعوه البوت الي سيرفرك 』
@@ -155,6 +156,11 @@ if (message.content === "-help") {
 『-cat/صور قطط صغيره』
 『-paint/يجبلك الكلام الي تكتبه في صوره』
 『-trans/يترجم الكلمه الي تكتبه ال اي لغه مع تحديد』
+=====اوامر اضافيه====
+『ترحيب』
+『باك』
+『السلام عليكم』
+『حشيش』
 **
   `,`
         ***__Administrative Orders__***
@@ -413,6 +419,37 @@ client.on('message', message => {
 			      .setFooter('By | n3k4a and Baron')
     })
 }
+});
+
+lient.on('message',async message => {
+    var p = "-"
+  function timeCon(time) {
+  let days = Math.floor(time % 31536000 / 86400)
+  let hours = Math.floor(time % 31536000 % 86400 / 3600)
+  let minutes = Math.floor(time % 31536000 % 86400 % 3600 / 60)
+  let seconds = Math.round(time % 31536000 % 86400 % 3600 % 60)
+  days = days > 9 ? days : '0' + days
+  hours = hours > 9 ? hours : '0' + hours
+  minutes = minutes > 9 ? minutes : '0' + minutes
+  seconds = seconds > 9 ? seconds : '0' + seconds
+  return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
+  };
+  if(message.content.startsWith( p + "botin")) {
+    const millis = new Date().getTime() - client.user.createdAt.getTime();
+    const noww = new Date();
+    dateFormat(noww, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
+    const createdAT = millis / 1000 / 60 / 60 / 24;
+    var star = new Discord.RichEmbed() 
+    .setTitle(`${client.user.username} معلومات عن بوت`)
+    .setColor('#36393e')
+    .addField('🌟 امر البوت', prefix, true)
+    .addField('🌟 الرامات المستخدمة', `${(process.memoryUsage().rss / 1048576).toFixed()} ميجا بايت`,true)
+    .addField('🌟 سرعة البوت', `${Math.round(client.ping)} ملي سكند`,true)
+    .addField('🌟 تم تشغيل البوت منذ', `${timeCon(process.uptime())}`, true)
+    .addField('🌟 السيرفرات', client.guilds.size,true)
+    .addField('🌟 المستخدمين', client.users.size,true)
+    message.channel.send(star);
+  }
 });
 
 client.on('message', message => {
@@ -795,7 +832,7 @@ if (message.content === 'باك') {
 client.on('message', message => {
 if(message.author.bot) return;
 if (message.content.startsWith('ترحيب')) {
-message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/480791714471346178/5t4qyhsm.gif")
+message.channel.send("https://cdn.discordapp.com/attachments/486250425817890821/487718238839504917/images.jpg")
 }
 });
 
