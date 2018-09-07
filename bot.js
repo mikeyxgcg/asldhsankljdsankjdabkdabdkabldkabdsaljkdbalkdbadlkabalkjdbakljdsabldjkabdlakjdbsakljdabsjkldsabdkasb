@@ -1084,7 +1084,7 @@ message.channel.sendMessage({embed: {
 
 
 
-lient.on('message', ra3d => {
+client.on('message', ra3d => {
 var prefix = "-";
                         let args = ra3d.content.split(" ").slice(1).join(" ")
 if(ra3d.content.startsWith(prefix + 'ccolors')) {
