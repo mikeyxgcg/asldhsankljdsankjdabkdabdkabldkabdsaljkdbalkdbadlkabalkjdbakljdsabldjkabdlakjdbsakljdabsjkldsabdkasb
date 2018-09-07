@@ -1084,17 +1084,26 @@ message.channel.sendMessage({embed: {
          }//jackeo جاكيو
  });//jackeo جاكيو
 
-client.on('message', message => {
-	var prefix ="-";
- let args = message.content.split(' ').slice(1);
-    if(message.content.startsWith(prefix + 'google')) {
-    const input = args.join(' ');
+  client.on('message', message => {
+     if(!message.channel.guild) return;
+var prefix = "-";
+                if(message.content.startsWith(prefix + 'allbots')) {
 
-google({ query: input, disableConsole: true }).then(results => {
-    return message.channel.send(`\n\n**Title**: ${results[0].title}\n***Link***: ${results[0].link}\nDescription: ${results[0].snippet}`);
-}).catch(error => {
-    if (error) throw error;
+    
+    if (message.author.bot) return;
+    let i = 1;
+        const botssize = message.guild.members.filter(m=>m.user.bot).map(m=>`${i++} - <@${m.id}>`);
+          const embed = new Discord.RichEmbed()
+          .setAuthor(message.author.tag, message.author.avatarURL)
+          .setDescription(`**Found ${message.guild.members.filter(m=>m.user.bot).size} bots in this Server**
+${botssize.join('\n')}`)
+.setFooter(client.user.username, client.user.avatarURL)
+.setTimestamp();
+message.channel.send(embed)
+
+ }
 });
+
 
 client.on('message', async msg => {
      client.snek = require('snekfetch');
@@ -1104,7 +1113,7 @@ client.on('message', async msg => {
 
  if(args.length < 1) return args.missing(msg, 'No text added', this.help);
   msg.channel.startTyping();
-  const searchMessage = await msg.channel.send('Painting...');
+  const searchMessage = await msg.channel.send('???Painting...');
   const { body } = await client.snek.get(`https://nekobot.xyz/api/imagegen?type=changemymind&text=${encodeURIComponent(args)}`);
   msg.channel.send({file: { attachment:body.message, name: 'changemymind.png'}}).then(()=> { searchMessage.delete(); msg.channel.stopTyping(); });
 };
