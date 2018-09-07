@@ -759,7 +759,7 @@ message.channel.send("https://cdn.discordapp.com/attachments/478923882384982027/
 }
 });
 
-lient.on('message', message => {
+client.on('message', message => {
 if (!points[message.author.id]) points[message.author.id] = {
     points: 0,
   };
