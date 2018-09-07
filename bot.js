@@ -1084,7 +1084,31 @@ message.channel.sendMessage({embed: {
          }//jackeo جاكيو
  });//jackeo جاكيو
 
+client.on('message', message => {
+	var prefix ="-";
+ let args = message.content.split(' ').slice(1);
+    if(message.content.startsWith(prefix + 'google')) {
+    const input = args.join(' ');
 
+google({ query: input, disableConsole: true }).then(results => {
+    return message.channel.send(`\n\n**Title**: ${results[0].title}\n***Link***: ${results[0].link}\nDescription: ${results[0].snippet}`);
+}).catch(error => {
+    if (error) throw error;
+});
+
+client.on('message', async msg => {
+     client.snek = require('snekfetch');
+    var p = "-"
+  if(msg.content.startsWith(p + "paint")) {
+   let args = msg.content.split(' ').slice(1).join(' ');
+
+ if(args.length < 1) return args.missing(msg, 'No text added', this.help);
+  msg.channel.startTyping();
+  const searchMessage = await msg.channel.send('Painting...');
+  const { body } = await client.snek.get(`https://nekobot.xyz/api/imagegen?type=changemymind&text=${encodeURIComponent(args)}`);
+  msg.channel.send({file: { attachment:body.message, name: 'changemymind.png'}}).then(()=> { searchMessage.delete(); msg.channel.stopTyping(); });
+};
+});
 
  const fetch = require('snekfetch');
  client.on('message', message => {
