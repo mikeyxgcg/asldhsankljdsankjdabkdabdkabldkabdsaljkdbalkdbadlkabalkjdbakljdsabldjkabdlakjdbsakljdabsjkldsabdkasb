@@ -146,7 +146,6 @@ if (message.content === "-help") {
 『-avatar/صورتك او صورة الي تمنشنو』
 『-ask/يبحث عن الكلمه الي تكتبها باالانجليزي』
 『-invites /لمعرفه كم شخص دعوت الي السيرفر』
-『-sarch / يبحث عن الي تكتبه』
 『❖❖❖اومر مميزه نادره❖❖❖』
 『-kiss/يعطي قبله لمن تختار في السيرفر عن طريق المنشن』
 『-love / يعبر بشعورك بلحب  لمن تختار في السيرفر عن طريق المنشن』
@@ -470,37 +469,7 @@ client.on('message', message => {
     
     });
 
-var prefix = "-";
 
-client.on('message', message => {
-   let args = message.content.split(" ").slice(1);
-  if (message.content.startsWith(prefix + "serch")) {
-let Embed = new Discord.RichEmbed()
-        .setColor(0x36393e);
-    if (!args[0]) {
-        Embed.setFooter(`**للأستعمال : $serch [ Letter ].**`);
-        return message.channel.send(Embed); 
-    }
-
-    if (args[0].length <= 1) {
-        Embed.setFooter(`للأستعمال : $serch [ Letter ].`);
-        return message.channel.send(Embed); 
-    }
-    let array = []; 
-    let number = 0; 
-    message.guild.members.map(m => { 
-        if (m.user.username.toUpperCase().includes(args[0].toUpperCase())) { 
-            number++; 
-            array.push(`${number}. ${m.user.username}`); 
-        }
-    });
-    Embed.setTitle(`نتائج البحث عن : "${args[0]}"`);
-    Embed.setDescription(`\`\`\`${array.slice(0, 30).join(`\n`)}\`\`\``);
-
-    message.channel.send(Embed);
-   
-   }
-}); 
 
 client.on('message', message => {
      if (message.content === "-ping") {
