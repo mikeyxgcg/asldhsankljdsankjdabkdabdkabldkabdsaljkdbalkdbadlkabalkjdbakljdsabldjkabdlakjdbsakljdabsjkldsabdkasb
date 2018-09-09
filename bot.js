@@ -1917,16 +1917,7 @@ client.on('message', function(message) {
 			});
 
 		});
-	}
-
-        function play(guild, song) {
-        const serverQueue = queue.get(guild.id);
-
-        if (!song) {
-        serverQueue.voiceChannel.leave();
-        queue.delete(guild.id);
-        return;
-     }  
+	} 
 	function skip_song(message) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		dispatcher.end();
