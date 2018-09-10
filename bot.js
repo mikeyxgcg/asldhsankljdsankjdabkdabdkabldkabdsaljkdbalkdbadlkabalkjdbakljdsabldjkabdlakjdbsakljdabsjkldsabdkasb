@@ -407,17 +407,17 @@ client.on('message', message => {
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO Speed Bot`` ')
-            .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
-            .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
-            .addField('``servers``', [client.guilds.size], true)
-            .addField('``channels``' , `[ ${client.channels.size} ]` , true)
-            .addField('``Users``' ,`[ ${client.users.size} ]` , true)
-            .addField('``My Name``' , `[ ${client.user.tag} ]` , true)
-            .addField('``My ID``' , `[ ${client.user.id} ]` , true)
-			      .addField('``My Prefix``' , `[ - ]` , true)
-			      .addField('``My Language``' , `[ Java Script ]` , true)
-			      .setFooter('By | n3k4a and Baron')
+            .setTitle('``this Premium Bot`` ')
+            .addField('``سرعة البوت 📡``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+            .addField('``الرامات المستخدمة ☄️``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
+            .addField('`` السيرفرات🏢``', [client.guilds.size], true)
+            .addField('``الشنلات💻``' , `[ ${client.channels.size} ]` , true)
+            .addField('``اعضاء السيرفر 👨‍👨‍👧‍👧``' ,`[ ${client.users.size} ]` , true)
+            .addField('``Premium Bot اسمي هوا📇``' , `[ ${client.user.tag} ]` , true)
+            .addField('``الايدي تبعي ☑️``' , `[ ${client.user.id} ]` , true)
+			      .addField('``امر تشغيلي ➡️``' , `[ - ]` , true)
+			      .addField('``الغه التي  تبرمجت بها ☎️``' , `[ Java Script ]` , true)
+			      .setFooter('By | 🔥n3k4a & baron🔥 ')
     })
 }
 });
@@ -443,12 +443,12 @@ client.on('message',async message => {
     var star = new Discord.RichEmbed() 
     .setTitle(`${client.user.username} معلومات عن بوت`)
     .setColor('#36393e')
-    .addField('🌟 امر البوت', prefix, true)
-    .addField('🌟 الرامات المستخدمة', `${(process.memoryUsage().rss / 1048576).toFixed()} ميجا بايت`,true)
-    .addField('🌟 سرعة البوت', `${Math.round(client.ping)} ملي سكند`,true)
-    .addField('🌟 تم تشغيل البوت منذ', `${timeCon(process.uptime())}`, true)
-    .addField('🌟 السيرفرات', client.guilds.size,true)
-    .addField('🌟 المستخدمين', client.users.size,true)
+    .addField('💓 امر البوت', prefix, true)
+    .addField('🖥️ الرامات المستخدمة', `${(process.memoryUsage().rss / 1048576).toFixed()} ميجا بايت`,true)
+    .addField('🏍️ سرعة البوت', `${Math.round(client.ping)} ملي سكند`,true)
+    .addField('⏲️ تم تشغيل البوت منذ', `${timeCon(process.uptime())}`, true)
+    .addField('💚 السيرفرات', client.guilds.size,true)
+    .addField('💙 المستخدمين', client.users.size,true)
     message.channel.send(star);
   }
 });
@@ -459,14 +459,14 @@ client.on('message', message => {
       var kayan = new Discord.RichEmbed()
       .setThumbnail(message.author.avatarURL)
       .setFooter(message.author.username, message.author.avatarURL) 
-      .setTitle('🌷| Members info')
+      .setTitle('🙆| معلومات الأعضاء')
       .addBlankField(true)
-      .addField('📗| Online',
+      .addField('🐸| متصل بالانترنت',
       `${message.guild.members.filter(m=>m.presence.status == 'online').size}`)
-      .addField('📕| DND',`${message.guild.members.filter(m=>m.presence.status == 'dnd').size}`)
-      .addField('📙| Idle',`${message.guild.members.filter(m=>m.presence.status == 'idle').size}`)
-      .addField('📓| Offline',`${message.guild.members.filter(m=>m.presence.status == 'offline').size}`)
-      .addField('➡| Server Members',`${message.guild.memberCount}`)
+      .addField('😡| مشغول',`${message.guild.members.filter(m=>m.presence.status == 'dnd').size}`)
+      .addField('🐨| وضع الخمول',`${message.guild.members.filter(m=>m.presence.status == 'idle').size}`)
+      .addField('😴|غير متصل على الانترنت',`${message.guild.members.filter(m=>m.presence.status == 'offline').size}`)
+      .addField('👨‍👨‍👧‍👧| Server Members',`${message.guild.memberCount}`)
       message.channel.send(kayan);
     
     });
@@ -516,6 +516,29 @@ if (message.content.startsWith(prefix + "uptime")) {
 }
 });
 
+var prefix = "-";
+
+client.on('message', message => {
+     if(!message.channel.guild) return;
+                if(message.content.startsWith(prefix + 'allbots')) {
+
+    
+    if (message.author.bot) return;
+    let i = 1;
+        const botssize = message.guild.members.filter(m=>m.user.bot).map(m=>`${i++} - <@${m.id}>`);
+          const embed = new Discord.RichEmbed()
+          .setAuthor(message.author.tag, message.author.avatarURL)
+          .setDescription(`**Found ${message.guild.members.filter(m=>m.user.bot).size} bots in this Server**
+${botssize.join('\n')}`)
+.setFooter(client.user.username, client.user.avatarURL)
+.setTimestamp();
+message.channel.send(embed)
+
+}
+
+
+});
+
 client.on('message', message => {
      if (message.content === "-ping") {
       const embed = new Discord.RichEmbed()
@@ -523,7 +546,7 @@ client.on('message', message => {
   .setColor("#FF0000")
   .addField('``سرعة أتصال الــبوت`` ' , `${Date.now() - message.createdTimestamp}` + ' ms`')
                  .setFooter(` Premium Bot
- .`, 'https://b.top4top.net/p_6021qh431.jpg')
+ .`, 'https://aladdintravel.com/wp-content/uploads/2014/11/pinterest-logo-2-1074x1067.png')
 
   message.channel.sendEmbed(embed);
     }
