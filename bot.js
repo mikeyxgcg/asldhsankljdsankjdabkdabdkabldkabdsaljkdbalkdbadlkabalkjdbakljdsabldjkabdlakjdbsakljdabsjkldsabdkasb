@@ -148,6 +148,8 @@ if (message.content === "-help") {
 『-invites /لمعرفه كم شخص دعوت الي السيرفر』
 『-uptime / لمعرالبوت اون لاين منذ متي』  
 『❖❖❖اومر مميزه نادره❖❖❖』
+『-boom /  يطير جبه الي تبي عن طريق المنشن』
+『-sad / يقول للشخص انك خزين بسببه  او زعلان منه عن طريق المنشن』
 『-kiss/يعطي قبله لمن تختار في السيرفر عن طريق المنشن』
 『-love / يعبر بشعورك بلحب  لمن تختار في السيرفر عن طريق المنشن』
 『-miss / يرسله اشتقت لك لمن تختار في السيرفر عن طريق المنشن』
@@ -593,6 +595,110 @@ client.on('message',  (message) => {
         }  
 });
 
+client.on('message',  (message) => {
+        if(message.content.startsWith('-boom')) {
+  let user = message.mentions.users.first();
+  if (!user) {
+
+    return message.emit('commandUsage', message, this.help);
+  }
+  let bombs = [
+    'https://media.giphy.com/media/Xp98Vi5OBvhXpwA0Zp/giphy.gif',
+    'https://media.giphy.com/media/POnwee2RZBWmWWCeiX/giphy.gif',
+	'https://media.giphy.com/media/oywQ7OhnYupINQa0L4/giphy.gif',
+    'https://media.giphy.com/media/5aLrlDiJPMPFS/giphy.gif',
+	'https://media.giphy.com/media/l1BgS9aNtdCdjgkaQ/giphy.gif',
+	'https://media.giphy.com/media/d0NnEG1WnnXqg/giphy.gif',
+    'https://media.giphy.com/media/NmrqUdwGXPOog/giphy.gif',
+	'https://media.giphy.com/media/dpnfPvaCIHBrW/giphy.gif',
+	'https://media.giphy.com/media/mks5DcSGjhQ1a/giphy.gif',
+    'https://media.giphy.com/media/8wfoaIjVc0FBaLu5xH/giphy.gif',
+	'https://media.giphy.com/media/xThtanBNixj1O1m5oY/giphy.gif',
+	'https://media.giphy.com/media/fdGkCOiM0oOqI/giphy.gif',
+    'https://media.giphy.com/media/c862b2dAhJXYA/giphy.gif',
+	'https://media.giphy.com/media/CepTYjGRbV1ba/giphy.gif',
+	'https://media.giphy.com/media/sRGCQ7INgSD0qbTqB5/giphy.gif',
+    'https://media.giphy.com/media/ZJYOwl8SbFsic/giphy.gif',
+	'https://media.giphy.com/media/3oEhmKspQX9EN48HNm/giphy.gif',
+	'https://media.giphy.com/media/l1KVcAP6jvP9r4MaA/giphy.gif',
+    'https://media.giphy.com/media/j2mY6orBJqAdG/giphy.gif',
+	'https://media.giphy.com/media/3oz8xEqn8AGAQbR0yY/giphy.gif',
+	'https://media.giphy.com/media/l4lQW9KfRQscU0ds4/giphy.gif',
+    'https://media.giphy.com/media/XathaB5ILqSME/giphy.gif',
+	'https://media.giphy.com/media/26AHvF2p5pridaSf6/giphy.gif',
+	'https://media.giphy.com/media/Nlur5uO8GkjC0/giphy.gif',
+    'https://media.giphy.com/media/l1J3preURPiwjRPvG/giphy.gif',
+	'https://media.giphy.com/media/8cdZit2ZcjTri/giphy.gif',
+	'https://media.giphy.com/media/3o7btNa0RUYa5E7iiQ/giphy.gif',
+    'https://media.giphy.com/media/V88pTEefkoOFG/giphy.gif',
+    'https://media.giphy.com/media/rfWAomOTPeOo8/giphy.gif'
+  ];
+
+  message.channel.send({
+    embed: {
+      description: `${message.author.username} لقد تم تطير الجبه بنجاح  جبهتك طارت ${user.username}!`,
+      image: {
+        url: bombs[Math.floor(Math.random() * bombs.length)]
+      }
+    }
+  }).catch(e => {
+    client.log.error(e);
+  })
+        }  
+});
+
+
+client.on('message',  (message) => {
+        if(message.content.startsWith('-sad')) {
+  let user = message.mentions.users.first();
+  if (!user) {
+
+    return message.emit('commandUsage', message, this.help);
+  }
+  let sads = [
+    'https://media.giphy.com/media/3oriO4SMR6ThimOQbS/giphy.gif',
+    'https://media.giphy.com/media/QhCAwDXZ0BltK/giphy.gif',
+	'https://media.giphy.com/media/Q8FaD6GjQ97jO/giphy.gif',
+    'https://media.giphy.com/media/9Y5BbDSkSTiY8/giphy.gif',
+	'https://media.giphy.com/media/VqcflcXbbud2M/giphy.gif',
+	'https://media.giphy.com/media/3UkLhoyi553r2/giphy.gif',
+    'https://media.giphy.com/media/3UkLhoyi553r2/giphy.gif',
+	'https://media.giphy.com/media/Txh1UzI7d0aqs/giphy.gif',
+	'https://media.giphy.com/media/GyNeHf5IrpQNG/giphy.gif',
+    'https://media.giphy.com/media/lKWlXRBGltz2g/giphy.gif',
+	'https://media.giphy.com/media/NTY1kHmcLsCsg/giphy.gif',
+	'https://media.giphy.com/media/vzpy2NjOKdeyk/giphy.gif',
+    'https://media.giphy.com/media/jRtGjzkm8JbRC/giphy.gif',
+	'https://media.giphy.com/media/iyfeJqd6NLNK0/giphy.gif',
+	'https://media.giphy.com/media/z2ug5EHHBuFaM/giphy.gif',
+    'https://media.giphy.com/media/wIhfELB4LvDhe/giphy.gif',
+	'https://media.giphy.com/media/5bukWFXJ6pn5S/giphy.gif',
+	'https://media.giphy.com/media/13RfBpyqVyvIME/giphy.gif',
+    'https://media.giphy.com/media/CL2Y9t4YQbp2U/giphy.gif',
+	'https://media.giphy.com/media/3ov9ka1OzbTGjQtCXC/giphy.gif',
+	'https://media.giphy.com/media/l3vR11Mr4XpqhtSHm/giphy.gif',
+    'https://media.giphy.com/media/l2R08A0HfJkV2lwQg/giphy.gif',
+	'https://media.giphy.com/media/3o6YghZV15YGZoOtIk/giphy.gif',
+	'https://media.giphy.com/media/8LM1P6bkXTyhy/giphy.gif',
+    'https://media.giphy.com/media/l4FGooziZSanyKS3u/giphy.gif',
+	'https://media.giphy.com/media/4TnZKIJHMhjKh3mIB1/giphy.gif',
+	'https://media.giphy.com/media/l0HlyXP3OkdhvO61G/giphy.gif',
+    'https://media.giphy.com/media/SXCQWrsob9TGg/giphy.gif',
+    'https://media.giphy.com/media/6nYwftjsGdKgOXB5C4/giphy.gif'
+  ];
+
+  message.channel.send({
+    embed: {
+      description: `${message.author.username} خزين بسببك او زعلان منك ${user.username}!`,
+      image: {
+        url: sads[Math.floor(Math.random() * sads.length)]
+      }
+    }
+  }).catch(e => {
+    client.log.error(e);
+  })
+        }  
+});
 
 client.on('message',  (message) => {
         if(message.content.startsWith('-hug')) {
