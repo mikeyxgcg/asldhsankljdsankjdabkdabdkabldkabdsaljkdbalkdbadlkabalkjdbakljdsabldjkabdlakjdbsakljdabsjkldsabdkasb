@@ -1806,7 +1806,8 @@ if (message.content.startsWith('-server')) {
 
 
 
- var prefix = "-";
+
+  var prefix = "-";
     client.on('message', message => {
     if(message.content.startsWith(prefix + '2avatar')) {
          var men = message.mentions.users.first();
@@ -1986,7 +1987,7 @@ client.on('message', function(message) {
 			if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 		});
 	}
-			else if (message.content.startsWith('n3k4a')) {
+			else if (message.content.startsWith('بسيبيسبسيبv')) {
 		if (!message.member.voiceChannel) return message.channel.send(':x: **You have to be in a voice channel to use this command.**');
 		// console.log(args)
 		if (args > 100) return message.channel.send('**1 - 100 | لا أكثر ولا أقل **')
@@ -2113,9 +2114,9 @@ client.on('message', function(message) {
 	}
 
 
-		function isYoutube(str) {
+	function isYoutube(str) {
 		return str.toLowerCase().indexOf('youtube.com') > -1;
-	
+	}
 });
 })
 client.login(process.env.BOT_TOKEN);
