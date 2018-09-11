@@ -184,7 +184,7 @@ if (message.content === "-help") {
 『-{prefix}pause / إيقآف الأغنية مؤقتا』
 『-{prefix}unpause / لموآصلة الإغنية بعد إيقآفهآ مؤقتا』
 『-{prefix}vol / لتغيير درجة الصوت 100 - 0』
-『-{prefix}leave / لإخرآج البوت من الروم』
+『-{prefix}stop/ لإخرآج البوت من الروم』
 **
         ***__Games orders__***
  **       
