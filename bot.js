@@ -713,7 +713,7 @@ client.on('message',  (message) => {
 
   message.channel.send({
     embed: {
-      description: `${message.author.username} خزين بسببك او زعلان منك ${user.username}!`,
+      description: `${message.author.username} حزين بسببك او زعلان منك ${user.username}!`,
       image: {
         url: sads[Math.floor(Math.random() * sads.length)]
       }
