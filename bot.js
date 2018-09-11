@@ -467,7 +467,7 @@ client.on('message', message => {
       .addField('😡| مشغول',`${message.guild.members.filter(m=>m.presence.status == 'dnd').size}`)
       .addField('🐨| وضع الخمول',`${message.guild.members.filter(m=>m.presence.status == 'idle').size}`)
       .addField('😴|غير متصل على الانترنت',`${message.guild.members.filter(m=>m.presence.status == 'offline').size}`)
-      .addField('👨‍👨‍👧‍👧| Server Members',`${message.guild.memberCount}`)
+      .addField('👨‍👨‍👧‍👧| اعضاء السيرفر',`${message.guild.memberCount}`)
       message.channel.send(kayan);
     
     });
@@ -512,7 +512,7 @@ if (message.content.startsWith(prefix + "uptime")) {
 
     }
 
-    message.channel.send("`" + `${days} days, ${hours} hrs, ${minutes} , ${seconds} sec` + "`");
+    message.channel.send("`" + `${days} days, ${hours} hrs, ${minutes} , ${seconds} sec` + "`**🎛 **");
 
 }
 });
