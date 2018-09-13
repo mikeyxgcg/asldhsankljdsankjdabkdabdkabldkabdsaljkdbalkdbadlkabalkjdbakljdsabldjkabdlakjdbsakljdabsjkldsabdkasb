@@ -291,6 +291,8 @@ if (message.content.startsWith(prefix + 'trans')) {
 }
 });
 
+var fs = require("fs");
+
 let sWlc = JSON.parse(fs.readFileSync("./setWlc.json", "UTF8"))   
 client.on('message', message => {
 if(message.channel.type === "dm") return;
@@ -310,6 +312,8 @@ const channel = sWlc[message.guild.id].channel
 if (err) console.error(err);
 })
 });
+
+var fs = require("fs");
 
 var prefix = "-";
 client.on("guildMemberAdd", member => {
