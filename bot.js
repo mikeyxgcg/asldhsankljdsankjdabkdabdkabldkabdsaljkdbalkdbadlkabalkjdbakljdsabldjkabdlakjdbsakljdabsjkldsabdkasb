@@ -388,17 +388,6 @@ client.on("guildMemberAdd", member => {
       }
       });
 
-client.on('guildMemberAdd', member => {
-  member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const yumz = member.guild.channels.find("name", `${sChannel}`);
-     yumz.send(`<@${member.user.id}> joined by <@${inviter.id}>`);
-     yumz.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
-  }); 
-});
-
 client.on('message', async message =>{
   if (message.author.boss) return;
 	var prefix = "-";
@@ -2160,7 +2149,7 @@ client.on('message', function(message) {
 	const args = message.content.split(' ').slice(1).join(' ');
 
 	if (mess.startsWith('-play')) {
-		if (!message.member.voiceChannel') return message.reply(':x: **You have to be in a voice channel to use this command.**');
+		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		// if user is not insert the URL or song title
 		if (args.length == 0) {
 			let play_info = new Discord.RichEmbed()
