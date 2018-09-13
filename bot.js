@@ -649,10 +649,19 @@ client.on('message',async message => {
   }
 });
 
-   client.on('guildCreate', guild => {
-  client.channels.get("489673438806409228").send(`**Woops new server ✅**
+  client.on('guildCreate', guild => {
+  client.channels.get("489673438806409228").send(`✅ **تم اضافة البوت في سيرفر جديد مبروكك
 Server name: __${guild.name}__
-Server owner: __${guild.owner}__**`)
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**`)
+});
+client.on('guildDelete', guild => {
+  client.channels.get("489673438806409228").send(`❎ **طردوني حرام والله ايش سويت انا
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**`)
 });
 
 var prefix = "-";
