@@ -649,6 +649,12 @@ client.on('message',async message => {
   }
 });
 
+   client.on('guildCreate', guild => {
+  client.channels.get("489673438806409228").send(`**Woops new server ✅**
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__**`)
+});
+
 var prefix = "-";
 
 client.on('message', message => {
