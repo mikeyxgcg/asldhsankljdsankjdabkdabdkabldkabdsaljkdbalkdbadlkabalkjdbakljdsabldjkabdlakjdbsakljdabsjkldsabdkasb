@@ -749,12 +749,12 @@ client.on('message',async message => {
 
 client.on("guildCreate", guild => {
 console.log(` Premium bot  Added To Server ${guild.name} , The Owner Is ${guild.owner.user.username} , Members In Server : **[${guild.memberCount}]**            `)
-client.channels.get("426048106841505813").send('** :purple_heart: Middle East** ``Added``:white_check_mark:  To Server '+`** [ ${guild.name} ] **`+''+'  The Owner Is  ' +`**[ ${guild.owner.user.username} ]** , Members In Server : **[${guild.memberCount}]**` +'')
+client.channels.get("426048106841505813").send('** :purple_heart:Premium bot** ``ضفوني لي سيرفر جديد ياصحبي وهنخربها``:white_check_mark:  To Server '+`** [ ${guild.name} ] **`+''+'  The Owner Is  ' +`**[ ${guild.owner.user.username} ]** , Members In Server : **[${guild.memberCount}]**` +'')
 });
 
 client.on("guildDelete", guild => {
   console.log(`  Premium bot Leave From Server ${guild.name}, The Server Owner Is ${guild.owner.user.username}`)
-  client.channels.get("489673438806409228").send('** :purple_heart: Middle East **``Kicked``:x:  From Server '+`** [ ${guild.name} ] **`+''+' The Owner Is ' +`**[ ${guild.owner.user.username} ]**` +'')
+  client.channels.get("489673438806409228").send('** :purple_heart: Premium bot **``طردوني وانا معملتش حاجه حسبي الله``:x:  From Server '+`** [ ${guild.name} ] **`+''+' The Owner Is ' +`**[ ${guild.owner.user.username} ]**` +'')
   });
 
 var prefix = "-";
