@@ -649,20 +649,15 @@ client.on('message',async message => {
   }
 });
 
-  client.on('guildCreate', guild => {
-  client.channels.get("489673438806409228").send(`✅ **تم اضافة البوت في سيرفر جديد مبروكك
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**`)
+client.on("guildCreate", guild => {
+console.log(` Premium bot  Added To Server ${guild.name} , The Owner Is ${guild.owner.user.username} , Members In Server : **[${guild.memberCount}]**            `)
+client.channels.get("426048106841505813").send('** :purple_heart: Middle East** ``Added``:white_check_mark:  To Server '+`** [ ${guild.name} ] **`+''+'  The Owner Is  ' +`**[ ${guild.owner.user.username} ]** , Members In Server : **[${guild.memberCount}]**` +'')
 });
-client.on('guildDelete', guild => {
-  client.channels.get("489673438806409228").send(`❎ **طردوني حرام والله ايش سويت انا
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**`)
-});
+
+client.on("guildDelete", guild => {
+  console.log(`  Premium bot Leave From Server ${guild.name}, The Server Owner Is ${guild.owner.user.username}`)
+  client.channels.get("489673438806409228").send('** :purple_heart: Middle East **``Kicked``:x:  From Server '+`** [ ${guild.name} ] **`+''+' The Owner Is ' +`**[ ${guild.owner.user.username} ]**` +'')
+  });
 
 var prefix = "-";
 
