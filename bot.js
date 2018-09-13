@@ -388,10 +388,8 @@ client.on("guildMemberAdd", member => {
       }
       });
 
-var prefix = "-";
+var fs = require("fs");
 client.on("guildMemberAdd", member => {
-      if (!welcomer) return;
-      if(welcomer) {
 member.guild.fetchInvites().then(guildInvites => {
     const ei = invites[member.guild.id];
     const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
@@ -400,7 +398,6 @@ member.guild.fetchInvites().then(guildInvites => {
      yumz.send(`<@${member.user.id}> joined by <@${inviter.id}>`);
    //  yumz.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
   })
-      }
     });
 
 client.on('message', async message =>{
