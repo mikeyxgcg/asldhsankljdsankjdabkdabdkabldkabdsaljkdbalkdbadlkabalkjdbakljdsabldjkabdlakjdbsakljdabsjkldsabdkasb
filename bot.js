@@ -2160,7 +2160,7 @@ client.on('message', function(message) {
 	const args = message.content.split(' ').slice(1).join(' ');
 
 	if (mess.startsWith('-play')) {
-		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
+		if (!message.member.voiceChannel') return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		// if user is not insert the URL or song title
 		if (args.length == 0) {
 			let play_info = new Discord.RichEmbed()
