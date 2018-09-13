@@ -747,15 +747,14 @@ client.on('message',async message => {
   }
 });
 
-//bot-log
 client.on("guildCreate", guild => {
-console.log(` Premium ضفوني لي سيرفر جديد ياصحبي وهنخربها ${guild.name} , The Owner Is ${guild.owner.user.username} , Members In Server : **[${guild.memberCount}]**            `)
-client.channels.get("489673438806409228").send(` Premium ضفوني لي سيرفر جديد ياصحبي وهنخربها ${guild.name} , The Owner Is ${guild.owner.user.username} , Members In Server : **[${guild.memberCount}]**`)
+console.log(` Premium Bot  Added To Server ${guild.name} , The Owner Is ${guild.owner.user.username} , Members In Server : **[${guild.memberCount}]**            `)
+client.channels.get("489944931868082177").send('** :purple_heart: Premium Bot ** ``Added``:white_check_mark:  To Server '+`** [ ${guild.name} ] **`+''+'  The Owner Is  ' +`**[ ${guild.owner.user.username} ]** , Members In Server : **[${guild.memberCount}]**` +'')
 });
 
 client.on("guildDelete", guild => {
-  console.log(`  Premium bot Leave From Server ${guild.name}, The Server Owner Is ${guild.owner.user.username}`)
-  client.channels.get("489673438806409228").send('** :purple_heart: Premium bot **``طردوني وانا معملتش حاجه حسبي الله``:x:  From Server '+`** [ ${guild.name} ] **`+''+' The Owner Is ' +`**[ ${guild.owner.user.username} ]**` +'')
+  console.log(`  Premium Bot  Leave From Server ${guild.name}, The Server Owner Is ${guild.owner.user.username}`)
+  client.channels.get("489944931868082177").send('** :purple_heart: Premium Bot  **``Kicked``:x:  From Server '+`** [ ${guild.name} ] **`+''+' The Owner Is ' +`**[ ${guild.owner.user.username} ]**` +'')
   });
 
 var prefix = "-";
