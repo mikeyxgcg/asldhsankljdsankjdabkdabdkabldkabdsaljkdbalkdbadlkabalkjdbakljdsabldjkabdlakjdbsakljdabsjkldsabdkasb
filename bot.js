@@ -180,6 +180,7 @@ if (message.content === "-help") {
 『-mute / يعطي ميوت للشغص الي بتمنشن』
 『-unmute /  يفك الميوت عن العضو 』
 『-giveaway / يسويلك قف اوي علي الشي الي تبيه』
+『-setwelcomer <text channel name> لاختيار روم للترحيب』
    `,`
         ***__Music orders__***
 **
