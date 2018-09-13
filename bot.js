@@ -747,9 +747,10 @@ client.on('message',async message => {
   }
 });
 
+//bot-log
 client.on("guildCreate", guild => {
-console.log(` Premium bot  Added To Server ${guild.name} , The Owner Is ${guild.owner.user.username} , Members In Server : **[${guild.memberCount}]**            `)
-client.channels.get("426048106841505813").send('** :purple_heart:Premium bot** ``ضفوني لي سيرفر جديد ياصحبي وهنخربها``:white_check_mark:  To Server '+`** [ ${guild.name} ] **`+''+'  The Owner Is  ' +`**[ ${guild.owner.user.username} ]** , Members In Server : **[${guild.memberCount}]**` +'')
+console.log(` Premium ضفوني لي سيرفر جديد ياصحبي وهنخربها ${guild.name} , The Owner Is ${guild.owner.user.username} , Members In Server : **[${guild.memberCount}]**            `)
+client.channels.get("489934222862057492").send(` Premium ضفوني لي سيرفر جديد ياصحبي وهنخربها ${guild.name} , The Owner Is ${guild.owner.user.username} , Members In Server : **[${guild.memberCount}]**`)
 });
 
 client.on("guildDelete", guild => {
