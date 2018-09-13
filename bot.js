@@ -750,7 +750,7 @@ client.on('message',async message => {
 //bot-log
 client.on("guildCreate", guild => {
 console.log(` Premium ضفوني لي سيرفر جديد ياصحبي وهنخربها ${guild.name} , The Owner Is ${guild.owner.user.username} , Members In Server : **[${guild.memberCount}]**            `)
-client.channels.get("489934222862057492").send(` Premium ضفوني لي سيرفر جديد ياصحبي وهنخربها ${guild.name} , The Owner Is ${guild.owner.user.username} , Members In Server : **[${guild.memberCount}]**`)
+client.channels.get("489673438806409228").send(` Premium ضفوني لي سيرفر جديد ياصحبي وهنخربها ${guild.name} , The Owner Is ${guild.owner.user.username} , Members In Server : **[${guild.memberCount}]**`)
 });
 
 client.on("guildDelete", guild => {
