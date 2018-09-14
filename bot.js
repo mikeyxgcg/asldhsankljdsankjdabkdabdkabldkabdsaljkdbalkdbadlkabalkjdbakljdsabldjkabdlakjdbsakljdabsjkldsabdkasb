@@ -247,42 +247,6 @@ if (message.content === "-help") {
     }
 });
 
-var prefix = "-";
-
-const Songs = require("discord.js");
-const client = new Songs.Client();
-const fs = require("fs");
-const music = JSON.parse(fs.readFile("MusicIsLife.json"));
-
-client.on("message", message => {
-    if(message.content == 'antibots') {
-        if (message.channel.type == "text") {
-            if (message.member.hasPermission("KICK_MEMBERS")) {
-                if (!music[message.guild.id]) music[message.guild.id] = {on : false};
-                if (music[message.guild.id].on == false) {
-                    music[message.guild.id].on = true;
-                    message.channel.send("تم منع البوتات من السيرفر");
-                } else if (music[message.guild.id].on == true) {
-                    music[message.guild.id].on = false;
-                    message.channel.send("تم السماح للبوتات في السيرفر");
-                };
-            };
-        };
-    };
-    fs.writeFile('MusicIsLife.json', JSON.stringify(music), err => {
-        if (err) console.error(err);
-    });
-});
-client.on("guildMemberAdd", m =>{
-    if(music[m.guild.id]) {
-        if (music[m.guild.id].on == true) {
-            if (m.user.bot == true){
-                m.kick();
-            };
-        };
-    };
-});
-
             client.on("message", (message) => {
                         if (message.channel.type === "dm") {
                     if (message.author.id === client.user.id) return;
