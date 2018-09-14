@@ -181,6 +181,7 @@ if (message.content === "-help") {
 『-unmute /  يفك الميوت عن العضو 』
 『-giveaway / يسويلك قف اوي علي الشي الي تبيه』
 『-setwelcomer <text channel name> لاختيار روم للترحيب』
+『-nick/ لتغيراسماء جميع الاعضاء』
    `,`
         ***__Music orders__***
 **
@@ -245,6 +246,57 @@ if (message.content === "-help") {
     })
     }
 });
+
+client.on('message',message => {
+         if (!message.content.startsWith(prefix)) return;
+var cont = message.content.slice(prefix.length).split(" ");
+
+  var args = cont.slice(1);
+       if (message.content.startsWith("-nick")) {
+   let nickmention = message.mentions.users.first()
+    if (message.mentions.users.size === 0) {
+        if (message.member.permissions.has("CHANGE_NICKNAME")) {
+            let nickchange = args.slice(0).join(" ");
+            if (args[0] === undefined) {
+                message.channel.send("**ضع الاسم الذي تريده**")
+                return;
+            }
+            message.guild.members.get(message.author.id).setNickname(nickchange).catch(err => {
+                message.channel.send("Error: " + err)
+                return;
+            });
+            message.channel.send("✅ **Changed your nickname to:** `" + nickchange + "`")
+            return;
+        } else {
+            message.channel.send("You don't have permission to change your username. 😕")
+            return;
+        }
+        return; 
+    }
+    if (message.member.permissions.has("MANAGE_NICKNAMES", "ADMINISTRATOR")) {
+        let nickchange = args.slice(1).join(" ");
+        if (args[0] === undefined) {
+            message.channel.send("**ضع اسم**")
+            return;
+        }
+        message.guild.members.get(nickmention.id).setNickname(nickchange).catch(err => {
+            message.channel.send("Error: " + err);
+            return;
+        });
+        message.channel.send("Nick of " + nickmention + " (" + nickmention.username + "#" + nickmention.discriminator + ") changed to: `" + nickchange + "`")
+  
+     }
+    } 
+});
+
+client.on('message', message=> {
+    if (message.author.bot) return;
+    if (message.isMentioned(client.user))
+    {
+    message.reply(" what do you need ?");
+    }
+});
+
 
 const Langs = ['afrikaans', 'albanian', 'amharic', 'arabic', 'armenian', 'azerbaijani', 'bangla', 'basque', 'belarusian', 'bengali', 'bosnian', 'bulgarian', 'burmese', 'catalan', 'cebuano', 'chichewa', 'chinese simplified', 'chinese traditional', 'corsican', 'croatian', 'czech', 'danish', 'dutch', 'english', 'esperanto', 'estonian', 'filipino', 'finnish', 'french', 'frisian', 'galician', 'georgian', 'german', 'greek', 'gujarati', 'haitian creole', 'hausa', 'hawaiian', 'hebrew', 'hindi', 'hmong', 'hungarian', 'icelandic', 'igbo', 'indonesian', 'irish', 'italian', 'japanese', 'javanese', 'kannada', 'kazakh', 'khmer', 'korean', 'kurdish (kurmanji)', 'kyrgyz', 'lao', 'latin', 'latvian', 'lithuanian', 'luxembourgish', 'macedonian', 'malagasy', 'malay', 'malayalam', 'maltese', 'maori', 'marathi', 'mongolian', 'myanmar (burmese)', 'nepali', 'norwegian', 'nyanja', 'pashto', 'persian', 'polish', 'portugese', 'punjabi', 'romanian', 'russian', 'samoan', 'scottish gaelic', 'serbian', 'sesotho', 'shona', 'sindhi', 'sinhala', 'slovak', 'slovenian', 'somali', 'spanish', 'sundanese', 'swahili', 'swedish', 'tajik', 'tamil', 'telugu', 'thai', 'turkish', 'ukrainian', 'urdu', 'uzbek', 'vietnamese', 'welsh', 'xhosa', 'yiddish', 'yoruba', 'zulu'];
 
