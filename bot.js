@@ -180,7 +180,7 @@ if (message.content === "-help") {
 『-mute / يعطي ميوت للشغص الي بتمنشن』
 『-unmute /  يفك الميوت عن العضو 』
 『-giveaway / يسويلك قف اوي علي الشي الي تبيه』
-『-setwelcomer <text channel name> لاختيار روم للترحيب』
+『-setwelcomer /  <welcome> يجب ان يكون اسم روم الترحيب 』
 『-nick/ لتغيراسماء جميع الاعضاء』
    `,`
         ***__Music orders__***
@@ -430,7 +430,7 @@ client.on("guildMemberAdd", member => {
                               ctx.font = '30px Arial';
                               ctx.fontSize = '28px';
                               ctx.fillStyle = "#FFFFFF";
-      ctx.fillText(`Welcome To Our Server`, 245, 80);
+      ctx.fillText(`Welcome To Server`, 245, 80);
     
                               //AVATARً
                               let Avatar = Canvas.Image;
@@ -455,6 +455,8 @@ client.on("guildMemberAdd", member => {
       
       }
       });
+
+
 
 client.on('message', async message =>{
   if (message.author.boss) return;
