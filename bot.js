@@ -2161,7 +2161,6 @@ if (message.content.startsWith('-server')) {
 
 }
 })
-
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
@@ -2172,9 +2171,7 @@ client.on('ready', () => {
      client.user.setActivity("you",{type: 'WATCHING'});
  
 });
-	
-var prefix = "-";
-
+const prefix = "-"
 client.on('message', async msg => {
     if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
@@ -2457,5 +2454,13 @@ function play(guild, song) {
     .setColor('#ff0000')
     .setTimestamp()
 });
+})
+})
+})
+})
+})
+})
+}
+});
 
- client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
