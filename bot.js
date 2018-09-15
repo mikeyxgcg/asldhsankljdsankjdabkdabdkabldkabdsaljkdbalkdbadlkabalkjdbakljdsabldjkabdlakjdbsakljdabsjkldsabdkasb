@@ -134,7 +134,6 @@ if (message.content === "-help") {
 **
 :gem:  البوت فيه كثير ميزات حلوة و جميلة
  ا:rocket: البوت يعمل 24 ساعه 
-
 **
         ***__General orders__***
 **
@@ -2098,8 +2097,6 @@ client.on("message", message => {
                           }
 });
 
-
-
 client.on('message', message => {
 if (message.content.startsWith('-server')) {
  message.channel.send(`Here is the different information of **${message.guild.name}**`, {
@@ -2164,7 +2161,7 @@ if (message.content.startsWith('-server')) {
 }
 })
 
-var prefix = "-";
+ var prefix = "-";
     client.on('message', message => {
     if(message.content.startsWith(prefix + '2avatar')) {
          var men = message.mentions.users.first();
@@ -2476,4 +2473,4 @@ client.on('message', function(message) {
 	}
 });
 })
-client.login(process.env.token);
+client.login(process.env.BOT_TOKEN);
