@@ -2171,7 +2171,9 @@ client.on('ready', () => {
      client.user.setActivity("you",{type: 'WATCHING'});
  
 });
-const prefix = "-"
+
+var prefix = "-";
+
 client.on('message', async msg => {
     if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
