@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const dateFormat = require('dateformat');//npm i dateformat
 const client = new Discord.Client();
-const ytdl = require('ytdl-core');
 const moment = require('moment');
 const request = require('request');
 const fs = require("fs");;
