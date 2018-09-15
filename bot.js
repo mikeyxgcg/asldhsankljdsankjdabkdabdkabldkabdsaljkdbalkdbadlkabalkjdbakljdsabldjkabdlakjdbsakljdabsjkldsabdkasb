@@ -2154,6 +2154,7 @@ if (message.content.startsWith('-server')) {
             ]
         }
     })
+
 var prefix = "-";
     client.on('message', message => {
     if(message.content.startsWith(prefix + '2avatar')) {
