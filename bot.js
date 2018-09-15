@@ -2098,90 +2098,6 @@ client.on("message", message => {
                           }
 });
 
-client.on('message', message => {
-if (message.content.startsWith('-server')) {
- message.channel.send(`Here is the different information of **${message.guild.name}**`, {
-        embed: {
-            color: 0xDF9C9D,
-            author: {
-                name: client.user.username,
-                icon_url: client.user.displayAvatarURL
-            },
-            thumbnail: {
-                url: message.guild.iconURL
-            },
-            fields: [{
-                    name: "• name:",
-                    value: `${message.guild.name}`,
-                    inline: true
-                }, {
-                    name: "• ID:",
-                    value: `${message.guild.id}`,
-                    inline: true
-                }, {
-                    name: "• Crated at:",
-                    value: moment(message.guild.createdAt).format("LL"),
-                    inline: true
-                }, {
-                    name: "• Owner:",
-                    value: message.guild.owner.user.tag,
-                    inline: true
-                }, {
-                    name: "• Members:",
-                    value: `${message.guild.memberCount}`,
-                    inline: true
-                }, {
-                    name: "• Last members:",
-                    value: `${Array.from(message.channel.guild.members.values()).sort((a, b) => b.joinedAt - a.joinedAt).map(m => `<@!${m.id}>`).splice(0, 1)}`,
-                    inline: true
-                }, {
-                    name: "• Channel",
-                    value: `**${message.guild.channels.filter(channel => channel.type === 'text').size}** text - **${message.guild.channels.filter(channel => channel.type === 'voice').size}** audio`,
-                    inline: true
-                }, {
-                    name: "• AFK channel",
-                    value: `${message.guild.afkChannel}`,
-                    inline: true
-                }, {
-                    name: `• Roles - **${message.channel.guild.roles.size}**:`,
-                    value: message.guild.roles.array().map(g=> g).join(', '),
-                    inline: true
-                }, {
-                    name: `• Emojies - **${message.channel.guild.emojis.size}**:`,
-                    value: `${message.guild.emojis.map(e => e).join(', ')}`,
-                    inline: true
-                }
-            ]
-        }
-    })
-
-
-
-
-
-}
-})
-
-  var prefix = "-";
-
-    client.on('message', message => {
-    if(message.content.startsWith(prefix + '2avatar')) {
-         var men = message.mentions.users.first();
-   var heg;
-      if(men) {
-          heg = men
-      } else {
-          heg = message.author
-      }
-  var avatar = new Discord.RichEmbed()
-.setColor('RANDOM')
-.setTitle(heg.username)
-.setImage(heg.avatarURL)
-
-message.channel.sendEmbed(avatar)
-    }
-});
-
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
@@ -2192,9 +2108,7 @@ client.on('ready', () => {
      client.user.setActivity("you",{type: 'WATCHING'});
  
 });
-
 var prefix = "-";
-
 client.on('message', async msg => {
     if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
@@ -2485,5 +2399,70 @@ function play(guild, song) {
 })
 }
 });
+
+client.on('message', message => {
+if (message.content.startsWith('-server')) {
+ message.channel.send(`Here is the different information of **${message.guild.name}**`, {
+        embed: {
+            color: 0xDF9C9D,
+            author: {
+                name: client.user.username,
+                icon_url: client.user.displayAvatarURL
+            },
+            thumbnail: {
+                url: message.guild.iconURL
+            },
+            fields: [{
+                    name: "• name:",
+                    value: `${message.guild.name}`,
+                    inline: true
+                }, {
+                    name: "• ID:",
+                    value: `${message.guild.id}`,
+                    inline: true
+                }, {
+                    name: "• Crated at:",
+                    value: moment(message.guild.createdAt).format("LL"),
+                    inline: true
+                }, {
+                    name: "• Owner:",
+                    value: message.guild.owner.user.tag,
+                    inline: true
+                }, {
+                    name: "• Members:",
+                    value: `${message.guild.memberCount}`,
+                    inline: true
+                }, {
+                    name: "• Last members:",
+                    value: `${Array.from(message.channel.guild.members.values()).sort((a, b) => b.joinedAt - a.joinedAt).map(m => `<@!${m.id}>`).splice(0, 1)}`,
+                    inline: true
+                }, {
+                    name: "• Channel",
+                    value: `**${message.guild.channels.filter(channel => channel.type === 'text').size}** text - **${message.guild.channels.filter(channel => channel.type === 'voice').size}** audio`,
+                    inline: true
+                }, {
+                    name: "• AFK channel",
+                    value: `${message.guild.afkChannel}`,
+                    inline: true
+                }, {
+                    name: `• Roles - **${message.channel.guild.roles.size}**:`,
+                    value: message.guild.roles.array().map(g=> g).join(', '),
+                    inline: true
+                }, {
+                    name: `• Emojies - **${message.channel.guild.emojis.size}**:`,
+                    value: `${message.guild.emojis.map(e => e).join(', ')}`,
+                    inline: true
+                }
+            ]
+        }
+    })
+
+
+
+
+
+}
+})
+
 
 client.login(process.env.BOT_TOKEN);
