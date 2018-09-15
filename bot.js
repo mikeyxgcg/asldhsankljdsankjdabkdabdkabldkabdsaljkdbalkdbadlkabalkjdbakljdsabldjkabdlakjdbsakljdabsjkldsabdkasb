@@ -2464,13 +2464,6 @@ function play(guild, song) {
     .setThumbnail('http://cdn.akhbaar24.com/430e061a-f89a-43c7-86d9-82fae5f7c495.jpg')
     .setColor('#ff0000')
     .setTimestamp()
-});
+}});
 })
-})
-})
-})
-})
-})
-}
-});
 client.login(process.env.BOT_TOKEN);
