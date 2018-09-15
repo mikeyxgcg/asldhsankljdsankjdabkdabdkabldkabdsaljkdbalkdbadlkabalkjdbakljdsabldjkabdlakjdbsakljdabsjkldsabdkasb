@@ -2361,7 +2361,7 @@ client.on('message', function(message) {
 			dispatcher.resume();
 		});
 	}
-	else if (mess.startsWith('-leave')) {
+	else if (mess.startsWith('-stop')) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		message.reply(':name_badge: **تم الايقاف**');
 		var server = server = servers[message.guild.id];
@@ -2467,4 +2467,5 @@ client.on('message', function(message) {
 	}
 });
 })
+
 client.login(process.env.BOT_TOKEN);
