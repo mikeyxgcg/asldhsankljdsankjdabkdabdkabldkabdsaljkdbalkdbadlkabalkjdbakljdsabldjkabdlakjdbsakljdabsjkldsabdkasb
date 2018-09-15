@@ -2154,9 +2154,7 @@ if (message.content.startsWith('-server')) {
             ]
         }
     })
-
-
-  var prefix = "-";
+var prefix = "-";
     client.on('message', message => {
     if(message.content.startsWith(prefix + '2avatar')) {
          var men = message.mentions.users.first();
