@@ -2161,7 +2161,10 @@ if (message.content.startsWith('-server')) {
 }
 })
 
- var prefix = "-";
+ 
+
+
+  var prefix = "-";
     client.on('message', message => {
     if(message.content.startsWith(prefix + '2avatar')) {
          var men = message.mentions.users.first();
@@ -2235,7 +2238,7 @@ client.on('message', function(message) {
 					let play_info = new Discord.RichEmbed()
 						.setAuthor("أضيف إلى قائمة الانتظار", message.author.avatarURL)
 						.setDescription(`**${videoInfo.title}**`)
-						.setColor("BLACK")
+						.setColor("RANDOM")
 						.setFooter('Requested By:' + message.author.tag)
 						.setImage(videoInfo.thumbnailUrl)
 					//.setDescription('?')
@@ -2286,7 +2289,7 @@ client.on('message', function(message) {
 					let play_info = new Discord.RichEmbed()
 						.setAuthor("أضيف إلى قائمة الانتظار", message.author.avatarURL)
 						.setDescription(`**${videoInfo.title}**`)
-						.setColor("BLACK")
+						.setColor("RANDOM")
 						.setFooter('Requested By:' + message.author.tag)
 						.setImage(videoInfo.thumbnailUrl)
 					//.setDescription('?')
@@ -2367,7 +2370,7 @@ client.on('message', function(message) {
 			dispatcher.resume();
 		});
 	}
-	else if (mess.startsWith('-leave')) {
+	else if (mess.startsWith('-stop')) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		message.reply(':name_badge: **تم الايقاف**');
 		var server = server = servers[message.guild.id];
@@ -2391,7 +2394,7 @@ client.on('message', function(message) {
 				let playing_now_info = new Discord.RichEmbed()
 					.setAuthor(client.user.username, client.user.avatarURL)
 					.setDescription(`**${videoInfo.title}**`)
-					.setColor("BLACK")
+					.setColor("RANDOM")
 					.setFooter('Requested By:' + message.author.tag)
 					.setImage(videoInfo.thumbnailUrl)
 				message.channel.sendEmbed(playing_now_info);
