@@ -2,17 +2,14 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const dateFormat = require('dateformat');//npm i dateformat
 const client = new Discord.Client();
+const ytdl = require('ytdl-core');
 const moment = require('moment');
 const request = require('request');
-const fs = require("fs");;
-const discord_token = "NDIyMDM3NzQwNTkxMzgyNTI4.DYV8zA.6vBJjF7Op9T_bH_YOwRMXqwh9vc";
+const fs = require("fs");
 const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
-const YouTube = require('simple-youtube-api');
-const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
-const queue = new Map();
-const ytdl = require("ytdl-core");
-const { Client, Util } = require('discord.js')
+const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
+const discord_token = "NDIyMDM3NzQwNTkxMzgyNTI4.DYV8zA.6vBJjF7Op9T_bH_YOwRMXqwh9vc";
 var table = require('table').table
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -458,16 +455,7 @@ client.on("guildMemberAdd", member => {
       }
       });
 
-client.on('guildMemberAdd', member => {
-  member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const stewart = member.guild.channels.find("name", "welcome");
-     stewart.send(`<@${member.user.id}> تمت الدعوه من <@${inviter.id}>`);
-   //  stewart.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
-  }); 
-});
+
 
 client.on('message', async message =>{
   if (message.author.boss) return;
@@ -2170,7 +2158,7 @@ if (message.content.startsWith('-server')) {
 }
 })
 
- 
+
 
 
   var prefix = "-";
